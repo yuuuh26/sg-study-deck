@@ -1,0 +1,32 @@
+{
+  "id": "https://sg-study-deck.dengana-10011212.workers.dev/",
+  "name": "SG Study Deck",
+  "short_name": "SG Deck",
+  "lang": "ja",
+  "description": "情報セキュリティを遊んで学ぶ、自分だけの学習デッキ",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#090719",
+  "theme_color": "#0b0721",
+  "icons": [
+    {
+      "src": "./icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

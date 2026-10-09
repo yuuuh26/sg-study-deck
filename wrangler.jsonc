@@ -1,0 +1,17 @@
+{
+  "name": "sg-study-deck",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-10-09",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": true
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "sg-study-deck-backups",
+      "database_id": "18fa5a87-56c8-43de-bef3-b70c62d650cf"
+    }
+  ]
+}

@@ -1,0 +1,1153 @@
+{
+  "packId": "ipa-sg-2025-2026-v1",
+  "formatVersion": 1,
+  "version": "1.0.0",
+  "questions": [
+    {
+      "questionId": "ipa-sg-2026-public-a-01",
+      "revision": 1,
+      "sourceType": "ipa_official",
+      "sourceYear": 2026,
+      "sourceExam": "情報セキュリティマネジメント試験 科目A・B 公開問題",
+      "sourceNumber": 1,
+      "sourceUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf",
+      "syllabusVersion": "2026年度対応（対象規格の版は設問に従う）",
+      "subject": "A",
+      "topicTags": [
+        "リスク管理"
+      ],
+      "difficulty": 2,
+      "stem": "情報セキュリティのリスクマネジメントにおける残留リスクに関する記述のうち， 適切なものはどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "経営者の意思決定に従って保有したリスクは，残留リスクに含まれない。"
+        },
+        {
+          "id": "イ",
+          "text": "特定されていないリスクは，残留リスクに含まれない。"
+        },
+        {
+          "id": "ウ",
+          "text": "リスク対応を行った後に残るリスクは，残留リスクである。"
+        },
+        {
+          "id": "エ",
+          "text": "リスクを生じさせる活動を継続しないという決定によって回避したリスクは，残留リスクである。"
+        }
+      ],
+      "correctOptionId": "ウ",
+      "explanation": "残留リスクは、リスクへの対応を実施した後にも残るリスク。リスクの保有や未特定のリスクを含み得る。",
+      "optionExplanations": {
+        "ア": "保有したリスクも残留リスクに含まれる。",
+        "イ": "まだ特定されていないリスクも残留リスクに含まれ得る。",
+        "ウ": "対応後に残ったリスクという定義に一致する。",
+        "エ": "回避によって取り除かれたリスクを残留リスクと呼ぶわけではない。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "method": "公式解答との照合＋選択肢ごとの意味・計算の根拠確認（AI編集）",
+        "evidenceUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf"
+      }
+    },
+    {
+      "questionId": "ipa-sg-2026-public-a-02",
+      "revision": 1,
+      "sourceType": "ipa_official",
+      "sourceYear": 2026,
+      "sourceExam": "情報セキュリティマネジメント試験 科目A・B 公開問題",
+      "sourceNumber": 2,
+      "sourceUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf",
+      "syllabusVersion": "2026年度対応（対象規格の版は設問に従う）",
+      "subject": "A",
+      "topicTags": [
+        "インシデント対応"
+      ],
+      "difficulty": 2,
+      "stem": "組織的なインシデント対応体制の構築を支援する目的で JPCERT コーディネーションセンターが作成したものはどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "CSIRT マテリアル"
+        },
+        {
+          "id": "イ",
+          "text": "ISMS ユーザーズガイド"
+        },
+        {
+          "id": "ウ",
+          "text": "証拠保全ガイドライン"
+        },
+        {
+          "id": "エ",
+          "text": "組織における内部不正防止ガイドライン"
+        }
+      ],
+      "correctOptionId": "ア",
+      "explanation": "JPCERT/CCのCSIRTマテリアルは、組織内CSIRTの構想・構築・運用を支援する資料。",
+      "optionExplanations": {
+        "ア": "CSIRT構築・運用を支援する資料であり、設問の目的に一致する。",
+        "イ": "ISMSの構築・運用に関する資料で、CSIRTマテリアルとは目的が異なる。",
+        "ウ": "デジタル証拠の保全を扱う資料であり、組織対応体制を構築するための資料名ではない。",
+        "エ": "IPAが公開する内部不正対策の資料で、JPCERT/CCのCSIRTマテリアルではない。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "method": "公式解答との照合＋選択肢ごとの意味・計算の根拠確認（AI編集）",
+        "evidenceUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf"
+      }
+    },
+    {
+      "questionId": "ipa-sg-2026-public-a-03",
+      "revision": 1,
+      "sourceType": "ipa_official",
+      "sourceYear": 2026,
+      "sourceExam": "情報セキュリティマネジメント試験 科目A・B 公開問題",
+      "sourceNumber": 3,
+      "sourceUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf",
+      "syllabusVersion": "2026年度対応（対象規格の版は設問に従う）",
+      "subject": "A",
+      "topicTags": [
+        "ネットワーク防御"
+      ],
+      "difficulty": 2,
+      "stem": "DMZ はどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "インターネットと内部ネットワークとの間に設置されるネットワーク"
+        },
+        {
+          "id": "イ",
+          "text": "外部から持ち込んだ PC がマルウェアなどに感染していないかどうかを社内ネットワークに接続する前にチェックするための，社内ネットワークとは隔離された専用のネットワーク"
+        },
+        {
+          "id": "ウ",
+          "text": "通信内容を監視し，あらかじめ設定された不正な通信パターンと一致した場合に通信を遮断するネットワーク"
+        },
+        {
+          "id": "エ",
+          "text": "不正通信を検知する際に利用するためにセキュリティベンダーから入手するシグネチャ情報"
+        }
+      ],
+      "correctOptionId": "ア",
+      "explanation": "DMZは、外部ネットワークと内部ネットワークの間に設けるネットワーク領域。公開サーバなどを配置し、内部を保護する。",
+      "optionExplanations": {
+        "ア": "外部と内部の中間領域というDMZの定義に一致する。",
+        "イ": "持込み端末の安全性を確認する検疫ネットワークの説明。",
+        "ウ": "不正通信を検知・遮断するIPSなどの機能の説明。",
+        "エ": "既知の不正通信を識別するシグネチャ情報の説明。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "method": "公式解答との照合＋選択肢ごとの意味・計算の根拠確認（AI編集）",
+        "evidenceUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf"
+      }
+    },
+    {
+      "questionId": "ipa-sg-2026-public-a-04",
+      "revision": 1,
+      "sourceType": "ipa_official",
+      "sourceYear": 2026,
+      "sourceExam": "情報セキュリティマネジメント試験 科目A・B 公開問題",
+      "sourceNumber": 4,
+      "sourceUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf",
+      "syllabusVersion": "2026年度対応（対象規格の版は設問に従う）",
+      "subject": "A",
+      "topicTags": [
+        "認証"
+      ],
+      "difficulty": 2,
+      "stem": "チャレンジレスポンス認証方式に該当するものはどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "固定パスワードを，TLS による暗号通信を使い，クライアントからサーバに送信して，サーバで検証する。"
+        },
+        {
+          "id": "イ",
+          "text": "端末のシリアル番号を，クライアントで秘密鍵を使って暗号化し，サーバに送信して，サーバで検証する。"
+        },
+        {
+          "id": "ウ",
+          "text": "トークンという機器が自動的に表示する，認証のたびに異なる数字列をパスワードとしてサーバに送信して，サーバで検証する。"
+        },
+        {
+          "id": "エ",
+          "text": "利用者が入力したパスワードと，サーバから受け取ったランダムなデータとをクライアントで演算し，その結果をサーバに送信して，サーバで検証する。"
+        }
+      ],
+      "correctOptionId": "エ",
+      "explanation": "サーバが毎回異なるチャレンジを送り、クライアントが秘密情報を用いて計算したレスポンスを返す。固定の応答を再送するリプレイ攻撃を防ぎやすい。",
+      "optionExplanations": {
+        "ア": "TLSで守っても固定パスワードを送る方式で、チャレンジに応じた計算ではない。",
+        "イ": "固定の端末番号を暗号化するだけでは、サーバからの毎回異なるチャレンジがない。",
+        "ウ": "トークン表示型のワンタイムパスワードで、記述にはサーバからのチャレンジがない。",
+        "エ": "サーバからのランダム値と秘密情報を使って応答を計算している。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "method": "公式解答との照合＋選択肢ごとの意味・計算の根拠確認（AI編集）",
+        "evidenceUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf"
+      }
+    },
+    {
+      "questionId": "ipa-sg-2026-public-a-05",
+      "revision": 1,
+      "sourceType": "ipa_official",
+      "sourceYear": 2026,
+      "sourceExam": "情報セキュリティマネジメント試験 科目A・B 公開問題",
+      "sourceNumber": 5,
+      "sourceUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf",
+      "syllabusVersion": "2026年度対応（対象規格の版は設問に従う）",
+      "subject": "A",
+      "topicTags": [
+        "脆弱性対策"
+      ],
+      "difficulty": 2,
+      "stem": "情報セキュリティでの脆弱性の検出に用いられるホワイトボックステストに該当するものはどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "検査対象のソフトウェア製品に対して，外部仕様を基に，問題を引き起こしそうなデータを大量に送り込み，その応答や挙動を監視することによって脆弱性を検出する。"
+        },
+        {
+          "id": "イ",
+          "text": "検査対象のネットワークに対して，ネットワークの構成図や機器名などの情報を得ずに，TCP/IP に係る既知の脆弱性を攻撃し，実際に侵入できるかどうかを確認することによって脆弱性を検出する。"
+        },
+        {
+          "id": "ウ",
+          "text": "検査対象のプログラムの内部構造及び内部仕様を基に，脆弱性の可能性がある箇所の処理で使われる入力値を変化させて実行することによって脆弱性を検出する。"
+        },
+        {
+          "id": "エ",
+          "text": "検査対象のプログラムの内部仕様を参照せずに，変数領域のあふれを見つけ出すツールを利用して，バッファオーバフローの脆弱性を検出する。"
+        }
+      ],
+      "correctOptionId": "ウ",
+      "explanation": "ホワイトボックステストは内部構造・内部仕様を把握して検査する。外部から見える入出力だけを基にするブラックボックステストと区別する。",
+      "optionExplanations": {
+        "ア": "外部仕様と応答を基にする検査で、内部構造を用いていない。",
+        "イ": "内部情報を得ない侵入テストであり、ブラックボックス型。",
+        "ウ": "内部構造と内部仕様を基に処理の入力値を変えている。",
+        "エ": "内部仕様を参照しないため、設問のホワイトボックスには当たらない。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "method": "公式解答との照合＋選択肢ごとの意味・計算の根拠確認（AI編集）",
+        "evidenceUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf"
+      }
+    },
+    {
+      "questionId": "ipa-sg-2026-public-a-06",
+      "revision": 1,
+      "sourceType": "ipa_official",
+      "sourceYear": 2026,
+      "sourceExam": "情報セキュリティマネジメント試験 科目A・B 公開問題",
+      "sourceNumber": 6,
+      "sourceUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf",
+      "syllabusVersion": "2026年度対応（対象規格の版は設問に従う）",
+      "subject": "A",
+      "topicTags": [
+        "アクセス制御"
+      ],
+      "difficulty": 2,
+      "stem": "セキュアOSのアクセス制御と管理者権限管理を説明した適切な組みはどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "アクセス制御：管理者のポリシーに従い一元制御し、所有者は変更できない。管理者権限：分野別のアカウントに必要最小限の特権を与える。"
+        },
+        {
+          "id": "イ",
+          "text": "アクセス制御：管理者のポリシーに従い一元制御し、所有者は変更できない。管理者権限：一つの特権アカウントに全権限を与える。"
+        },
+        {
+          "id": "ウ",
+          "text": "アクセス制御：所有者が保持・制御する。管理者権限：分野別のアカウントに必要最小限の特権を与える。"
+        },
+        {
+          "id": "エ",
+          "text": "アクセス制御：所有者が保持・制御する。管理者権限：一つの特権アカウントに全権限を与える。"
+        }
+      ],
+      "correctOptionId": "ア",
+      "explanation": "セキュアOSは強制アクセス制御と管理者特権の分離を組み合わせる。所有者の判断でポリシーを緩められず、管理者も必要最小限の特権で作業する。",
+      "optionExplanations": {
+        "ア": "強制アクセス制御と管理者特権の分離の両方を満たす。",
+        "イ": "強制アクセス制御は満たすが、特権が一つのアカウントに集中している。",
+        "ウ": "管理者特権は分離されているが、アクセス制御は所有者に委ねられている。",
+        "エ": "所有者による制御と特権の集中で、両方とも設問の特徴に一致しない。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": "選択肢の表を文章に組み替えています。判断条件・正解は原典と同じです。",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "method": "公式解答との照合＋選択肢ごとの意味・計算の根拠確認（AI編集）",
+        "evidenceUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf"
+      }
+    },
+    {
+      "questionId": "ipa-sg-2026-public-a-08",
+      "revision": 1,
+      "sourceType": "ipa_official",
+      "sourceYear": 2026,
+      "sourceExam": "情報セキュリティマネジメント試験 科目A・B 公開問題",
+      "sourceNumber": 8,
+      "sourceUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf",
+      "syllabusVersion": "2026年度対応（対象規格の版は設問に従う）",
+      "subject": "A",
+      "topicTags": [
+        "監査"
+      ],
+      "difficulty": 2,
+      "stem": "システム監査におけるフォローアップの説明として，適切なものはどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "監査の品質管理体制を，システム監査人が事前に確かめておくこと"
+        },
+        {
+          "id": "イ",
+          "text": "監査報告書の指摘事項に基づいて監査対象先が実施した改善措置を，システム監査人が確認すること"
+        },
+        {
+          "id": "ウ",
+          "text": "システム監査の対象範囲に関する事項を，システム監査人が文書化すること"
+        },
+        {
+          "id": "エ",
+          "text": "システム監査の目的に応じた適切な形式で作成した監査報告書を，監査の依頼者及び関係者に提出すること"
+        }
+      ],
+      "correctOptionId": "イ",
+      "explanation": "フォローアップは、監査で指摘した事項に対する改善措置が実施されたかを監査人が確認する工程。",
+      "optionExplanations": {
+        "ア": "監査前の品質管理体制確認であり、改善措置の確認ではない。",
+        "イ": "指摘を受けた監査対象先の改善措置を確認している。",
+        "ウ": "監査範囲の文書化は監査計画に関連する作業。",
+        "エ": "監査報告書の提出は報告工程であり、その後の確認ではない。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "method": "公式解答との照合＋選択肢ごとの意味・計算の根拠確認（AI編集）",
+        "evidenceUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf"
+      }
+    },
+    {
+      "questionId": "ipa-sg-2026-public-a-09",
+      "revision": 1,
+      "sourceType": "ipa_official",
+      "sourceYear": 2026,
+      "sourceExam": "情報セキュリティマネジメント試験 科目A・B 公開問題",
+      "sourceNumber": 9,
+      "sourceUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf",
+      "syllabusVersion": "2026年度対応（対象規格の版は設問に従う）",
+      "subject": "A",
+      "topicTags": [
+        "サービス管理"
+      ],
+      "difficulty": 2,
+      "stem": "サービスマネジメントにおける，サービスレベル目標の説明はどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "意図した結果を達成するために，知識及び技能を適用する能力"
+        },
+        {
+          "id": "イ",
+          "text": "組織が約束する，具体的に測定可能なサービスの特性"
+        },
+        {
+          "id": "ウ",
+          "text": "トップマネジメントによって正式に表明された組織の意図及び方向付け"
+        },
+        {
+          "id": "エ",
+          "text": "明示されているか，通常，暗黙のうちに了解されているか，又は義務として要求されているニーズ又は期待"
+        }
+      ],
+      "correctOptionId": "イ",
+      "explanation": "サービスレベル目標は、提供を約束するサービスの具体的で測定可能な特性。稼働率や応答時間などが例となる。",
+      "optionExplanations": {
+        "ア": "能力・力量に関する説明。",
+        "イ": "測定可能なサービス特性を組織が約束するという定義に一致する。",
+        "ウ": "トップマネジメントの方針に関する説明。",
+        "エ": "要求事項の説明であり、測定可能なサービスレベル目標そのものではない。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "method": "公式解答との照合＋選択肢ごとの意味・計算の根拠確認（AI編集）",
+        "evidenceUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf"
+      }
+    },
+    {
+      "questionId": "ipa-sg-2026-public-a-10",
+      "revision": 1,
+      "sourceType": "ipa_official",
+      "sourceYear": 2026,
+      "sourceExam": "情報セキュリティマネジメント試験 科目A・B 公開問題",
+      "sourceNumber": 10,
+      "sourceUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf",
+      "syllabusVersion": "2026年度対応（対象規格の版は設問に従う）",
+      "subject": "A",
+      "topicTags": [
+        "ネットワーク基礎"
+      ],
+      "difficulty": 2,
+      "stem": "次のIPアドレスとサブネットマスクをもつPCがある。このPCのネットワークアドレスとして、適切なものはどれか。\nIPアドレス：10.170.70.19\nサブネットマスク：255.255.255.240",
+      "options": [
+        {
+          "id": "ア",
+          "text": "10.170.70.0"
+        },
+        {
+          "id": "イ",
+          "text": "10.170.70.16"
+        },
+        {
+          "id": "ウ",
+          "text": "10.170.70.31"
+        },
+        {
+          "id": "エ",
+          "text": "10.170.70.255"
+        }
+      ],
+      "correctOptionId": "イ",
+      "explanation": "255.255.255.240は/28。最終オクテットを16ずつに区切る。19は16〜31の区画に属するので、ネットワークアドレスは10.170.70.16。",
+      "optionExplanations": {
+        "ア": "0〜15の区画のネットワークアドレスで、19は含まれない。",
+        "イ": "19 AND 240 = 16。該当区画の先頭アドレスになる。",
+        "ウ": "この区画のブロードキャストアドレスで、ネットワークアドレスではない。",
+        "エ": "今回の/28区画の先頭ではない。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "method": "公式解答との照合＋選択肢ごとの意味・計算の根拠確認（AI編集）",
+        "evidenceUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf"
+      }
+    },
+    {
+      "questionId": "ipa-sg-2026-public-a-11",
+      "revision": 1,
+      "sourceType": "ipa_official",
+      "sourceYear": 2026,
+      "sourceExam": "情報セキュリティマネジメント試験 科目A・B 公開問題",
+      "sourceNumber": 11,
+      "sourceUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf",
+      "syllabusVersion": "2026年度対応（対象規格の版は設問に従う）",
+      "subject": "A",
+      "topicTags": [
+        "データ活用"
+      ],
+      "difficulty": 2,
+      "stem": "eコマース運営会社がビッグデータを用いて新たなニーズを発掘し、その後のビジネス戦略に生かそうとしている。次のフローの「データの分析」で行うことはどれか。\na ビッグデータの収集 → b 必要なデータの整備 → c データの分析 → d ビジネス戦略への活用",
+      "options": [
+        {
+          "id": "ア",
+          "text": "機械学習を用いて自然言語処理やクラスタリングを行い，新しい傾向を導き出す。"
+        },
+        {
+          "id": "イ",
+          "text": "取扱い製品に関する SNS での評価などを自動プログラムで取得する。"
+        },
+        {
+          "id": "ウ",
+          "text": "ノイズリダクション処理やデータクレンジング処理を行う。"
+        },
+        {
+          "id": "エ",
+          "text": "発見した新しい傾向を見極めて，注力すべきビジネス戦略を立案する。"
+        }
+      ],
+      "correctOptionId": "ア",
+      "explanation": "収集→整備→分析→戦略活用という段階のうち、分析はデータから傾向や知見を導く処理。",
+      "optionExplanations": {
+        "ア": "自然言語処理やクラスタリングによる傾向の導出は分析に当たる。",
+        "イ": "データを取得する処理は収集の段階。",
+        "ウ": "ノイズ除去やクレンジングはデータ整備の段階。",
+        "エ": "発見した傾向を事業戦略に反映するのは活用の段階。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": "フロー図を文章に組み替え、設問の表記を調整しています。選択肢・正解は原典と同じです。",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "method": "公式解答との照合＋選択肢ごとの意味・計算の根拠確認（AI編集）",
+        "evidenceUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf"
+      }
+    },
+    {
+      "questionId": "ipa-sg-2026-public-a-12",
+      "revision": 1,
+      "sourceType": "ipa_official",
+      "sourceYear": 2026,
+      "sourceExam": "情報セキュリティマネジメント試験 科目A・B 公開問題",
+      "sourceNumber": 12,
+      "sourceUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf",
+      "syllabusVersion": "2026年度対応（対象規格の版は設問に従う）",
+      "subject": "A",
+      "topicTags": [
+        "期待値"
+      ],
+      "difficulty": 2,
+      "stem": "良品である確率が0.9、不良品である確率が0.1の外注部品について、受入検査を行いたい。各案の良品と不良品1個に掛かる費用は次のとおり。期待費用が最も低い案はどれか。\nA：良品0円／不良品1,500円\nB：良品40円／不良品1,000円\nC：良品80円／不良品500円\nD：良品120円／不良品200円",
+      "options": [
+        {
+          "id": "ア",
+          "text": "A"
+        },
+        {
+          "id": "イ",
+          "text": "B"
+        },
+        {
+          "id": "ウ",
+          "text": "C"
+        },
+        {
+          "id": "エ",
+          "text": "D"
+        }
+      ],
+      "correctOptionId": "ウ",
+      "explanation": "期待費用＝良品の費用×0.9＋不良品の費用×0.1。A=150円、B=136円、C=122円、D=128円なのでCが最小。",
+      "optionExplanations": {
+        "ア": "A：0×0.9＋1500×0.1＝150円。",
+        "イ": "B：40×0.9＋1000×0.1＝136円。",
+        "ウ": "C：80×0.9＋500×0.1＝122円。最も低い。",
+        "エ": "D：120×0.9＋200×0.1＝128円。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": "費用表を文章に組み替え、設問の表記を調整しています。数値・選択肢・正解は原典と同じです。",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "method": "公式解答との照合＋選択肢ごとの意味・計算の根拠確認（AI編集）",
+        "evidenceUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf"
+      }
+    },
+    {
+      "questionId": "ipa-sg-2025-public-a-01",
+      "revision": 1,
+      "sourceType": "ipa_official",
+      "sourceYear": 2025,
+      "sourceExam": "情報セキュリティマネジメント試験 科目A・B 公開問題",
+      "sourceNumber": 1,
+      "sourceUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_sg_qs.pdf",
+      "syllabusVersion": "2026年度対応（対象規格の版は設問に従う）",
+      "subject": "A",
+      "topicTags": [
+        "リスク管理"
+      ],
+      "difficulty": 2,
+      "stem": "JIS Q 31000:2019（リスクマネジメント－指針）におけるリスクマネジメントプロセスに関する記述のうち，適切なものはどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "リスク対応の意義は，プロセスの設計，実施及び結末の質及び効果を保証し，改善することである。"
+        },
+        {
+          "id": "イ",
+          "text": "リスク特定の意義は，リスクに対処するための選択肢を選定し，実施することである。"
+        },
+        {
+          "id": "ウ",
+          "text": "リスク評価の意義は，組織の目的の達成を助ける又は妨害する可能性のあるリスクを発見し，認識し，記述することである。"
+        },
+        {
+          "id": "エ",
+          "text": "リスク分析の意義は，必要に応じてリスクのレベルを含め，リスクの性質及び特徴を理解することである。"
+        }
+      ],
+      "correctOptionId": "エ",
+      "explanation": "リスク分析はリスクの性質・特徴・レベルを理解すること。特定は発見・認識・記述、評価は基準との比較、対応は選択肢の選定・実施。",
+      "optionExplanations": {
+        "ア": "プロセスの質や効果を保証・改善するのはモニタリング及びレビュー。",
+        "イ": "リスクへの選択肢を選定して実施するのはリスク対応。",
+        "ウ": "リスクを発見・認識・記述するのはリスク特定。",
+        "エ": "リスクの性質・特徴を理解するという分析の定義に一致する。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "method": "公式解答との照合＋選択肢ごとの意味・計算の根拠確認（AI編集）",
+        "evidenceUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_sg_ans.pdf"
+      }
+    },
+    {
+      "questionId": "ipa-sg-2025-public-a-02",
+      "revision": 1,
+      "sourceType": "ipa_official",
+      "sourceYear": 2025,
+      "sourceExam": "情報セキュリティマネジメント試験 科目A・B 公開問題",
+      "sourceNumber": 2,
+      "sourceUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_sg_qs.pdf",
+      "syllabusVersion": "2026年度対応（対象規格の版は設問に従う）",
+      "subject": "A",
+      "topicTags": [
+        "ログ分析"
+      ],
+      "difficulty": 2,
+      "stem": "SIEM 製品によるセキュリティ上の効果として，最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "様々な機器のログを集中管理することによって，横断的な分析や相関分析が可能になり，単純な目視だけでは発見困難な兆候を検知，分析，可視化することが可能になる。"
+        },
+        {
+          "id": "イ",
+          "text": "通信経路上を流れるパケットをキャプチャし，暗号化されたデータが改ざんされていないかどうかをチェックすることが可能になる。"
+        },
+        {
+          "id": "ウ",
+          "text": "ファイアウォール，IDS，マルウェア対策といった複数のネットワークセキュリティ機能を一つの機器で実現することが可能になる。"
+        },
+        {
+          "id": "エ",
+          "text": "ファイルの改ざんを検知すると，事前に取得済みのバックアップを用いて直ちに修復することが可能になる。"
+        }
+      ],
+      "correctOptionId": "ア",
+      "explanation": "SIEMは複数の機器・システムのログを集約して相関分析し、不審な兆候の検知・可視化を支援する。",
+      "optionExplanations": {
+        "ア": "ログの横断分析・相関分析はSIEMの主な機能。",
+        "イ": "暗号化データの完全性を確認する機能そのものはSIEMの主目的ではない。",
+        "ウ": "複数のセキュリティ機能を統合するUTMの説明。",
+        "エ": "改ざんされたファイルの即時修復はSIEMのログ分析とは異なる。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "method": "公式解答との照合＋選択肢ごとの意味・計算の根拠確認（AI編集）",
+        "evidenceUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_sg_ans.pdf"
+      }
+    },
+    {
+      "questionId": "ipa-sg-2025-public-a-03",
+      "revision": 1,
+      "sourceType": "ipa_official",
+      "sourceYear": 2025,
+      "sourceExam": "情報セキュリティマネジメント試験 科目A・B 公開問題",
+      "sourceNumber": 3,
+      "sourceUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_sg_qs.pdf",
+      "syllabusVersion": "2026年度対応（対象規格の版は設問に従う）",
+      "subject": "A",
+      "topicTags": [
+        "ゼロトラスト"
+      ],
+      "difficulty": 2,
+      "stem": "ゼロトラストの説明として，最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "機器やソフトウェアの脆弱性のうち，開発元から対策方法，修正プログラムなどが提供されていない脆弱性が残っている状態のこと"
+        },
+        {
+          "id": "イ",
+          "text": "内部ネットワークであっても必ずしも安全ではないことを前提として対策を講じる考え方のこと"
+        },
+        {
+          "id": "ウ",
+          "text": "秘密情報そのものは明かさずに，自分が秘密情報を知っていることを相手に知らせる方法のこと"
+        },
+        {
+          "id": "エ",
+          "text": "マルウェア定義ファイルを用いず，PC の振る舞いからマルウェア感染を検知する手法のこと"
+        }
+      ],
+      "correctOptionId": "イ",
+      "explanation": "ネットワーク内外の場所だけで信頼せず、アクセスごとに認証・認可などを検証する考え方。内部にいるだけで安全とはみなさない。",
+      "optionExplanations": {
+        "ア": "修正手段が提供されていないゼロデイ脆弱性に関する説明。",
+        "イ": "内部ネットワークも安全とは限らないという考え方がゼロトラスト。",
+        "ウ": "秘密を明かさずに知っていることを示すゼロ知識証明の説明。",
+        "エ": "振る舞い検知の説明で、ゼロトラストという設計原則そのものではない。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "method": "公式解答との照合＋選択肢ごとの意味・計算の根拠確認（AI編集）",
+        "evidenceUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_sg_ans.pdf"
+      }
+    },
+    {
+      "questionId": "ipa-sg-2025-public-a-04",
+      "revision": 1,
+      "sourceType": "ipa_official",
+      "sourceYear": 2025,
+      "sourceExam": "情報セキュリティマネジメント試験 科目A・B 公開問題",
+      "sourceNumber": 4,
+      "sourceUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_sg_qs.pdf",
+      "syllabusVersion": "2026年度対応（対象規格の版は設問に従う）",
+      "subject": "A",
+      "topicTags": [
+        "内部不正"
+      ],
+      "difficulty": 2,
+      "stem": "不正が発生する際には“不正のトライアングル”の 3 要素全てが存在すると考えられている。“不正のトライアングル”の構成要素の説明として，適切なものはどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "“機会”とは，情報システムなどの技術や物理的な環境，組織のルールなど，内部者による不正行為の実行を可能又は容易にする環境の存在である。"
+        },
+        {
+          "id": "イ",
+          "text": "“情報と伝達”とは，必要な情報が識別，把握及び処理され，組織内外及び関係者相互に正しく伝えられるようにすることである。"
+        },
+        {
+          "id": "ウ",
+          "text": "“正当化”とは，ノルマによるプレッシャなどのことである。"
+        },
+        {
+          "id": "エ",
+          "text": "“動機”とは，良心のかしゃくを乗り越える都合の良い解釈や他人への責任転嫁など，内部者が不正行為を自ら納得させるための自分勝手な理由付けである。"
+        }
+      ],
+      "correctOptionId": "ア",
+      "explanation": "不正のトライアングルは機会・動機（プレッシャ）・正当化。機会を減らす対策には権限管理や監視などがある。",
+      "optionExplanations": {
+        "ア": "不正を可能にする環境の存在が機会に当たる。",
+        "イ": "情報と伝達は内部統制の要素で、不正のトライアングルの3要素ではない。",
+        "ウ": "ノルマのプレッシャは動機に当たる。",
+        "エ": "都合のよい理由付けや責任転嫁は正当化に当たる。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "method": "公式解答との照合＋選択肢ごとの意味・計算の根拠確認（AI編集）",
+        "evidenceUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_sg_ans.pdf"
+      }
+    },
+    {
+      "questionId": "ipa-sg-2025-public-a-05",
+      "revision": 1,
+      "sourceType": "ipa_official",
+      "sourceYear": 2025,
+      "sourceExam": "情報セキュリティマネジメント試験 科目A・B 公開問題",
+      "sourceNumber": 5,
+      "sourceUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_sg_qs.pdf",
+      "syllabusVersion": "2026年度対応（対象規格の版は設問に従う）",
+      "subject": "A",
+      "topicTags": [
+        "DNS"
+      ],
+      "difficulty": 2,
+      "stem": "DNS キャッシュサーバでの DNS キャッシュポイズニング攻撃の対策はどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "DNS サービスの待ち受けポートを 53 番に固定する。"
+        },
+        {
+          "id": "イ",
+          "text": "外部の DNS クライアントからの再帰的問合せを受け付けない設定にする。"
+        },
+        {
+          "id": "ウ",
+          "text": "権威 DNS サーバへの問合せに使用するトランザクション ID を固定する。"
+        },
+        {
+          "id": "エ",
+          "text": "権威 DNS サーバへの非再帰的問合せを行う設定にする。"
+        }
+      ],
+      "correctOptionId": "イ",
+      "explanation": "外部のクライアントからの再帰的問合せを受け付けず、攻撃者がキャッシュ生成のきっかけを与える経路を抑える。IDを固定すると偽応答が成功しやすくなる。",
+      "optionExplanations": {
+        "ア": "53番はDNSの通常の待受ポートで、固定すること自体が対策ではない。",
+        "イ": "外部の攻撃者による再帰問合せを制限する対策。",
+        "ウ": "トランザクションIDを固定すると推測が容易になり、対策と逆になる。",
+        "エ": "権威サーバへの非再帰問合せは通常の名前解決でも行われるため、それだけでは攻撃対策にならない。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "method": "公式解答との照合＋選択肢ごとの意味・計算の根拠確認（AI編集）",
+        "evidenceUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_sg_ans.pdf"
+      }
+    },
+    {
+      "questionId": "ipa-sg-2025-public-a-06",
+      "revision": 1,
+      "sourceType": "ipa_official",
+      "sourceYear": 2025,
+      "sourceExam": "情報セキュリティマネジメント試験 科目A・B 公開問題",
+      "sourceNumber": 6,
+      "sourceUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_sg_qs.pdf",
+      "syllabusVersion": "2026年度対応（対象規格の版は設問に従う）",
+      "subject": "A",
+      "topicTags": [
+        "脆弱性対策"
+      ],
+      "difficulty": 2,
+      "stem": "CVSS v3 について，基本評価基準，現状評価基準，環境評価基準のうち，現状評価基準の特徴はどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "攻撃コードの出現の有無，利用可能な対策のレベルなどに応じ，評価結果は時間の経過で変化する。"
+        },
+        {
+          "id": "イ",
+          "text": "脆弱性及び想定される脅威に応じ，製品利用者ごとに評価結果は異なる。"
+        },
+        {
+          "id": "ウ",
+          "text": "製品利用者が脆弱性への対応を決めるための評価に用いる基準であり，評価結果は時間の経過で変化しない。"
+        },
+        {
+          "id": "エ",
+          "text": "評価結果は利用環境によらず同じで，かつ，時間の経過でも変化しない。"
+        }
+      ],
+      "correctOptionId": "ア",
+      "explanation": "CVSS v3の現状評価基準は、攻撃コードや修正・回避策の状況によって時間とともに変わる。設問はv3を対象とし、v4と区別する。",
+      "optionExplanations": {
+        "ア": "攻撃コードや対策の変化を反映するのが現状評価基準。",
+        "イ": "製品利用者ごとの環境を反映するのは環境評価基準。",
+        "ウ": "現状評価は時間経過によって変わり得るため、この説明は一致しない。",
+        "エ": "利用環境や時間によらない固有の特徴は基本評価基準の説明。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "method": "公式解答との照合＋選択肢ごとの意味・計算の根拠確認（AI編集）",
+        "evidenceUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_sg_ans.pdf"
+      },
+      "versionNote": "CVSS v3の設問です。CVSS v4とは区別してください。"
+    },
+    {
+      "questionId": "ipa-sg-2025-public-a-08",
+      "revision": 1,
+      "sourceType": "ipa_official",
+      "sourceYear": 2025,
+      "sourceExam": "情報セキュリティマネジメント試験 科目A・B 公開問題",
+      "sourceNumber": 8,
+      "sourceUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_sg_qs.pdf",
+      "syllabusVersion": "2026年度対応（対象規格の版は設問に従う）",
+      "subject": "A",
+      "topicTags": [
+        "監査"
+      ],
+      "difficulty": 2,
+      "stem": "情報セキュリティ違反を犯した従業員に対する懲戒手続を規定した就業規則を含む社内規程の内容について，情報セキュリティ管理基準（平成 28 年）に基づき監査を実施した。監査人が，指摘事項として監査報告書に記載すべきものはどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "従業員による情報セキュリティ違反の可能性を認識したら，直ちに懲戒手続を開始することを定めていた。"
+        },
+        {
+          "id": "イ",
+          "text": "懲戒手続は，情報セキュリティ違反による業務への影響度，違反を犯した従業員に対する教育の実施状況などを考慮した段階別の対応を定めていた。"
+        },
+        {
+          "id": "ウ",
+          "text": "懲戒手続は，情報セキュリティ違反を犯した従業員に対する恣意性を排除した公平な取扱いを定めていた。"
+        },
+        {
+          "id": "エ",
+          "text": "懲戒手続を具体化した細則を策定すること，及び従業員に周知徹底することを定めていた。"
+        }
+      ],
+      "correctOptionId": "ア",
+      "explanation": "違反の可能性を認識しただけで直ちに懲戒を開始せず、違反の事実を確認して公平に対応する。設問に明示された平成28年の管理基準に基づく判断。",
+      "optionExplanations": {
+        "ア": "可能性だけで直ちに開始するため、事実確認が欠けている。この点を指摘する。",
+        "イ": "影響や教育状況を考慮した段階的な対応は適切。",
+        "ウ": "恣意性を排除した公平な扱いは適切。",
+        "エ": "具体的な手続を定めて周知することは適切。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "method": "公式解答との照合＋選択肢ごとの意味・計算の根拠確認（AI編集）",
+        "evidenceUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_sg_ans.pdf"
+      },
+      "versionNote": "設問で指定された平成28年の管理基準を対象とします。"
+    },
+    {
+      "questionId": "ipa-sg-2025-public-a-09",
+      "revision": 1,
+      "sourceType": "ipa_official",
+      "sourceYear": 2025,
+      "sourceExam": "情報セキュリティマネジメント試験 科目A・B 公開問題",
+      "sourceNumber": 9,
+      "sourceUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_sg_qs.pdf",
+      "syllabusVersion": "2026年度対応（対象規格の版は設問に従う）",
+      "subject": "A",
+      "topicTags": [
+        "サービス管理"
+      ],
+      "difficulty": 2,
+      "stem": "サービス満足度の目標値を「調査アンケートの満足度の平均点が5点満点中4.0点」と設定したサービスがある。集計結果が次のとおりのとき、目標達成率は幾らか。\n目標達成率＝満足度の平均点÷満足度の目標値\n5点：50人／4点：250人／3点：150人／2点：50人／1点：0人",
+      "options": [
+        {
+          "id": "ア",
+          "text": "0.6"
+        },
+        {
+          "id": "イ",
+          "text": "0.72"
+        },
+        {
+          "id": "ウ",
+          "text": "0.8"
+        },
+        {
+          "id": "エ",
+          "text": "0.9"
+        }
+      ],
+      "correctOptionId": "エ",
+      "explanation": "加重平均は(5×50＋4×250＋3×150＋2×50＋1×0)÷500＝3.6点。目標達成率は3.6÷4.0＝0.9。",
+      "optionExplanations": {
+        "ア": "0.6ではない。各点数を回答数で重み付けする。",
+        "イ": "0.72ではない。平均点は3.6点になる。",
+        "ウ": "0.8ではない。3.6点を目標4.0点で割る。",
+        "エ": "3.6÷4.0＝0.9で正しい。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": "集計表を文章に組み替え、設問の表記を調整しています。数値・選択肢・正解は原典と同じです。",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "method": "公式解答との照合＋選択肢ごとの意味・計算の根拠確認（AI編集）",
+        "evidenceUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_sg_ans.pdf"
+      }
+    },
+    {
+      "questionId": "ipa-sg-2025-public-a-10",
+      "revision": 1,
+      "sourceType": "ipa_official",
+      "sourceYear": 2025,
+      "sourceExam": "情報セキュリティマネジメント試験 科目A・B 公開問題",
+      "sourceNumber": 10,
+      "sourceUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_sg_qs.pdf",
+      "syllabusVersion": "2026年度対応（対象規格の版は設問に従う）",
+      "subject": "A",
+      "topicTags": [
+        "信頼性"
+      ],
+      "difficulty": 2,
+      "stem": "システムの信頼性指標である RASIS の，安全性を除く四つに関する記述のうち，適切なものはどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "R の信頼性は，システムの MTBF によって表す。"
+        },
+        {
+          "id": "イ",
+          "text": "A の可用性は，システムが稼働している時間の平均値によって表す。"
+        },
+        {
+          "id": "ウ",
+          "text": "S の保守性は，システムの稼働率によって表す。"
+        },
+        {
+          "id": "エ",
+          "text": "I の完全性は，システムの故障率によって表す。"
+        }
+      ],
+      "correctOptionId": "ア",
+      "explanation": "RASISのRはReliability（信頼性）、AはAvailability（可用性）、SはServiceability（保守性）、IはIntegrity（完全性）、最後のSはSecurity（安全性）。信頼性を示す指標にMTBFがある。",
+      "optionExplanations": {
+        "ア": "MTBF（平均故障間隔）は信頼性の指標。",
+        "イ": "可用性は稼働率などで表す。稼働時間の平均値だけでは復旧時間が考慮されない。",
+        "ウ": "保守性はMTTR（平均修復時間）などで表す。",
+        "エ": "完全性はデータの正確さや矛盾のなさに関する特性で、故障率では表さない。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "method": "公式解答との照合＋選択肢ごとの意味・計算の根拠確認（AI編集）",
+        "evidenceUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_sg_ans.pdf"
+      }
+    },
+    {
+      "questionId": "ipa-sg-2025-public-a-11",
+      "revision": 1,
+      "sourceType": "ipa_official",
+      "sourceYear": 2025,
+      "sourceExam": "情報セキュリティマネジメント試験 科目A・B 公開問題",
+      "sourceNumber": 11,
+      "sourceUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_sg_qs.pdf",
+      "syllabusVersion": "2026年度対応（対象規格の版は設問に従う）",
+      "subject": "A",
+      "topicTags": [
+        "データ活用"
+      ],
+      "difficulty": 2,
+      "stem": "企業全体で使用するデータを統合・整理したデータウェアハウスから，特定の分析目的のためにデータを加工して構築したものはどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "データカタログ"
+        },
+        {
+          "id": "イ",
+          "text": "データマート"
+        },
+        {
+          "id": "ウ",
+          "text": "データリネージ"
+        },
+        {
+          "id": "エ",
+          "text": "データレイク"
+        }
+      ],
+      "correctOptionId": "イ",
+      "explanation": "データマートは特定部門や特定の分析目的に合わせて加工・構築したデータの集合。",
+      "optionExplanations": {
+        "ア": "データの所在や定義などを管理する目録。",
+        "イ": "特定の分析目的に加工したデータの集合で、設問に一致する。",
+        "ウ": "データの発生源や変換・移動の履歴。",
+        "エ": "多様なデータを元の形式で蓄積する基盤。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "method": "公式解答との照合＋選択肢ごとの意味・計算の根拠確認（AI編集）",
+        "evidenceUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_sg_ans.pdf"
+      }
+    },
+    {
+      "questionId": "ipa-sg-2025-public-a-12",
+      "revision": 1,
+      "sourceType": "ipa_official",
+      "sourceYear": 2025,
+      "sourceExam": "情報セキュリティマネジメント試験 科目A・B 公開問題",
+      "sourceNumber": 12,
+      "sourceUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_sg_qs.pdf",
+      "syllabusVersion": "2026年度対応（対象規格の版は設問に従う）",
+      "subject": "A",
+      "topicTags": [
+        "DX"
+      ],
+      "difficulty": 2,
+      "stem": "経済産業省の「DXレポート2」では、DX実現に至る段階を次のように分けている。製造業のデジタル化事例において、デジタルトランスフォーメーションの段階に達しているものはどれか。\nデジタイゼーション：アナログ・物理データのデジタルデータ化\nデジタライゼーション：個別の業務・製造プロセスのデジタル化\nデジタルトランスフォーメーション：組織横断／全体の業務・製造プロセスのデジタル化、「顧客起点の価値創出」のための事業やビジネスモデルの変革",
+      "options": [
+        {
+          "id": "ア",
+          "text": "3D 画像撮影用の高性能カメラを生産ラインに設置し，カメラの前を通過する製造物のデジタル画像をリアルタイムで記録して，出荷検査の証拠データとする。"
+        },
+        {
+          "id": "イ",
+          "text": "技術継承のために，生産ラインに設置したカメラと，熟練工の手に装着したウェアラブルセンサーによって，熟練工の所作をデジタルデータとして保存した上で， AI を用いて熟練工の動きをモデル化する。"
+        },
+        {
+          "id": "ウ",
+          "text": "顧客から販売・在庫情報を，部品メーカーから生産・在庫情報をデジタルデータで逐次入手し，AI を用いて複数の需給調整案を高速でシミュレーションすることによって，サプライチェーン全体を最適化する。"
+        },
+        {
+          "id": "エ",
+          "text": "生産ラインで取得したデジタル画像データから良品，不良品の特徴を AI に学習させた上で，AI で画像解析を行うことによって，自社の出荷時検品作業を効率化する。"
+        }
+      ],
+      "correctOptionId": "ウ",
+      "explanation": "デジタルトランスフォーメーションは、個別作業のデジタル化を超えて全体のプロセスや事業を変革する。設問ではサプライチェーン全体を最適化するウが該当する。",
+      "optionExplanations": {
+        "ア": "画像をデジタル記録するデジタイゼーションに当たる。",
+        "イ": "技能のデジタル化・モデル化で、組織横断の事業変革まで記述されていない。",
+        "ウ": "顧客・部品メーカーを結び、全体を最適化する段階。",
+        "エ": "自社の一つの検品作業の効率化で、デジタライゼーションに当たる。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": "定義の表を文章に組み替え、設問の表記を調整しています。選択肢・正解は原典と同じです。",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "method": "公式解答との照合＋選択肢ごとの意味・計算の根拠確認（AI編集）",
+        "evidenceUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_sg_ans.pdf"
+      }
+    }
+  ]
+}

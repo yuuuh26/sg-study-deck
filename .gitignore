@@ -1,0 +1,6 @@
+node_modules/
+dist/
+qa/
+*.secret
+*-recovery-key.txt
+.env*
