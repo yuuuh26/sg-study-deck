@@ -3,6 +3,6 @@ const manifest=JSON.parse(readFileSync('public/manifest.webmanifest'));assert.eq
 for(const icon of manifest.icons){const bytes=readFileSync(join('public',icon.src));assert.equal(bytes.toString('hex',0,8),'89504e470d0a1a0a');const size=Number(icon.sizes.split('x')[0]);assert.equal(bytes.readUInt32BE(16),size);assert.equal(bytes.readUInt32BE(20),size);}
 const files=[];function walk(p){for(const f of readdirSync(p,{withFileTypes:true})){const n=join(p,f.name);f.isDirectory()?walk(n):files.push(n);}}walk('public');walk('worker');
 for(const f of files.filter(f=>f.endsWith('.js'))){const r=spawnSync(process.execPath,['--check',f],{encoding:'utf8'});assert.equal(r.status,0,r.stderr);}
-validatePack(JSON.parse(readFileSync('public/data/ipa-verified.json')));assert.match(readFileSync('public/sw.js','utf8'),/pathname\.startsWith\('\/api\/'\)/);
+const official=validatePack(JSON.parse(readFileSync('public/data/ipa-verified.json')));validatePack(JSON.parse(readFileSync('public/data/practical-verified.json')),official);assert.match(readFileSync('public/sw.js','utf8'),/pathname\.startsWith\('\/api\/'\)/);
 for(const f of files.filter(f=>/\.(js|json|html|css)$/.test(f))){const s=readFileSync(f,'utf8');assert(!/Bearer\s+[A-Za-z0-9._-]{20,}/.test(s),f);assert(!/[a-f0-9]{64}/.test(s),'Unexpected secret-looking string: '+f);}
 console.log('Syntax, verified data, PWA icons/identity, API cache exclusion and secret scan passed');

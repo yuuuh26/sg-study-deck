@@ -1,0 +1,1946 @@
+{
+  "packId": "sg-practical-security-v1",
+  "formatVersion": 1,
+  "version": "1.0.0",
+  "description": "実生活からSGの基礎を学ぶ独自の入門・予想問題。公式問題ではない。",
+  "questions": [
+    {
+      "questionId": "sg-practical-auth-01",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門・予想問題（非公式）",
+      "sourceNumber": "AUTH-01",
+      "sourceUrl": "https://pages.nist.gov/800-63-4/sp800-63b.html",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "認証"
+      ],
+      "difficulty": 1,
+      "learningTrack": "practical",
+      "learningOrder": 1,
+      "concept": "二要素認証",
+      "stem": "ログインを「覚えているもの」と「持っているもの」の2種類で確かめたい。適切な組合せはどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "パスワードと、登録済みの認証アプリが生成するコード"
+        },
+        {
+          "id": "イ",
+          "text": "利用者IDと、メールアドレス"
+        },
+        {
+          "id": "ウ",
+          "text": "パスワードと、別のパスワード"
+        },
+        {
+          "id": "エ",
+          "text": "パスワードと、秘密の質問の答え"
+        }
+      ],
+      "correctOptionId": "ア",
+      "explanation": "家の鍵に加えて、合言葉でも確かめるイメージ。認証要素は「記憶・所有・生体」の3種類で、異なる2種類を使うのが二要素認証。",
+      "optionExplanations": {
+        "ア": "パスワードは記憶、登録済み認証アプリは所有の確認になる。",
+        "イ": "IDやメールアドレスは識別情報で、これだけでは本人を確かめられない。",
+        "ウ": "どちらも記憶要素で、要素の種類は増えない。",
+        "エ": "どちらも知っている情報であり、2種類の要素ではない。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面を使った独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ／利用者認証：多要素認証",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・動作・注意点と、正解および全誤答の理由を照合（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://pages.nist.gov/800-63-4/sp800-63b.html",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ／利用者認証：多要素認証"
+      }
+    },
+    {
+      "questionId": "sg-practical-auth-02",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門・予想問題（非公式）",
+      "sourceNumber": "AUTH-02",
+      "sourceUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "認証"
+      ],
+      "difficulty": 1,
+      "learningTrack": "practical",
+      "learningOrder": 2,
+      "concept": "二段階と二要素の違い",
+      "stem": "パスワードを入力し、その後に秘密の質問へ答える。二段階認証と二要素認証の関係として適切な説明はどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "2回入力すれば、必ず二要素認証である"
+        },
+        {
+          "id": "イ",
+          "text": "別の画面へ移れば、所有要素が加わる"
+        },
+        {
+          "id": "ウ",
+          "text": "手順は2段階だが、両方とも記憶要素なので二要素とは限らない"
+        },
+        {
+          "id": "エ",
+          "text": "秘密の質問は、指紋と同じ生体要素である"
+        }
+      ],
+      "correctOptionId": "ウ",
+      "explanation": "「扉を2回通る」と「鍵と指紋の両方で確かめる」は別の話。試験では、多段階認証の段階数と多要素認証の要素数を区別する。",
+      "optionExplanations": {
+        "ア": "回数だけでは要素の種類を判断できない。",
+        "イ": "画面の切替で、持っている物を確認したことにはならない。",
+        "ウ": "段階は手順の数、要素は本人確認に使う材料の種類。",
+        "エ": "質問の答えは覚えている情報。身体の特徴ではない。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面を使った独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ／利用者認証：多段階認証・多要素認証",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・動作・注意点と、正解および全誤答の理由を照合（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ／利用者認証：多段階認証・多要素認証",
+        "additionalEvidenceUrls": [
+          "https://pages.nist.gov/800-63-4/sp800-63b.html"
+        ]
+      }
+    },
+    {
+      "questionId": "sg-practical-auth-03",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門・予想問題（非公式）",
+      "sourceNumber": "AUTH-03",
+      "sourceUrl": "https://pages.nist.gov/800-63-4/sp800-63b.html",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "認証"
+      ],
+      "difficulty": 1,
+      "learningTrack": "practical",
+      "learningOrder": 3,
+      "concept": "認証コードとフィッシング",
+      "stem": "認証アプリのコードを使っている。メールから開いた偽ログイン画面にも、そのコードを入力してよいか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "コードを使えば、入力したパスワードも自動で無効になる"
+        },
+        {
+          "id": "イ",
+          "text": "入力しない。コードをリアルタイムに盗まれて悪用される場合がある"
+        },
+        {
+          "id": "ウ",
+          "text": "コードを入力すると、偽サイトが本物に変わる"
+        },
+        {
+          "id": "エ",
+          "text": "短時間で変わるコードなので、どこへ入力しても安全"
+        }
+      ],
+      "correctOptionId": "イ",
+      "explanation": "その場限りの合言葉でも、盗み聞きした相手がすぐ使うと危ない。コードを使う認証と、偽サイトへの耐性は別の性質。ログイン先を確認する。",
+      "optionExplanations": {
+        "ア": "認証コードは、盗まれたパスワードを取り消す機能ではない。",
+        "イ": "手入力のコードは、攻撃者が本物のサイトへ中継して使う場合がある。",
+        "ウ": "コードはサイトの正当性を保証するものではない。",
+        "エ": "有効時間が短くても、その間の中継を防ぐとは限らない。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面を使った独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ／利用者認証・フィッシング：OTPとフィッシング耐性",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・動作・注意点と、正解および全誤答の理由を照合（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://pages.nist.gov/800-63-4/sp800-63b.html",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ／利用者認証・フィッシング：OTPとフィッシング耐性"
+      }
+    },
+    {
+      "questionId": "sg-practical-auth-04",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門・予想問題（非公式）",
+      "sourceNumber": "AUTH-04",
+      "sourceUrl": "https://support.google.com/accounts/answer/13548313?hl=ja",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "認証"
+      ],
+      "difficulty": 1,
+      "learningTrack": "practical",
+      "learningOrder": 4,
+      "concept": "パスキー",
+      "stem": "パスキーでログインするときの、指紋や顔、端末のPINの役割として適切なものはどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "指紋画像を毎回すべてのサイトへ送る"
+        },
+        {
+          "id": "イ",
+          "text": "端末側で、パスキーを使う人を確認する"
+        },
+        {
+          "id": "ウ",
+          "text": "サイトのパスワードを顔写真に置き換えて公開する"
+        },
+        {
+          "id": "エ",
+          "text": "端末のロックを永久に解除する"
+        }
+      ],
+      "correctOptionId": "イ",
+      "explanation": "端末の中の鍵を、本人だけが使えるようにするイメージ。パスキーは公開鍵の仕組みでログインし、指紋・顔・PINなどは端末での確認に使う。",
+      "optionExplanations": {
+        "ア": "パスキーのログイン先へ、生体情報そのものを送るわけではない。",
+        "イ": "端末のロック解除方法で、パスキーの利用を許可する。",
+        "ウ": "公開するのは顔写真ではなく、公開鍵に基づく情報。",
+        "エ": "確認は今回の利用のためで、端末の保護をなくすものではない。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面を使った独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ／利用者認証：パスワードレス認証（FIDO）",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・動作・注意点と、正解および全誤答の理由を照合（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://support.google.com/accounts/answer/13548313?hl=ja",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ／利用者認証：パスワードレス認証（FIDO）"
+      }
+    },
+    {
+      "questionId": "sg-practical-auth-05",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門・予想問題（非公式）",
+      "sourceNumber": "AUTH-05",
+      "sourceUrl": "https://www.ipa.go.jp/security/anshin/measures/everyday.html",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "認証"
+      ],
+      "difficulty": 2,
+      "learningTrack": "practical",
+      "learningOrder": 5,
+      "concept": "パスワードの使い回し",
+      "stem": "買い物サイトとメールで同じパスワードを使っている。買い物サイトからパスワードが漏れた場合、何が起こり得るか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "メールのパスワードが自動で新しくなる"
+        },
+        {
+          "id": "イ",
+          "text": "別のサイトなので、メールには影響がない"
+        },
+        {
+          "id": "ウ",
+          "text": "漏れた情報を使い、メールにもログインを試される"
+        },
+        {
+          "id": "エ",
+          "text": "メールの文字が自動で暗号化される"
+        }
+      ],
+      "correctOptionId": "ウ",
+      "explanation": "全部の扉を同じ鍵で開けていると、1本盗まれたときの被害が広がる。試験用語はパスワードリスト攻撃。サービスごとに異なるパスワードを使う。",
+      "optionExplanations": {
+        "ア": "漏れただけで、自動的に変更されるとは限らない。",
+        "イ": "同じ認証情報を使っていれば、サービスが別でも危険が広がる。",
+        "ウ": "攻撃者は漏れたID・パスワードの組を別のサービスでも試す。",
+        "エ": "パスワードの漏えいは、メールを暗号化する操作ではない。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面を使った独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ／サイバー攻撃手法：パスワードリスト攻撃",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・動作・注意点と、正解および全誤答の理由を照合（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://www.ipa.go.jp/security/anshin/measures/everyday.html",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ／サイバー攻撃手法：パスワードリスト攻撃"
+      }
+    },
+    {
+      "questionId": "sg-practical-auth-06",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門・予想問題（非公式）",
+      "sourceNumber": "AUTH-06",
+      "sourceUrl": "https://csrc.nist.gov/glossary/term/authentication",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "認証"
+      ],
+      "difficulty": 2,
+      "learningTrack": "practical",
+      "learningOrder": 6,
+      "concept": "認証と認可",
+      "stem": "クラウドの資料を開く。「本人かを確かめる処理」と「その資料を読んでよいか決める処理」の組合せはどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "本人確認が認証、読める範囲の判断が認可"
+        },
+        {
+          "id": "イ",
+          "text": "ログイン成功後は、すべての資料を読める"
+        },
+        {
+          "id": "ウ",
+          "text": "本人確認が認可、読める範囲の判断が認証"
+        },
+        {
+          "id": "エ",
+          "text": "両方ともファイルの圧縮"
+        }
+      ],
+      "correctOptionId": "ア",
+      "explanation": "入口で身分証を確認するのが認証。「この部屋に入ってよい」と許可するのが認可。本人であることと、何でもできることを分けて考える。",
+      "optionExplanations": {
+        "ア": "認証は誰かを確認し、認可は何を許すかを判断する。",
+        "イ": "ログイン済みでも、資料ごとの権限は必要。",
+        "ウ": "認証と認可の役割が逆。",
+        "エ": "圧縮はデータ量を減らす処理で、権限判断ではない。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面を使った独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ／利用者認証・情報セキュリティ対策／アクセス制御",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・動作・注意点と、正解および全誤答の理由を照合（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://csrc.nist.gov/glossary/term/authentication",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ／利用者認証・情報セキュリティ対策／アクセス制御",
+        "additionalEvidenceUrls": [
+          "https://csrc.nist.gov/glossary/term/authorization"
+        ]
+      }
+    },
+    {
+      "questionId": "sg-practical-auth-07",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門・予想問題（非公式）",
+      "sourceNumber": "AUTH-07",
+      "sourceUrl": "https://support.google.com/accounts/answer/1187538?hl=ja",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "認証"
+      ],
+      "difficulty": 2,
+      "learningTrack": "practical",
+      "learningOrder": 7,
+      "concept": "バックアップコード",
+      "stem": "二段階認証に使うスマートフォンを紛失した場合に備える。バックアップコードの扱いとして適切なのはどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "公開SNSへ投稿して、いつでも見られるようにする"
+        },
+        {
+          "id": "イ",
+          "text": "他人に見られない安全な場所へ、紛失する端末だけに頼らず保管する"
+        },
+        {
+          "id": "ウ",
+          "text": "ログインできないとき、知らない相手へ全部送る"
+        },
+        {
+          "id": "エ",
+          "text": "使ったコードは何回でも同じように使えると考える"
+        }
+      ],
+      "correctOptionId": "イ",
+      "explanation": "予備の鍵は、自分が取り出せる安全な別の場所へ置く。Googleのバックアップコードは1回限りで、作り直すと古いセットが無効になる。",
+      "optionExplanations": {
+        "ア": "コードを知った他人が、ログインに悪用できる。",
+        "イ": "端末を失っても取り出せ、他人が使えない保管方法が必要。",
+        "ウ": "復旧用のコードも秘密情報。他人へ渡さない。",
+        "エ": "Googleのバックアップコードは1回使用すると無効になる。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面を使った独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ／利用者認証：認証情報の管理",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・動作・注意点と、正解および全誤答の理由を照合（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://support.google.com/accounts/answer/1187538?hl=ja",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ／利用者認証：認証情報の管理"
+      }
+    },
+    {
+      "questionId": "sg-practical-auth-08",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門・予想問題（非公式）",
+      "sourceNumber": "AUTH-08",
+      "sourceUrl": "https://support.google.com/accounts/answer/7026266?hl=ja",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "認証"
+      ],
+      "difficulty": 2,
+      "learningTrack": "practical",
+      "learningOrder": 8,
+      "concept": "身に覚えのない承認要求",
+      "stem": "ログインしていないのに、スマートフォンへ「ログインを承認しますか」と通知が来た。適切な行動はどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "通知が来たこと自体が本人のログインの証明なので承認する"
+        },
+        {
+          "id": "イ",
+          "text": "通知が消えるまで、何度も承認する"
+        },
+        {
+          "id": "ウ",
+          "text": "承認せず、公式のアカウント設定から利用状況を確認する"
+        },
+        {
+          "id": "エ",
+          "text": "パスワードを通知に書かれた相手へ送る"
+        }
+      ],
+      "correctOptionId": "ウ",
+      "explanation": "知らない人から「鍵を開けて」と言われても開けない。承認通知は、直前に自分が行った操作と一致するか確認する。",
+      "optionExplanations": {
+        "ア": "通知が届いても、操作を始めたのが本人とは限らない。",
+        "イ": "攻撃者のログインを自分で許可してしまう可能性がある。",
+        "ウ": "自分が始めていない要求を拒否し、不審なアクセスを確認する。",
+        "エ": "パスワードを他人へ送ると、被害を広げる。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面を使った独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ／利用者認証・なりすまし",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・動作・注意点と、正解および全誤答の理由を照合（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://support.google.com/accounts/answer/7026266?hl=ja",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ／利用者認証・なりすまし"
+      }
+    },
+    {
+      "questionId": "sg-practical-crypto-01",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門・予想問題（非公式）",
+      "sourceNumber": "CRYPTO-01",
+      "sourceUrl": "https://csrc.nist.gov/glossary/term/hash_function",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "暗号・ハッシュ"
+      ],
+      "difficulty": 1,
+      "learningTrack": "practical",
+      "learningOrder": 1,
+      "concept": "ハッシュ値",
+      "stem": "SHA-256のハッシュ値を「データの指紋」と呼ぶとき、適切な説明はどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "元のファイル名を短くしたもの"
+        },
+        {
+          "id": "イ",
+          "text": "必ず元の文章に戻せる暗号文"
+        },
+        {
+          "id": "ウ",
+          "text": "データから計算する一定の長さの値で、内容の比較に使える"
+        },
+        {
+          "id": "エ",
+          "text": "ファイルを開くための利用者ID"
+        }
+      ],
+      "correctOptionId": "ウ",
+      "explanation": "長い文章でも、決まった大きさの「指紋」を計算する。SHA-256の出力は256ビット。ハッシュは暗号化とは用途が異なる。",
+      "optionExplanations": {
+        "ア": "ファイル名ではなく、入力したデータの内容から計算する。",
+        "イ": "暗号学的ハッシュは、元の内容を復元するための処理ではない。",
+        "ウ": "同じ方式で内容から計算し、比較用の値を得る。",
+        "エ": "ハッシュ値自体は利用者の本人確認用IDではない。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面を使った独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ／暗号技術：ハッシュ関数（SHA-256）",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・動作・注意点と、正解および全誤答の理由を照合（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://csrc.nist.gov/glossary/term/hash_function",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ／暗号技術：ハッシュ関数（SHA-256）"
+      }
+    },
+    {
+      "questionId": "sg-practical-crypto-02",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門・予想問題（非公式）",
+      "sourceNumber": "CRYPTO-02",
+      "sourceUrl": "https://csrc.nist.gov/glossary/term/hash_function",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "暗号・ハッシュ"
+      ],
+      "difficulty": 1,
+      "learningTrack": "practical",
+      "learningOrder": 2,
+      "concept": "同じデータとハッシュ",
+      "stem": "全く同じバイト列のファイルを、同じSHA-256の方式で2回計算した。ハッシュ値はどうなるか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "保存した時刻だけで決まる"
+        },
+        {
+          "id": "イ",
+          "text": "同じ値になる"
+        },
+        {
+          "id": "ウ",
+          "text": "ファイルを読む人の名前で決まる"
+        },
+        {
+          "id": "エ",
+          "text": "計算のたびに必ずランダムな値になる"
+        }
+      ],
+      "correctOptionId": "イ",
+      "explanation": "同じ材料を同じ計算機へ入れれば同じ結果になる。この性質で、手元のファイルと基準となる値を比較できる。",
+      "optionExplanations": {
+        "ア": "時刻を入力へ含めなければ、時刻だけで値が変わるわけではない。",
+        "イ": "同じ入力と同じ方式なら、計算結果は同じ。",
+        "ウ": "人の名前を入力へ含めなければ、計算する人で変わらない。",
+        "エ": "SHA-256単体の計算は、毎回ランダムに変える処理ではない。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面を使った独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ／暗号技術：ハッシュ関数",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・動作・注意点と、正解および全誤答の理由を照合（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://csrc.nist.gov/glossary/term/hash_function",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ／暗号技術：ハッシュ関数"
+      }
+    },
+    {
+      "questionId": "sg-practical-crypto-03",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門・予想問題（非公式）",
+      "sourceNumber": "CRYPTO-03",
+      "sourceUrl": "https://csrc.nist.gov/glossary/term/cryptographic_hash_function",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "暗号・ハッシュ"
+      ],
+      "difficulty": 1,
+      "learningTrack": "practical",
+      "learningOrder": 3,
+      "concept": "ハッシュの一致と安全性",
+      "stem": "ダウンロードしたファイルのSHA-256が、信頼できる配布元の掲載値と一致した。何が分かるか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "掲載値との内容の一致を確認する助けになるが、無害である保証ではない"
+        },
+        {
+          "id": "イ",
+          "text": "ウイルスが含まれないことを必ず保証する"
+        },
+        {
+          "id": "ウ",
+          "text": "このファイルは、どの端末でも安全に実行できる"
+        },
+        {
+          "id": "エ",
+          "text": "ファイルの作者の身元を、この比較だけで必ず証明する"
+        }
+      ],
+      "correctOptionId": "ア",
+      "explanation": "箱の指紋が合っても、中身が安全とは限らない。信頼できる基準値との比較は改変の確認に役立つが、それだけで無害性や作者を証明しない。",
+      "optionExplanations": {
+        "ア": "内容の比較と、プログラムが何をするかの判断は別。",
+        "イ": "悪意のあるファイルにもハッシュ値はある。",
+        "ウ": "実行する端末の弱点や、ファイルの動作までは分からない。",
+        "エ": "掲載値を信頼する根拠や配布元の確認も必要。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面を使った独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ／暗号技術・完全性：ハッシュの照合",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・動作・注意点と、正解および全誤答の理由を照合（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://csrc.nist.gov/glossary/term/cryptographic_hash_function",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ／暗号技術・完全性：ハッシュの照合"
+      }
+    },
+    {
+      "questionId": "sg-practical-crypto-04",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門・予想問題（非公式）",
+      "sourceNumber": "CRYPTO-04",
+      "sourceUrl": "https://csrc.nist.gov/glossary/term/collision_resistance",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "暗号・ハッシュ"
+      ],
+      "difficulty": 1,
+      "learningTrack": "practical",
+      "learningOrder": 4,
+      "concept": "ハッシュの衝突",
+      "stem": "暗号学的ハッシュの「衝突」とは何か。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "パスワードを2回入力すること"
+        },
+        {
+          "id": "イ",
+          "text": "異なる入力から、同じハッシュ値が得られること"
+        },
+        {
+          "id": "ウ",
+          "text": "ハッシュ計算で端末が物理的に壊れること"
+        },
+        {
+          "id": "エ",
+          "text": "同じ入力から、同じハッシュ値が得られること"
+        }
+      ],
+      "correctOptionId": "イ",
+      "explanation": "別の人なのに、同じ指紋の番号が付くイメージ。安全な暗号学的ハッシュは、衝突を見つけるのが非常に困難になるよう設計される。「絶対に存在しない」ではない。",
+      "optionExplanations": {
+        "ア": "認証の入力回数とは関係がない。",
+        "イ": "異なる内容なのに同じ値になることを衝突という。",
+        "ウ": "ここでの衝突は、物や端末がぶつかる意味ではない。",
+        "エ": "同じ入力が同じ値になるのは、通常の性質。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面を使った独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ／暗号技術：ハッシュ関数の衝突耐性",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・動作・注意点と、正解および全誤答の理由を照合（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://csrc.nist.gov/glossary/term/collision_resistance",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ／暗号技術：ハッシュ関数の衝突耐性"
+      }
+    },
+    {
+      "questionId": "sg-practical-crypto-05",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門・予想問題（非公式）",
+      "sourceNumber": "CRYPTO-05",
+      "sourceUrl": "https://pages.nist.gov/800-63-4/sp800-63b.html",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "暗号・ハッシュ"
+      ],
+      "difficulty": 2,
+      "learningTrack": "practical",
+      "learningOrder": 5,
+      "concept": "パスワードの保存とソルト",
+      "stem": "サービス運営者が利用者のパスワードを保存する。漏えい後の推測攻撃を難しくする方法として適切なのはどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "パスワードをそのまま文章として保存する"
+        },
+        {
+          "id": "イ",
+          "text": "全員に同じ短いパスワードを使わせる"
+        },
+        {
+          "id": "ウ",
+          "text": "ランダムなソルトと、計算コストを持つ適切なパスワード用ハッシュ方式を使う"
+        },
+        {
+          "id": "エ",
+          "text": "SHA-256を1回計算すれば、短いパスワードでも推測は不可能と考える"
+        }
+      ],
+      "correctOptionId": "ウ",
+      "explanation": "ソルトは利用者ごとに加えるランダムな材料。パスワード用のハッシュは、計算を重くして大量の当てずっぽうを難しくする。ソルト自体を秘密にすることが目的ではない。",
+      "optionExplanations": {
+        "ア": "漏えいするとパスワードがそのまま読める。",
+        "イ": "1人分が知られるだけで、他の人にも被害が広がる。",
+        "ウ": "ソルトで一括照合を難しくし、計算コストで1回の推測を重くする。",
+        "エ": "高速なハッシュ1回だけでは、候補を大量に試す攻撃へ十分な備えにならない。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面を使った独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ／暗号技術・利用者認証：パスワードの保護",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・動作・注意点と、正解および全誤答の理由を照合（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://pages.nist.gov/800-63-4/sp800-63b.html",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ／暗号技術・利用者認証：パスワードの保護"
+      }
+    },
+    {
+      "questionId": "sg-practical-crypto-06",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門・予想問題（非公式）",
+      "sourceNumber": "CRYPTO-06",
+      "sourceUrl": "https://csrc.nist.gov/glossary/term/symmetric_key_algorithm",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "暗号・ハッシュ"
+      ],
+      "difficulty": 2,
+      "learningTrack": "practical",
+      "learningOrder": 6,
+      "concept": "共通鍵暗号",
+      "stem": "共通鍵暗号で資料を暗号化して相手へ送る。暗号化と復号で使う鍵の関係はどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "公開鍵と秘密鍵の2本を必ず使う方式である"
+        },
+        {
+          "id": "イ",
+          "text": "暗号化には利用者ID、復号にはファイル名を使う"
+        },
+        {
+          "id": "ウ",
+          "text": "同じ秘密の鍵を使う"
+        },
+        {
+          "id": "エ",
+          "text": "暗号化した資料は、鍵なしで誰でも復号できる"
+        }
+      ],
+      "correctOptionId": "ウ",
+      "explanation": "同じ鍵で閉めて、同じ鍵で開ける箱のイメージ。相手と共有する秘密の鍵を、どう安全に渡して守るかも大切になる。",
+      "optionExplanations": {
+        "ア": "それは公開鍵暗号の基本的な考え方。",
+        "イ": "IDやファイル名を鍵の定義と混同している。",
+        "ウ": "共通鍵暗号は、同じ秘密の鍵で暗号化と復号をする。",
+        "エ": "内容を読むには、適切な鍵が必要。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面を使った独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ／暗号技術：共通鍵暗号方式",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・動作・注意点と、正解および全誤答の理由を照合（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://csrc.nist.gov/glossary/term/symmetric_key_algorithm",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ／暗号技術：共通鍵暗号方式"
+      }
+    },
+    {
+      "questionId": "sg-practical-crypto-07",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門・予想問題（非公式）",
+      "sourceNumber": "CRYPTO-07",
+      "sourceUrl": "https://csrc.nist.gov/glossary/term/public_key_cryptography",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "暗号・ハッシュ"
+      ],
+      "difficulty": 2,
+      "learningTrack": "practical",
+      "learningOrder": 7,
+      "concept": "公開鍵暗号",
+      "stem": "公開鍵暗号で、受信者だけが読めるようにメッセージを暗号化する。基本的な鍵の使い方はどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "受信者の公開鍵で暗号化し、受信者の秘密鍵で復号する"
+        },
+        {
+          "id": "イ",
+          "text": "送信者の名前で暗号化し、受信者の住所で復号する"
+        },
+        {
+          "id": "ウ",
+          "text": "受信者の公開鍵だけを使い、誰でも復号できるようにする"
+        },
+        {
+          "id": "エ",
+          "text": "受信者の秘密鍵を公開SNSへ載せる"
+        }
+      ],
+      "correctOptionId": "ア",
+      "explanation": "誰でも投函できるが、取り出す鍵は持ち主だけが持つ郵便箱のイメージ。これは暗号化の例。電子署名では秘密鍵と公開鍵の役割が異なる。",
+      "optionExplanations": {
+        "ア": "受信者の公開鍵と、それに対応する秘密鍵の組を使う。",
+        "イ": "名前や住所は、この方式の暗号鍵ではない。",
+        "ウ": "公開鍵は配布できるが、秘密鍵を持たない人へ復号を許すわけではない。",
+        "エ": "秘密鍵は本人が秘密に管理する必要がある。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面を使った独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ／暗号技術：公開鍵暗号方式",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・動作・注意点と、正解および全誤答の理由を照合（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://csrc.nist.gov/glossary/term/public_key_cryptography",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ／暗号技術：公開鍵暗号方式"
+      }
+    },
+    {
+      "questionId": "sg-practical-crypto-08",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門・予想問題（非公式）",
+      "sourceNumber": "CRYPTO-08",
+      "sourceUrl": "https://csrc.nist.gov/glossary/term/digital_signature",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "暗号・ハッシュ"
+      ],
+      "difficulty": 2,
+      "learningTrack": "practical",
+      "learningOrder": 8,
+      "concept": "電子署名",
+      "stem": "資料へ電子署名を付けた。電子署名そのものの役割として適切なのはどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "対応する鍵の署名であることと、資料の改変を検証する"
+        },
+        {
+          "id": "イ",
+          "text": "資料を開いた端末のウイルスを必ず駆除する"
+        },
+        {
+          "id": "ウ",
+          "text": "署名を付けると、秘密鍵を全員へ公開できる"
+        },
+        {
+          "id": "エ",
+          "text": "資料の内容を必ず秘密にする"
+        }
+      ],
+      "correctOptionId": "ア",
+      "explanation": "「この鍵で付けた印か」「途中で書き換わったか」を確かめる仕組み。署名は秘密鍵、検証は公開鍵。鍵と本人の結び付きを確かめるには証明書なども関わる。",
+      "optionExplanations": {
+        "ア": "署名は秘密鍵で作り、対応する公開鍵で検証する。",
+        "イ": "署名の検証は、端末を駆除する機能ではない。",
+        "ウ": "秘密鍵が漏れると、他人に署名を作られるおそれがある。",
+        "エ": "内容を隠す機密性は、署名だけでは提供しない。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面を使った独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ／認証技術：デジタル署名",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・動作・注意点と、正解および全誤答の理由を照合（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://csrc.nist.gov/glossary/term/digital_signature",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ／認証技術：デジタル署名"
+      }
+    },
+    {
+      "questionId": "sg-practical-access-01",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門・予想問題（非公式）",
+      "sourceNumber": "ACCESS-01",
+      "sourceUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "アクセス制御"
+      ],
+      "difficulty": 1,
+      "learningTrack": "practical",
+      "learningOrder": 1,
+      "concept": "最小権限",
+      "stem": "写真を加工するアプリが、使わない連絡先へのアクセスも求めている。権限の考え方として適切なのはどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "権限を増やすほど、必ず安全になる"
+        },
+        {
+          "id": "イ",
+          "text": "必要な機能に必要な権限だけを許可する"
+        },
+        {
+          "id": "ウ",
+          "text": "求められた権限は、内容を確認せず全部許可する"
+        },
+        {
+          "id": "エ",
+          "text": "写真への権限を許可したら、すべての権限が同じになる"
+        }
+      ],
+      "correctOptionId": "イ",
+      "explanation": "部屋の掃除を頼む人へ、家のすべての鍵を渡す必要はない。最小権限の原則は、人のアカウントにもアプリにも役立つ。",
+      "optionExplanations": {
+        "ア": "権限の増加は、扱える範囲を広げる。安全性の保証ではない。",
+        "イ": "必要最小限にすることで、誤操作や悪用による影響を抑える。",
+        "ウ": "不要な情報まで読み取られる範囲が広がる。",
+        "エ": "写真と連絡先などのアクセスは、同じ権限とは限らない。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面を使った独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ管理／利用者アクセス権の管理：最小権限",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・動作・注意点と、正解および全誤答の理由を照合（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ管理／利用者アクセス権の管理：最小権限",
+        "additionalEvidenceUrls": [
+          "https://source.android.com/docs/security/app-sandbox"
+        ]
+      }
+    },
+    {
+      "questionId": "sg-practical-access-02",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門・予想問題（非公式）",
+      "sourceNumber": "ACCESS-02",
+      "sourceUrl": "https://source.android.com/docs/security/app-sandbox",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "アクセス制御"
+      ],
+      "difficulty": 1,
+      "learningTrack": "practical",
+      "learningOrder": 2,
+      "concept": "Androidのアプリ隔離",
+      "stem": "Androidのアプリサンドボックスの基本的な役割はどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "すべてのアプリのデータを、無条件で全アプリへ公開する"
+        },
+        {
+          "id": "イ",
+          "text": "アプリを隔離し、他のアプリの私的なデータへ勝手に触れることを制限する"
+        },
+        {
+          "id": "ウ",
+          "text": "アプリを入れれば、すべての権限を自動で許可する"
+        },
+        {
+          "id": "エ",
+          "text": "画面の色を変えるための機能だけである"
+        }
+      ],
+      "correctOptionId": "イ",
+      "explanation": "アプリを別々の部屋へ入れ、隣の部屋を勝手に開けられないようにするイメージ。許可した権限や共有機能は境界を越える場合があるため、確認も必要。",
+      "optionExplanations": {
+        "ア": "私的なデータの無条件共有は、隔離の目的と逆。",
+        "イ": "アプリごとの境界を設け、許可されない操作を制限する。",
+        "ウ": "必要な権限や明示的な共有のルールは別途必要。",
+        "エ": "隔離はアクセスを制限する仕組みで、配色の機能ではない。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面を使った独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ対策／技術的対策・携帯端末のセキュリティ：隔離（関連知識）",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・動作・注意点と、正解および全誤答の理由を照合（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://source.android.com/docs/security/app-sandbox",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ対策／技術的対策・携帯端末のセキュリティ：隔離（関連知識）"
+      }
+    },
+    {
+      "questionId": "sg-practical-access-03",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門・予想問題（非公式）",
+      "sourceNumber": "ACCESS-03",
+      "sourceUrl": "https://learn.microsoft.com/en-us/windows/security/application-security/application-isolation/windows-sandbox/",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "アクセス制御"
+      ],
+      "difficulty": 1,
+      "learningTrack": "practical",
+      "learningOrder": 3,
+      "concept": "サンドボックスの目的",
+      "stem": "サンドボックスでアプリを動かす主な目的はどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "隔離した環境で実行し、ほかの環境への影響を抑える"
+        },
+        {
+          "id": "イ",
+          "text": "インターネット上から自分の存在を完全に消す"
+        },
+        {
+          "id": "ウ",
+          "text": "アプリの作者が善人であることを証明する"
+        },
+        {
+          "id": "エ",
+          "text": "どんなプログラムも必ず無害に変える"
+        }
+      ],
+      "correctOptionId": "ア",
+      "explanation": "汚れるかもしれない作業を、区切った作業場で行うイメージ。サンドボックスという名称はSG Ver.4.1の用語例に明記されていないが、隔離とマルウェア対策の理解に役立つ。",
+      "optionExplanations": {
+        "ア": "実行環境を分け、触れられる範囲を制限する。",
+        "イ": "隔離と匿名性は異なる性質。",
+        "ウ": "隔離しても、作者の身元や意図を証明するわけではない。",
+        "エ": "プログラムの内容を無害に書き換える仕組みではない。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面を使った独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ対策／マルウェア対策・技術的対策：隔離（関連知識）",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・動作・注意点と、正解および全誤答の理由を照合（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://learn.microsoft.com/en-us/windows/security/application-security/application-isolation/windows-sandbox/",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ対策／マルウェア対策・技術的対策：隔離（関連知識）"
+      }
+    },
+    {
+      "questionId": "sg-practical-access-04",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門・予想問題（非公式）",
+      "sourceNumber": "ACCESS-04",
+      "sourceUrl": "https://pages.nist.gov/800-63-4/sp800-63b.html",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "アクセス制御"
+      ],
+      "difficulty": 1,
+      "learningTrack": "practical",
+      "learningOrder": 4,
+      "concept": "隔離と情報入力",
+      "stem": "サンドボックス内のブラウザで偽サイトを開き、パスワードを入力した。適切な説明はどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "隔離されていても、入力情報をサイトへ送れば盗まれ得る"
+        },
+        {
+          "id": "イ",
+          "text": "サンドボックスが入力した文字を必ず消してくれる"
+        },
+        {
+          "id": "ウ",
+          "text": "サンドボックスが偽サイトを公式サイトへ変える"
+        },
+        {
+          "id": "エ",
+          "text": "隔離されていれば、どんなサイトでも本人確認なしで安全"
+        }
+      ],
+      "correctOptionId": "ア",
+      "explanation": "別室から電話しても、相手へ合言葉を話せば知られてしまう。端末の隔離と、偽サイトへ秘密を渡さないことは両方必要。",
+      "optionExplanations": {
+        "ア": "実行範囲の隔離は、通信先へ自分で送った秘密を取り戻す機能ではない。",
+        "イ": "サイトへの入力を必ず削除する仕組みではない。",
+        "ウ": "隔離は相手のサイトを作り替える機能ではない。",
+        "エ": "隔離とは別に、サイトの正当性と入力内容の確認が必要。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面を使った独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ／フィッシング・技術的対策：隔離の範囲",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・動作・注意点と、正解および全誤答の理由を照合（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://pages.nist.gov/800-63-4/sp800-63b.html",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ／フィッシング・技術的対策：隔離の範囲",
+        "additionalEvidenceUrls": [
+          "https://learn.microsoft.com/en-us/windows/security/application-security/application-isolation/windows-sandbox/"
+        ]
+      }
+    },
+    {
+      "questionId": "sg-practical-access-05",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門・予想問題（非公式）",
+      "sourceNumber": "ACCESS-05",
+      "sourceUrl": "https://learn.microsoft.com/en-us/windows/security/application-security/application-isolation/windows-sandbox/windows-sandbox-configure-using-wsb-file",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "アクセス制御"
+      ],
+      "difficulty": 2,
+      "learningTrack": "practical",
+      "learningOrder": 5,
+      "concept": "サンドボックスの共有範囲",
+      "stem": "Windows Sandboxへ、ホストPCの大切なフォルダを書込み可能で共有した。適切な説明はどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "共有しても、隔離されているのでホスト側への影響は必ずゼロ"
+        },
+        {
+          "id": "イ",
+          "text": "共有すると、大切なファイルが自動で暗号化されて保護される"
+        },
+        {
+          "id": "ウ",
+          "text": "サンドボックス内のアプリが共有フォルダを変更でき、変更がホスト側にも残る場合がある"
+        },
+        {
+          "id": "エ",
+          "text": "サンドボックスを閉じれば、ホストの共有フォルダの変更も必ず戻る"
+        }
+      ],
+      "correctOptionId": "ウ",
+      "explanation": "別室でも、本棚を共用すれば本を書き換えられる。必要な共有だけに絞り、用途に応じて読み取り専用やネットワーク無効の設定を使う。",
+      "optionExplanations": {
+        "ア": "自分で許可した共有まで、無条件に遮断されるわけではない。",
+        "イ": "共有設定そのものは、ファイル暗号化を行わない。",
+        "ウ": "共有フォルダは隔離の境界を越える。書込み可能ならホストのデータにも影響する。",
+        "エ": "書込み可能なホストの共有フォルダの変更は、終了後も残り得る。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面を使った独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ対策／アクセス制御・隔離：共有の境界",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・動作・注意点と、正解および全誤答の理由を照合（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://learn.microsoft.com/en-us/windows/security/application-security/application-isolation/windows-sandbox/windows-sandbox-configure-using-wsb-file",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ対策／アクセス制御・隔離：共有の境界"
+      }
+    },
+    {
+      "questionId": "sg-practical-access-06",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門・予想問題（非公式）",
+      "sourceNumber": "ACCESS-06",
+      "sourceUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "アクセス制御"
+      ],
+      "difficulty": 2,
+      "learningTrack": "practical",
+      "learningOrder": 6,
+      "concept": "共有リンクの権限",
+      "stem": "チームだけで読む資料をクラウドで共有する。最小権限の考え方に合う設定はどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "リンクを知る全員へ、編集と再共有を許可する"
+        },
+        {
+          "id": "イ",
+          "text": "ログインできる人なら、関係のない人にも編集を許可する"
+        },
+        {
+          "id": "ウ",
+          "text": "必要なメンバーだけに、閲覧だけを許可する"
+        },
+        {
+          "id": "エ",
+          "text": "資料が重要なので、全員を管理者にする"
+        }
+      ],
+      "correctOptionId": "ウ",
+      "explanation": "資料を見せるだけなら、書き換えるペンまで渡す必要はない。共有相手と、閲覧・編集・再共有などの操作を分けて確認する。",
+      "optionExplanations": {
+        "ア": "読むだけの目的に対して、対象者と操作の範囲が広すぎる。",
+        "イ": "認証済みであることと、編集を許可されることは別。",
+        "ウ": "誰が、何をできるかを必要な範囲へ限定する。",
+        "エ": "重要さを理由に管理者を増やすと、影響の範囲が広がる。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面を使った独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ管理／利用者アクセス権の管理：最小権限",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・動作・注意点と、正解および全誤答の理由を照合（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ管理／利用者アクセス権の管理：最小権限"
+      }
+    },
+    {
+      "questionId": "sg-practical-access-07",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門・予想問題（非公式）",
+      "sourceNumber": "ACCESS-07",
+      "sourceUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "アクセス制御"
+      ],
+      "difficulty": 2,
+      "learningTrack": "practical",
+      "learningOrder": 7,
+      "concept": "不要になった権限",
+      "stem": "担当を外れた人が、以前の担当資料を編集できるままになっている。適切な管理はどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "本人がパスワードを知っていれば、担当に関係なく編集を許す"
+        },
+        {
+          "id": "イ",
+          "text": "役割の変更に合わせて、不要になったアクセス権を見直す"
+        },
+        {
+          "id": "ウ",
+          "text": "資料の名前を変えれば、編集権限は必ず消える"
+        },
+        {
+          "id": "エ",
+          "text": "一度許可した権限は、ずっと残す"
+        }
+      ],
+      "correctOptionId": "イ",
+      "explanation": "担当が変わったら、借りていた鍵を返してもらう。権限は付けるときだけでなく、異動や退職、役割変更のときにも管理する。",
+      "optionExplanations": {
+        "ア": "本人確認だけでは、現在の権限の妥当性を判断できない。",
+        "イ": "現在の役割と必要性に合わせて、権限を更新する。",
+        "ウ": "資料名の変更と、アクセス権の取消は別の処理。",
+        "エ": "過去の役割の権限が残ると、不必要な操作を許してしまう。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面を使った独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ管理／アカウント管理・利用者アクセス権の管理",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・動作・注意点と、正解および全誤答の理由を照合（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ管理／アカウント管理・利用者アクセス権の管理"
+      }
+    },
+    {
+      "questionId": "sg-practical-access-08",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門・予想問題（非公式）",
+      "sourceNumber": "ACCESS-08",
+      "sourceUrl": "https://learn.microsoft.com/en-us/windows/security/application-security/application-isolation/windows-sandbox/",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "アクセス制御"
+      ],
+      "difficulty": 2,
+      "learningTrack": "practical",
+      "learningOrder": 8,
+      "concept": "隔離環境の終了",
+      "stem": "Windows Sandbox内だけに作成したファイルを、ホストへ保存せずにサンドボックスを閉じた。基本的にどうなるか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "必ずホストのドキュメントへ自動保存される"
+        },
+        {
+          "id": "イ",
+          "text": "サンドボックス内の内容とともに破棄される"
+        },
+        {
+          "id": "ウ",
+          "text": "全世界へ自動公開される"
+        },
+        {
+          "id": "エ",
+          "text": "次に起動したとき、必ず同じファイルが残る"
+        }
+      ],
+      "correctOptionId": "イ",
+      "explanation": "使い捨ての作業場なので、必要な成果物は閉じる前に安全な保存先へ移す。ホストの共有フォルダへ書いた内容は別で、終了しても残り得る。",
+      "optionExplanations": {
+        "ア": "必要な成果物は、終了前に適切な方法で別に保存する必要がある。",
+        "イ": "Windows Sandboxは使い捨ての環境で、終了すると内部の状態を破棄する。",
+        "ウ": "終了は公開操作ではない。",
+        "エ": "起動のたびに新しい環境になる。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面を使った独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ対策／技術的対策：隔離（関連知識）",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・動作・注意点と、正解および全誤答の理由を照合（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://learn.microsoft.com/en-us/windows/security/application-security/application-isolation/windows-sandbox/",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ対策／技術的対策：隔離（関連知識）",
+        "additionalEvidenceUrls": [
+          "https://learn.microsoft.com/en-us/windows/security/application-security/application-isolation/windows-sandbox/windows-sandbox-configure-using-wsb-file"
+        ]
+      }
+    },
+    {
+      "questionId": "sg-practical-vuln-01",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門・予想問題（非公式）",
+      "sourceNumber": "VULN-01",
+      "sourceUrl": "https://www.ipa.go.jp/security/anshin/measures/everyday.html",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "脆弱性対策"
+      ],
+      "difficulty": 1,
+      "learningTrack": "practical",
+      "learningOrder": 1,
+      "concept": "セキュリティ更新",
+      "stem": "OSやブラウザのセキュリティ更新を適用する主な理由はどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "知られている弱点の修正を取り込み、悪用される危険を減らす"
+        },
+        {
+          "id": "イ",
+          "text": "更新すると、その後は永久に攻撃されなくなるから"
+        },
+        {
+          "id": "ウ",
+          "text": "すべてのパスワードを公開する"
+        },
+        {
+          "id": "エ",
+          "text": "ウイルス対策ソフトがあれば、更新は必ず不要だから"
+        }
+      ],
+      "correctOptionId": "ア",
+      "explanation": "家の壊れた窓を直すイメージ。見張り役がいても、窓そのものの修理は必要。OS・アプリ・ブラウザなど、それぞれの更新を適用する。",
+      "optionExplanations": {
+        "ア": "修正プログラムは、悪用され得る不具合を直す。",
+        "イ": "新しい弱点が見つかる場合もあるため、継続的な更新が必要。",
+        "ウ": "更新は秘密情報を公開するための操作ではない。",
+        "エ": "対策ソフトと、OSやアプリの弱点修正は異なる備え。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面を使った独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ対策／脆弱性管理：セキュリティパッチ",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・動作・注意点と、正解および全誤答の理由を照合（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://www.ipa.go.jp/security/anshin/measures/everyday.html",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ対策／脆弱性管理：セキュリティパッチ"
+      }
+    },
+    {
+      "questionId": "sg-practical-vuln-02",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門・予想問題（非公式）",
+      "sourceNumber": "VULN-02",
+      "sourceUrl": "https://www.ipa.go.jp/security/anshin/measures/everyday.html",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "脆弱性対策"
+      ],
+      "difficulty": 1,
+      "learningTrack": "practical",
+      "learningOrder": 2,
+      "concept": "ファイルの見た目と安全性",
+      "stem": "メールの添付ファイルに、見慣れた名前や拡張子が付いている。安全性の判断として適切なのはどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "名前だけで判断せず、送信元や入手経路、開く必要性も確認する"
+        },
+        {
+          "id": "イ",
+          "text": "拡張子だけで、内部の動作と安全性をすべて証明できる"
+        },
+        {
+          "id": "ウ",
+          "text": "見慣れた名前なら、開いても必ず安全"
+        },
+        {
+          "id": "エ",
+          "text": "不審でも、まず開いてから送信者を確かめる"
+        }
+      ],
+      "correctOptionId": "ア",
+      "explanation": "箱に「安全」と書いてあっても、それだけで信用しない。添付ファイルは、誰から何のために来たのかを確認して扱う。",
+      "optionExplanations": {
+        "ア": "見た目は偽装され得る。相手や状況を含めて確認する。",
+        "イ": "拡張子は表示上の手掛かりで、安全性の証明ではない。",
+        "ウ": "ファイル名を、正当な相手や無害性の証拠にできない。",
+        "エ": "開くことで影響が出る場合があるため、確認を先にする。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面を使った独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ／標的型攻撃・マルウェア対策",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・動作・注意点と、正解および全誤答の理由を照合（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://www.ipa.go.jp/security/anshin/measures/everyday.html",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ／標的型攻撃・マルウェア対策"
+      }
+    },
+    {
+      "questionId": "sg-practical-vuln-03",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門・予想問題（非公式）",
+      "sourceNumber": "VULN-03",
+      "sourceUrl": "https://csrc.nist.gov/glossary/term/zero_day_attack",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "脆弱性対策"
+      ],
+      "difficulty": 1,
+      "learningTrack": "practical",
+      "learningOrder": 3,
+      "concept": "ゼロデイ攻撃",
+      "stem": "開発元などにまだ知られていない脆弱性を悪用する攻撃を何というか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "共通鍵暗号"
+        },
+        {
+          "id": "イ",
+          "text": "二要素認証"
+        },
+        {
+          "id": "ウ",
+          "text": "バックアップ"
+        },
+        {
+          "id": "エ",
+          "text": "ゼロデイ攻撃"
+        }
+      ],
+      "correctOptionId": "エ",
+      "explanation": "修理用の部品がまだない壊れた窓を狙われるイメージ。更新だけですべてに備えられるとは限らないため、権限の制限など複数の対策も組み合わせる。",
+      "optionExplanations": {
+        "ア": "共通鍵暗号は秘密の鍵で内容を保護する方式。",
+        "イ": "二要素認証は本人確認の方式で、攻撃の名称ではない。",
+        "ウ": "バックアップはデータを別に保存する備え。",
+        "エ": "まだ知られていない弱点を狙う攻撃。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面を使った独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ／サイバー攻撃手法：ゼロデイ攻撃",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・動作・注意点と、正解および全誤答の理由を照合（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://csrc.nist.gov/glossary/term/zero_day_attack",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ／サイバー攻撃手法：ゼロデイ攻撃"
+      }
+    },
+    {
+      "questionId": "sg-practical-vuln-04",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門・予想問題（非公式）",
+      "sourceNumber": "VULN-04",
+      "sourceUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "脆弱性対策"
+      ],
+      "difficulty": 1,
+      "learningTrack": "practical",
+      "learningOrder": 4,
+      "concept": "多層防御",
+      "stem": "ウイルス対策ソフトを入れた端末について、適切な考え方はどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "対策ソフトに加え、更新や権限の制限、バックアップも組み合わせる"
+        },
+        {
+          "id": "イ",
+          "text": "対策ソフトを入れたら、OSの更新を止める"
+        },
+        {
+          "id": "ウ",
+          "text": "対策ソフトがあれば、知らない相手へパスワードを渡してよい"
+        },
+        {
+          "id": "エ",
+          "text": "対策ソフトがあれば、どんな攻撃も必ず防げる"
+        }
+      ],
+      "correctOptionId": "ア",
+      "explanation": "鍵・見張り・予備の道具を組み合わせて守るのが多層防御。1つの製品へ全部を任せず、防御・検知・復旧の役割を考える。",
+      "optionExplanations": {
+        "ア": "異なる役割の対策で、1つが防げない場合にも備える。",
+        "イ": "弱点の修正は、対策ソフトとは別に必要。",
+        "ウ": "他人へ秘密を渡す行為を、対策ソフトが取り消すわけではない。",
+        "エ": "未知の攻撃や設定、操作による被害まで完全に防ぐ保証はない。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面を使った独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ／多層防御・情報セキュリティ対策",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・動作・注意点と、正解および全誤答の理由を照合（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ／多層防御・情報セキュリティ対策",
+        "additionalEvidenceUrls": [
+          "https://www.ipa.go.jp/security/anshin/measures/everyday.html"
+        ]
+      }
+    },
+    {
+      "questionId": "sg-practical-vuln-05",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門・予想問題（非公式）",
+      "sourceNumber": "VULN-05",
+      "sourceUrl": "https://www.ipa.go.jp/security/anshin/measures/everyday.html",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "脆弱性対策"
+      ],
+      "difficulty": 2,
+      "learningTrack": "practical",
+      "learningOrder": 5,
+      "concept": "ランサムウェアへの備え",
+      "stem": "ランサムウェアで普段のデータが読めなくなる事態に備える。バックアップの管理として適切なのはどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "バックアップを取ったら、復元できるかは確認しない"
+        },
+        {
+          "id": "イ",
+          "text": "普段のデータと一緒に壊されないよう保護し、復元できるかも確かめる"
+        },
+        {
+          "id": "ウ",
+          "text": "ランサムウェアに感染してから、必ず元のデータをコピーできると考える"
+        },
+        {
+          "id": "エ",
+          "text": "同じフォルダに名前を変えたコピーを1つ置くだけで十分とする"
+        }
+      ],
+      "correctOptionId": "イ",
+      "explanation": "予備のノートを、元のノートと一緒に濡らさないようにする。別の媒体や場所、オフラインなどで守り、必要な記録を戻せるか確認する。",
+      "optionExplanations": {
+        "ア": "保存できたことと、使える形で復元できることは別。",
+        "イ": "バックアップ自身の保護と、復元の確認が必要。",
+        "ウ": "既に暗号化・破壊されたデータをコピーしても、元に戻るとは限らない。",
+        "エ": "同じ場所のコピーは、同じ被害を受けるおそれがある。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面を使った独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ対策／ランサムウェア対策・バックアップ",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・動作・注意点と、正解および全誤答の理由を照合（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://www.ipa.go.jp/security/anshin/measures/everyday.html",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ対策／ランサムウェア対策・バックアップ"
+      }
+    },
+    {
+      "questionId": "sg-practical-vuln-06",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門・予想問題（非公式）",
+      "sourceNumber": "VULN-06",
+      "sourceUrl": "https://www.ipa.go.jp/security/anshin/measures/everyday.html",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "脆弱性対策"
+      ],
+      "difficulty": 2,
+      "learningTrack": "practical",
+      "learningOrder": 6,
+      "concept": "不審な更新案内",
+      "stem": "突然のメールに「至急、このリンクで更新しないとアカウント停止」とある。適切な確認方法はどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "急ぎと書かれているので、すぐリンク先へパスワードを入力する"
+        },
+        {
+          "id": "イ",
+          "text": "更新という言葉があれば、送信元は必ず公式である"
+        },
+        {
+          "id": "ウ",
+          "text": "メールのリンクを頼らず、公式アプリや確認済みの公式サイトで状況を確かめる"
+        },
+        {
+          "id": "エ",
+          "text": "ロゴが本物に見えれば、リンク先の確認は不要"
+        }
+      ],
+      "correctOptionId": "ウ",
+      "explanation": "知らない人の「急いで」をそのまま信じず、いつもの窓口で確認する。試験用語ではフィッシングやソーシャルエンジニアリングと結び付く。",
+      "optionExplanations": {
+        "ア": "急がせる文面で、秘密を入力させる攻撃もある。",
+        "イ": "更新という文面だけで相手の正当性は判断できない。",
+        "ウ": "普段使っている公式の入口から確認することで、偽の入口を避ける。",
+        "エ": "見た目やロゴはコピーできる。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面を使った独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ／フィッシング・ソーシャルエンジニアリング",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・動作・注意点と、正解および全誤答の理由を照合（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://www.ipa.go.jp/security/anshin/measures/everyday.html",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ／フィッシング・ソーシャルエンジニアリング"
+      }
+    },
+    {
+      "questionId": "sg-practical-vuln-07",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門・予想問題（非公式）",
+      "sourceNumber": "VULN-07",
+      "sourceUrl": "https://www.ipa.go.jp/security/anshin/measures/everyday.html",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "脆弱性対策"
+      ],
+      "difficulty": 2,
+      "learningTrack": "practical",
+      "learningOrder": 7,
+      "concept": "サポート終了",
+      "stem": "OSのセキュリティ更新サポートが終了した。動いているから安全性も同じと考えてよいか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "よくない。新しい弱点の修正が受けられなくなるため、対応する環境への移行を考える"
+        },
+        {
+          "id": "イ",
+          "text": "よい。古いOSほど、必ず攻撃されにくい"
+        },
+        {
+          "id": "ウ",
+          "text": "よい。画面の色を変えるだけで更新サポートが復活する"
+        },
+        {
+          "id": "エ",
+          "text": "よい。起動できれば弱点は存在しない"
+        }
+      ],
+      "correctOptionId": "ア",
+      "explanation": "まだ使える家でも、壊れた場所を直せない状態は困る。サポート対象のOSやソフトへ移行し、更新を継続できるようにする。",
+      "optionExplanations": {
+        "ア": "動作の継続と、弱点の修正を受けられることは別。",
+        "イ": "古さだけで安全になるわけではない。",
+        "ウ": "表示の変更で、提供元の更新サポートが変わるわけではない。",
+        "エ": "普通に使えても、悪用される不具合があり得る。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面を使った独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ対策／脆弱性管理：OS・ソフトウェアの更新",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・動作・注意点と、正解および全誤答の理由を照合（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://www.ipa.go.jp/security/anshin/measures/everyday.html",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ対策／脆弱性管理：OS・ソフトウェアの更新"
+      }
+    },
+    {
+      "questionId": "sg-practical-vuln-08",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門・予想問題（非公式）",
+      "sourceNumber": "VULN-08",
+      "sourceUrl": "https://www.ipa.go.jp/security/anshin/measures/everyday.html",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "脆弱性対策"
+      ],
+      "difficulty": 2,
+      "learningTrack": "practical",
+      "learningOrder": 8,
+      "concept": "3-2-1バックアップ",
+      "stem": "バックアップの「3-2-1ルール」の基本的な意味はどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "パスワードを3文字にし、2回入力して、1人へ公開する"
+        },
+        {
+          "id": "イ",
+          "text": "データを3つ持ち、2種類の媒体を使い、1つは別の場所に保管する"
+        },
+        {
+          "id": "ウ",
+          "text": "3日待って、2回画面を開き、1回だけ保存する"
+        },
+        {
+          "id": "エ",
+          "text": "同じフォルダに3つコピーし、2つ削除して、1つだけ残す"
+        }
+      ],
+      "correctOptionId": "イ",
+      "explanation": "原本と予備2つを、同じ事故で全部失わないように分ける。3-2-1は基本の目安で、ランサムウェア対策では書換え防止やオフライン保管も考える。",
+      "optionExplanations": {
+        "ア": "認証の方法ではなく、データの保全方法。",
+        "イ": "元のデータ1つとバックアップ2つを、媒体や場所も分けて持つ考え方。",
+        "ウ": "日数や画面を開く回数の定義ではない。",
+        "エ": "同じ場所だけでは、同じ事故で失われる危険が残る。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面を使った独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ対策／ランサムウェア対策：3-2-1ルール",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・動作・注意点と、正解および全誤答の理由を照合（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://www.ipa.go.jp/security/anshin/measures/everyday.html",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ対策／ランサムウェア対策：3-2-1ルール"
+      }
+    }
+  ]
+}

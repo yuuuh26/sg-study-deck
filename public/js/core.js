@@ -1,10 +1,10 @@
 export const APP_ID='sg-study-deck';
 export const FORMAT_VERSION=1;
-export const VERSION='1.3.0';
+export const VERSION='1.4.0';
 export const UNKNOWN_OPTION_ID='__unknown__';
 export const isUnknown=a=>a?.selectedOptionId===UNKNOWN_OPTION_ID;
 export const quickCount=value=>Number.isFinite(Number(value))?Math.max(1,Math.min(100,Math.round(Number(value)))):5;
-export const DEFAULTS={theme:'neon',effects:'high',sound:true,vibration:false,autoNext:1.1,master:0.75,bgm:0.55,sfx:0.45,mute:false,fade:2.5,repeat:'all',duck:true,themeMusic:true,trackId:null,assignments:{neon:[],boss:[],cyber:[]},dailyGoal:10,quickCount:5,speechAuto:false,speechOptions:true,speechRate:1,speechVolume:.9,speechDuck:true};
+export const DEFAULTS={theme:'neon',effects:'high',sound:true,vibration:false,autoNext:1.1,master:0.75,bgm:0.55,sfx:0.45,mute:false,fade:2.5,repeat:'all',duck:true,themeMusic:true,trackId:null,assignments:{neon:[],boss:[],cyber:[]},dailyGoal:10,quickCount:5,quickTopic:'',speechAuto:false,speechOptions:true,speechRate:1,speechVolume:.9,speechDuck:true};
 export const dayKey=t=>new Intl.DateTimeFormat('sv-SE',{timeZone:'Asia/Tokyo',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(t));
 export const uid=()=>crypto.randomUUID();
 export const percent=(n,d)=>d?Math.round(100*n/d):null;
@@ -50,7 +50,7 @@ export function selectQuestions(catalog,attempts,mode,count=10,pins={},rng=Math.
   if(mode==='first')return random(bank.filter(q=>!seen.has(q.questionId))).slice(0,count);
   if(mode==='due')return bank.filter(q=>reviews[q.questionId]&&new Date(reviews[q.questionId].dueAt)<=now).sort((a,b)=>reviews[a.questionId].dueAt.localeCompare(reviews[b.questionId].dueAt)).slice(0,count);
   if(mode==='mock'){
-    const a=random(bank.filter(q=>q.subject==='A')),b=random(bank.filter(q=>q.subject==='B'));
+    const examBank=bank.filter(q=>q.learningTrack!=='practical'),a=random(examBank.filter(q=>q.subject==='A')),b=random(examBank.filter(q=>q.subject==='B'));
     return a.length>=48&&b.length>=12?[...a.slice(0,48),...b.slice(0,12)]:[];
   }
   const used=new Set(),out=[]; const take=(arr,n)=>{for(const q of arr){if(out.length>=count||n<=0)break;if(!used.has(q.questionId)){out.push(q);used.add(q.questionId);n--;}}};
@@ -73,6 +73,7 @@ export function validatePack(pack,existing=[]){
     assert(['A','B'].includes(q.subject)&&['active','retired','review_needed'].includes(q.status),'科目・採用状態が不正です');
     assert(['ipa_official','official_sample','ai_original'].includes(q.sourceType)&&/^https:\/\//.test(q.sourceUrl||''),'出典が必要です');
     assert(Array.isArray(q.topicTags)&&q.topicTags.length>0&&q.topicTags.every(t=>str(t,100)),'分野タグが必要です');
+    if(q.learningTrack!==undefined)assert(q.learningTrack==='practical'&&q.sourceType==='ai_original'&&q.subject==='A'&&Number.isInteger(q.learningOrder)&&q.learningOrder>0&&str(q.concept,100)&&str(q.syllabusMapping,300),'入門問題の分野・順番・出典区分が不正です');
     assert(Array.isArray(q.options)&&q.options.length>=4&&q.options.length<=20,'選択肢は4〜20個です（科目Bは多肢選択に対応）');
     assert(Number.isInteger(q.difficulty)&&q.difficulty>=1&&q.difficulty<=5&&Number.isInteger(q.sourceYear)&&q.sourceYear>=2000&&q.sourceYear<=2100&&str(q.sourceExam)&&q.sourceNumber!==undefined&&Number.isFinite(Date.parse(q.contentUpdatedAt)),'出典年度・区分・難易度・更新日が不正です');
     const opts=q.options.map(o=>o.id);assert(new Set(opts).size===opts.length&&!opts.includes(UNKNOWN_OPTION_ID)&&q.options.every(o=>str(o.id,40)&&str(o.text))&&opts.includes(q.correctOptionId),'選択肢ID・正解が不正です');
@@ -101,6 +102,7 @@ export function validateBackup(data){
   if([1,2.5,4].includes(data.settings.fade))settings.fade=data.settings.fade;
   if(Number.isFinite(data.settings.dailyGoal))settings.dailyGoal=Math.min(100,Math.max(1,data.settings.dailyGoal));
   if(Number.isFinite(data.settings.quickCount))settings.quickCount=quickCount(data.settings.quickCount);
+  if(typeof data.settings.quickTopic==='string'&&data.settings.quickTopic.length<=100)settings.quickTopic=data.settings.quickTopic;
   if(typeof data.settings.trackId==='string')settings.trackId=data.settings.trackId.slice(0,200);
   if(data.settings.assignments)for(const t of ['neon','boss','cyber']){const list=data.settings.assignments[t];if(Array.isArray(list)&&list.every(id=>str(id,200)))settings.assignments[t]=list;}
   const tracks=Array.isArray(data.audioTracks)?data.audioTracks.map(t=>{assert(str(t.trackId,200)&&str(t.name,200)&&Number.isFinite(t.size)&&t.size>=0,'楽曲情報が不正です');return {...t};}):[];
