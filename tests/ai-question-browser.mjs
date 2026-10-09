@@ -22,6 +22,7 @@ const pass=label=>console.log('PASS',label);
 try{
  browser=await chromium.launch({...(process.env.SG_CHROMIUM_PATH?{executablePath:process.env.SG_CHROMIUM_PATH}:{}),args:['--no-sandbox','--no-zygote','--single-process','--disable-dev-shm-usage','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader','--in-process-gpu']});
  const context=await browser.newContext({viewport:{width:360,height:800},isMobile:true,hasTouch:true,permissions:['clipboard-read','clipboard-write']});
+ await context.addInitScript(()=>Object.defineProperty(navigator,'share',{configurable:true,value:undefined}));
  page=await context.newPage();page.setDefaultTimeout(15000);page.on('pageerror',e=>errors.push(e.message));page.on('request',req=>{if(!req.url().startsWith(origin))external.push(req.url());});
  await page.goto(origin);await page.waitForSelector('[data-mode="quick"]');await page.waitForFunction(()=>navigator.serviceWorker.controller);
  const nav=id=>page.locator(`#nav [data-view="${id}"]`).click();

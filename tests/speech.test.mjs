@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {SpeechReader,questionSpeech,speechChunks} from '../public/js/speech.js';
+import {SpeechReader,questionSpeech,speechChunks,OPTION_PAUSE_MS} from '../public/js/speech.js';
 import {AudioEngine} from '../public/js/audio.js';
 import {DEFAULTS} from '../public/js/core.js';
 const question={stem:'情報を守る方法はどれか。',options:[{id:'ア',text:'認証を確認する。'},{id:'イ',text:'公開する。'}],correctOptionId:'ア',explanation:'秘密の答え合わせ'};
@@ -15,13 +15,14 @@ function fixture(settings={}){
 test('long Japanese text is complete, bounded and never includes the correct answer or explanation',()=>{
   const text=('暗号化、認証、アクセス制御を確認する🙂').repeat(50)+'。';
   const chunks=speechChunks(text);assert(chunks.every(c=>Array.from(c).length<=160));assert.equal(chunks.join(''),text);
-  const all=questionSpeech({...question,stem:text});assert(all.join('').includes('選択肢 ア。認証を確認する。'));assert(!all.join('').includes(question.explanation));
+  const all=questionSpeech({...question,stem:text});assert(all.includes('ア'));assert(all.includes('認証を確認する。'));assert(!all.join('').includes('選択肢'));assert(!all.join('').includes(question.explanation));
   assert.deepEqual(questionSpeech(question,false),[question.stem]);
 });
 test('Japanese local voice, speed and separate volume are applied; chunks continue in order',t=>{
+  t.mock.timers.enable({apis:['setTimeout']});
   const f=fixture({speechRate:1.3,speechVolume:.8,master:.5});t.after(()=>f.reader.dispose());
   assert(f.reader.read(question));const first=f.utterances[0];assert.equal(first.voice,f.local);assert.equal(first.lang,'ja-JP');assert.equal(first.rate,1.3);assert.equal(first.volume,.4);
-  for(let i=0;i<questionSpeech(question).length;i++){assert.equal(f.utterances[i].text,questionSpeech(question)[i]);f.utterances[i].onend();}
+  for(let i=0;i<questionSpeech(question).length;i++){assert.equal(f.utterances[i].text,questionSpeech(question)[i]);f.utterances[i].onend();t.mock.timers.tick(OPTION_PAUSE_MS);}
   assert.equal(f.reader.active,false);assert.equal(f.states.filter(s=>s.speaking).length,1);assert.equal(f.states.at(-1).speaking,false);
 });
 test('rapid stop and restart ignore stale end/error events and never queue an old question',t=>{
@@ -44,4 +45,14 @@ test('speech keeps BGM ducked when an effect ends, and stopping restores it with
   engine.wantPlay=true;engine.setSpeechActive(true);assert.equal(target,.35);engine.effectDuck=true;engine.updateDucking();assert.equal(target,.35);
   engine.effectDuck=false;engine.updateDucking();assert.equal(target,.35);engine.setSpeechActive(false);assert.equal(target,1);assert.equal(engine.wantPlay,true);
   engine.settings={...DEFAULTS,speechDuck:false};engine.setSpeechActive(true);assert.equal(target,1);
+});
+
+test('choice label is followed by a 400ms pause; stopping during the pause cancels delayed speech',t=>{
+ t.mock.timers.enable({apis:['setTimeout']});const f=fixture();t.after(()=>f.reader.dispose());
+ f.reader.read(question);f.utterances[0].onend();assert.equal(f.utterances[1].text,'ア');
+ f.utterances[1].onend();assert(f.reader.active);assert.equal(f.utterances.length,2);
+ t.mock.timers.tick(OPTION_PAUSE_MS-1);assert.equal(f.utterances.length,2);
+ t.mock.timers.tick(1);assert.equal(f.utterances[2].text,'認証を確認する。');
+ f.utterances[2].onend();assert.equal(f.utterances[3].text,'イ');f.utterances[3].onend();f.reader.stop();
+ f.reader.readText('別の問題。');t.mock.timers.tick(OPTION_PAUSE_MS+1);assert.equal(f.utterances.length,5);assert.equal(f.utterances[4].text,'別の問題。');
 });

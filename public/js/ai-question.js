@@ -1,11 +1,9 @@
-// Only the selected question and its answer are exported; no account or learning-history data.
+import {isUnknown,byTime} from './core.js';
+// Only selected questions and their answers are exported; no account or learning-history data.
 export function aiQuestionPrompt(q,attempt=null){
- const options=q.options.map(o=>`${o.id}：${o.text}`).join('\n');
- const selected=q.options.find(o=>o.id===attempt?.selectedOptionId);
- const correct=q.options.find(o=>o.id===q.correctOptionId);
- const reasons=q.options.map(o=>`${o.id}：${q.optionExplanations?.[o.id]||'解説なし'}`).join('\n');
- const myAnswer=selected?`${selected.id}：${selected.text}（${selected.id===q.correctOptionId?'正解しましたが、理解を深めたいです':'不正解でした'}）`:'この問題の回答記録はありません。基礎から理解したいです。';
- return `情報セキュリティマネジメント試験の、次の問題を詳しく教えてください。
+ return AI_INSTRUCTIONS+questionContext(q,attempt);
+}
+const AI_INSTRUCTIONS=`情報セキュリティマネジメント試験の、次の問題を詳しく教えてください。
 私は初学者の大人です。専門用語が分からなくても理解できるよう、日本語で説明してください。
 
 【説明してほしいこと】
@@ -17,7 +15,14 @@ export function aiQuestionPrompt(q,attempt=null){
 6. 最後に「これだけは覚える」要点を3つと、覚え方を示してください。理解を確認する短い問題を1問出し、その答えは私の回答を待ってください。
 提示した解説を丸写しせず、初学者向けに説明を補ってください。技術的な正確さを保ち、断定できない点は明示してください。正解・解説に疑問があれば出典で確認し、根拠とともに指摘してください。
 
-【問題】
+`;
+function questionContext(q,attempt=null){
+ const options=q.options.map(o=>`${o.id}：${o.text}`).join('\n');
+ const selected=q.options.find(o=>o.id===attempt?.selectedOptionId);
+ const correct=q.options.find(o=>o.id===q.correctOptionId);
+ const reasons=q.options.map(o=>`${o.id}：${q.optionExplanations?.[o.id]||'解説なし'}`).join('\n');
+ const myAnswer=isUnknown(attempt)?'分からない（選択肢を選ばず、未正解として記録しました）。基礎から理解したいです。':selected?`${selected.id}：${selected.text}（${selected.id===q.correctOptionId?'正解しましたが、理解を深めたいです':'不正解でした'}）`:'この問題の回答記録はありません。基礎から理解したいです。';
+ return `【問題】
 ${q.stem}
 
 【選択肢】
@@ -41,4 +46,16 @@ ${reasons}
 ${q.sourceType==='ai_original'?'AIオリジナル予想問題（非公式）':`${q.sourceYear}年度 ${q.sourceExam} 科目${q.subject} 問${q.sourceNumber}`}
 原典：${q.sourceUrl||'なし'}
 正解の根拠：${q.verification?.evidenceUrl||'なし'}${q.modificationNote?'\n改変の注記：'+q.modificationNote:''}${q.versionNote?'\n版の注記：'+q.versionNote:''}`;
+}
+
+export function collectMistakes(catalog,attempts,sessionId){
+ const questions=new Map(catalog.map(q=>[q.questionId,q])),latest=new Map();
+ for(const attempt of attempts.filter(a=>a.sessionId===sessionId&&!a.correct).sort(byTime)){
+  const q=questions.get(attempt.questionId);if(q)latest.set(q.questionId,{q,attempt});
+ }
+ return [...latest.values()];
+}
+export function aiQuestionsPrompt(entries){
+ if(!entries.length)return '';
+ return `以下の${entries.length}問は、私が間違えた、または「分からない」と答えた問題です。番号順に、一つずつ説明してください。共通する用語があれば関連も教えてください。各問題の説明は省略せず、理解確認の問題は最後に1問だけ出してください。\n\n`+AI_INSTRUCTIONS+entries.map(({q,attempt},index)=>`━━ 問題 ${index+1} / ${entries.length} ━━\n`+questionContext(q,attempt)).join('\n\n');
 }

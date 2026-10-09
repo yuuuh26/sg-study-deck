@@ -12,10 +12,14 @@ export function speechChunks(text,limit=160){
   }
   return chunks;
 }
-export function questionSpeech(question,includeOptions=true){
+export const OPTION_PAUSE_MS=400;
+export function questionSpeechPlan(question,includeOptions=true){
   if(!question)return [];
-  return [String(question.stem||''),...(includeOptions?(question.options||[]).map(o=>`選択肢 ${o.id}。${o.text}`):[])].flatMap(text=>speechChunks(text));
+  const steps=speechChunks(question.stem).map(text=>({text,pauseAfter:0}));
+  if(includeOptions)for(const option of question.options||[]){steps.push({text:String(option.id),pauseAfter:OPTION_PAUSE_MS},...speechChunks(option.text).map(text=>({text,pauseAfter:0})));}
+  return steps;
 }
+export const questionSpeech=(question,includeOptions=true)=>questionSpeechPlan(question,includeOptions).map(step=>step.text);
 const messages={
   'not-allowed':'読み上げボタンを押して、音声を開始してください。',
   'language-unavailable':'日本語の音声を利用できません。端末の読み上げ設定を確認してください。',
@@ -38,9 +42,10 @@ export class SpeechReader{
     if(this.active){this.active=false;try{this.synth.cancel();}catch{}this.report();}
   }
   fail(message,generation){if(generation!==this.generation)return;this.stop();this.report(message);}
-  read(question){return this.speak(questionSpeech(question,this.settings.speechOptions!==false));}
+  read(question){return this.speak(questionSpeechPlan(question,this.settings.speechOptions!==false));}
   readText(text){return this.speak(speechChunks(text));}
   speak(chunks){
+    const steps=chunks.map(chunk=>typeof chunk==='string'?{text:chunk,pauseAfter:0}:chunk);
     this.stop();
     if(!this.supported){this.report('このブラウザは読み上げに対応していません。');return false;}
     if(this.settings.mute||this.settings.master<=0||this.settings.speechVolume<=0){this.report('ミュートを解除し、読み上げと全体の音量を上げてください。');return false;}
@@ -52,15 +57,15 @@ export class SpeechReader{
     const generation=this.generation;this.active=true;this.report();
     const next=index=>{
       if(generation!==this.generation||!this.active)return;
-      if(index===chunks.length){this.active=false;this.utterance=null;clearTimeout(this.timer);this.timer=null;this.report();return;}
-      const utterance=new this.Utterance(chunks[index]);this.utterance=utterance;
+      if(index===steps.length){this.active=false;this.utterance=null;clearTimeout(this.timer);this.timer=null;this.report();return;}
+      const utterance=new this.Utterance(steps[index].text);this.utterance=utterance;
       utterance.lang='ja-JP';if(voice)utterance.voice=voice;
       utterance.rate=Math.max(.6,Math.min(1.6,this.settings.speechRate||1));
       utterance.volume=Math.max(0,Math.min(1,(this.settings.master??.75)*(this.settings.speechVolume??.9)));
       const timeout=()=>this.fail('読み上げが応答しませんでした。もう一度、読み上げボタンを押してください。',generation);
       this.timer=setTimeout(timeout,10000);
-      utterance.onstart=()=>{if(generation!==this.generation)return;clearTimeout(this.timer);this.timer=setTimeout(timeout,Math.max(30000,chunks[index].length*600/utterance.rate+10000));};
-      utterance.onend=()=>{if(generation!==this.generation)return;clearTimeout(this.timer);this.utterance=null;next(index+1);};
+      utterance.onstart=()=>{if(generation!==this.generation)return;clearTimeout(this.timer);this.timer=setTimeout(timeout,Math.max(30000,steps[index].text.length*600/utterance.rate+10000));};
+      utterance.onend=()=>{if(generation!==this.generation)return;clearTimeout(this.timer);this.utterance=null;if(steps[index].pauseAfter>0&&index+1<steps.length)this.timer=setTimeout(()=>next(index+1),steps[index].pauseAfter);else next(index+1);};
       utterance.onerror=e=>this.fail(messages[e.error]||'読み上げを再生できませんでした。端末の音声設定を確認してください。',generation);
       try{this.synth.speak(utterance);}catch{this.fail('読み上げを開始できませんでした。もう一度、ボタンを押してください。',generation);}
     };

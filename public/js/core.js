@@ -1,7 +1,10 @@
 export const APP_ID='sg-study-deck';
 export const FORMAT_VERSION=1;
-export const VERSION='1.2.0';
-export const DEFAULTS={theme:'neon',effects:'high',sound:true,vibration:false,autoNext:1.1,master:0.75,bgm:0.55,sfx:0.45,mute:false,fade:2.5,repeat:'all',duck:true,themeMusic:true,trackId:null,assignments:{neon:[],boss:[],cyber:[]},dailyGoal:10,speechAuto:false,speechOptions:true,speechRate:1,speechVolume:.9,speechDuck:true};
+export const VERSION='1.3.0';
+export const UNKNOWN_OPTION_ID='__unknown__';
+export const isUnknown=a=>a?.selectedOptionId===UNKNOWN_OPTION_ID;
+export const quickCount=value=>Number.isFinite(Number(value))?Math.max(1,Math.min(100,Math.round(Number(value)))):5;
+export const DEFAULTS={theme:'neon',effects:'high',sound:true,vibration:false,autoNext:1.1,master:0.75,bgm:0.55,sfx:0.45,mute:false,fade:2.5,repeat:'all',duck:true,themeMusic:true,trackId:null,assignments:{neon:[],boss:[],cyber:[]},dailyGoal:10,quickCount:5,speechAuto:false,speechOptions:true,speechRate:1,speechVolume:.9,speechDuck:true};
 export const dayKey=t=>new Intl.DateTimeFormat('sv-SE',{timeZone:'Asia/Tokyo',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(t));
 export const uid=()=>crypto.randomUUID();
 export const percent=(n,d)=>d?Math.round(100*n/d):null;
@@ -25,7 +28,7 @@ export function statistics(attempts,sessions=[],period='day',dailyGoal=10){
   const days=[...new Set(logs.map(a=>dayKey(a.answeredAt)))].sort();let streak=0,d=new Date(dayKey(Date.now())+'T12:00:00+09:00');
   if(!days.includes(dayKey(d)))d.setUTCDate(d.getUTCDate()-1);
   while(days.includes(dayKey(d))){streak++;d.setUTCDate(d.getUTCDate()-1);}
-  return {total:logs.length,correct:logs.filter(a=>a.correct).length,firstTotal:first.length,firstCorrect:first.filter(a=>a.correct).length,tags,buckets:Object.values(buckets).map(({ids,...bucket})=>bucket).sort((a,b)=>a.date.localeCompare(b.date)),xp,level:Math.floor(Math.sqrt(xp/100))+1,studyMs:sessions.reduce((s,v)=>s+(v.activeMs||0),0),streak,days,goalDays:days.filter(d=>logs.filter(a=>dayKey(a.answeredAt)===d).length>=dailyGoal).length};
+  return {total:logs.length,correct:logs.filter(a=>a.correct).length,unknown:logs.filter(isUnknown).length,firstTotal:first.length,firstCorrect:first.filter(a=>a.correct).length,tags,buckets:Object.values(buckets).map(({ids,...bucket})=>bucket).sort((a,b)=>a.date.localeCompare(b.date)),xp,level:Math.floor(Math.sqrt(xp/100))+1,studyMs:sessions.reduce((s,v)=>s+(v.activeMs||0),0),streak,days,goalDays:days.filter(d=>logs.filter(a=>dayKey(a.answeredAt)===d).length>=dailyGoal).length};
 }
 export function rebuildReviews(attempts,pins={}){
   const state=Object.create(null); const intervals=[1,3,7,14,30];
@@ -72,7 +75,7 @@ export function validatePack(pack,existing=[]){
     assert(Array.isArray(q.topicTags)&&q.topicTags.length>0&&q.topicTags.every(t=>str(t,100)),'分野タグが必要です');
     assert(Array.isArray(q.options)&&q.options.length>=4&&q.options.length<=20,'選択肢は4〜20個です（科目Bは多肢選択に対応）');
     assert(Number.isInteger(q.difficulty)&&q.difficulty>=1&&q.difficulty<=5&&Number.isInteger(q.sourceYear)&&q.sourceYear>=2000&&q.sourceYear<=2100&&str(q.sourceExam)&&q.sourceNumber!==undefined&&Number.isFinite(Date.parse(q.contentUpdatedAt)),'出典年度・区分・難易度・更新日が不正です');
-    const opts=q.options.map(o=>o.id);assert(new Set(opts).size===opts.length&&q.options.every(o=>str(o.id,40)&&str(o.text))&&opts.includes(q.correctOptionId),'選択肢ID・正解が不正です');
+    const opts=q.options.map(o=>o.id);assert(new Set(opts).size===opts.length&&!opts.includes(UNKNOWN_OPTION_ID)&&q.options.every(o=>str(o.id,40)&&str(o.text))&&opts.includes(q.correctOptionId),'選択肢ID・正解が不正です');
     assert(str(q.explanation)&&opts.every(id=>str(q.optionExplanations?.[id])),'正解と全選択肢の解説が必要です');
     if(q.status==='active')assert(q.verification?.answerChecked===true&&q.verification?.explanationChecked===true&&str(q.verification?.evidenceUrl)&&/^https:\/\//.test(q.verification.evidenceUrl),'検証が完了していない問題は採用できません');
     assert(!q.media?.length,'画像パックは未対応です。表・図は本文の文章表現にし、改変表示を付けてください');
@@ -85,7 +88,7 @@ export function validatePack(pack,existing=[]){
 export function validateBackup(data){
   assert(data?.appId===APP_ID&&data.formatVersion===FORMAT_VERSION,'このアプリの対応JSONではありません');
   assert(Array.isArray(data.attempts)&&Array.isArray(data.sessions)&&data.attempts.length<=1000000&&data.sessions.length<=100000,'履歴の形式・件数が不正です');
-  const ids=new Set();for(const a of data.attempts){assert(str(a.attemptId,200)&&!ids.has(a.attemptId)&&str(a.questionId,160)&&str(a.sessionId,200)&&str(a.selectedOptionId,40)&&typeof a.correct==='boolean'&&Number.isInteger(a.revision)&&a.revision>0&&Number.isFinite(Date.parse(a.answeredAt))&&Array.isArray(a.topicTagsSnapshot)&&a.topicTagsSnapshot.every(t=>str(t,100))&&Number.isFinite(a.responseMs)&&a.responseMs>=0,'回答履歴が不正です');ids.add(a.attemptId);}
+  const ids=new Set();for(const a of data.attempts){assert(str(a.attemptId,200)&&!ids.has(a.attemptId)&&str(a.questionId,160)&&str(a.sessionId,200)&&str(a.selectedOptionId,40)&&typeof a.correct==='boolean'&&(!isUnknown(a)||a.correct===false)&&Number.isInteger(a.revision)&&a.revision>0&&Number.isFinite(Date.parse(a.answeredAt))&&Array.isArray(a.topicTagsSnapshot)&&a.topicTagsSnapshot.every(t=>str(t,100))&&Number.isFinite(a.responseMs)&&a.responseMs>=0,'回答履歴が不正です');ids.add(a.attemptId);}
   const sids=new Set();for(const s of data.sessions){assert(str(s.sessionId,200)&&!sids.has(s.sessionId)&&Number.isFinite(s.activeMs)&&s.activeMs>=0,'セッションが不正です');sids.add(s.sessionId);}
   assert(data.attempts.every(a=>sids.has(a.sessionId)),'回答に対応するセッションがありません');
   assert(data.settings&&typeof data.settings==='object'&&!Array.isArray(data.settings),'設定が不正です');
@@ -97,6 +100,7 @@ export function validateBackup(data){
   if([0,.7,1.1,1.5].includes(data.settings.autoNext))settings.autoNext=data.settings.autoNext;
   if([1,2.5,4].includes(data.settings.fade))settings.fade=data.settings.fade;
   if(Number.isFinite(data.settings.dailyGoal))settings.dailyGoal=Math.min(100,Math.max(1,data.settings.dailyGoal));
+  if(Number.isFinite(data.settings.quickCount))settings.quickCount=quickCount(data.settings.quickCount);
   if(typeof data.settings.trackId==='string')settings.trackId=data.settings.trackId.slice(0,200);
   if(data.settings.assignments)for(const t of ['neon','boss','cyber']){const list=data.settings.assignments[t];if(Array.isArray(list)&&list.every(id=>str(id,200)))settings.assignments[t]=list;}
   const tracks=Array.isArray(data.audioTracks)?data.audioTracks.map(t=>{assert(str(t.trackId,200)&&str(t.name,200)&&Number.isFinite(t.size)&&t.size>=0,'楽曲情報が不正です');return {...t};}):[];

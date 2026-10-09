@@ -1,4 +1,4 @@
-import {APP_ID,FORMAT_VERSION,DEFAULTS,rebuildReviews,uid,validateBackup,validatePack} from './core.js';
+import {APP_ID,FORMAT_VERSION,DEFAULTS,rebuildReviews,uid,validateBackup,validatePack,quickCount,isUnknown} from './core.js';
 const STORES=['questionCatalog','attempts','sessions','reviewState','settings','audioTracks','audioBlobs','syncQueue','schemaMeta','safetyCopies'];
 const keys={questionCatalog:'questionId',attempts:'attemptId',sessions:'sessionId',reviewState:'questionId',settings:'key',audioTracks:'trackId',audioBlobs:'trackId',syncQueue:'key',schemaMeta:'key',safetyCopies:'id'};
 export const request=r=>new Promise((resolve,reject)=>{r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error);});
@@ -19,10 +19,11 @@ export const all=store=>transaction([store],'readonly',s=>request(s[store].getAl
 export const get=(store,key)=>transaction([store],'readonly',s=>request(s[store].get(key)));
 export const put=(store,value)=>transaction([store],'readwrite',s=>request(s[store].put(value)));
 async function bump(stores){const old=await request(stores.syncQueue.get('state'))||{key:'state',revision:0,sentRevision:0,lastSuccess:0};old.revision++;stores.syncQueue.put(old);return old;}
-export async function settings(){const value=(await get('settings','preferences'))?.value||{};return {...structuredClone(DEFAULTS),...value,assignments:{...structuredClone(DEFAULTS.assignments),...value.assignments}};}
+export async function settings(){const value=(await get('settings','preferences'))?.value||{};return {...structuredClone(DEFAULTS),...value,quickCount:quickCount(value.quickCount??DEFAULTS.quickCount),assignments:{...structuredClone(DEFAULTS.assignments),...value.assignments}};}
 export async function saveSettings(value){return transaction(['settings','syncQueue'],'readwrite',async s=>{s.settings.put({key:'preferences',value});await bump(s);});}
 export async function saveSession(session,dirty=true){return transaction(['sessions','syncQueue'],'readwrite',async s=>{s.sessions.put(session);if(dirty)await bump(s);});}
 export async function saveAnswer(attempt,session){
+  if(isUnknown(attempt)&&attempt.correct)throw new Error('分からない回答を正解として保存できません');
   return transaction(['attempts','sessions','reviewState','syncQueue','settings'],'readwrite',async s=>{
     const existing=await request(s.attempts.get(attempt.attemptId));if(existing)return existing;
     const prior=await request(s.attempts.index('questionId').getAll(attempt.questionId));
