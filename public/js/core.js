@@ -1,6 +1,6 @@
 export const APP_ID='sg-study-deck';
 export const FORMAT_VERSION=1;
-export const VERSION='1.1.0';
+export const VERSION='1.2.0';
 export const DEFAULTS={theme:'neon',effects:'high',sound:true,vibration:false,autoNext:1.1,master:0.75,bgm:0.55,sfx:0.45,mute:false,fade:2.5,repeat:'all',duck:true,themeMusic:true,trackId:null,assignments:{neon:[],boss:[],cyber:[]},dailyGoal:10,speechAuto:false,speechOptions:true,speechRate:1,speechVolume:.9,speechDuck:true};
 export const dayKey=t=>new Intl.DateTimeFormat('sv-SE',{timeZone:'Asia/Tokyo',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(t));
 export const uid=()=>crypto.randomUUID();
