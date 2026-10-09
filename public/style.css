@@ -9,3 +9,5 @@ button,input,select{font:inherit}button{border:1px solid var(--line);background:
 .metric strong small{display:inline;font-size:12px;margin-left:5px}
 
 @media(max-width:600px){.play-top{display:grid;grid-template-columns:88px 1fr;gap:8px}.play-top>button{padding:10px 6px;font-size:13px;white-space:nowrap}.play-top>.pill{text-align:right;border:0}.play-top select{grid-column:1/-1;width:100%;max-width:none;text-align:center;min-height:40px}}
+
+.speech-controls{margin:16px 0 12px;gap:8px}.speech-controls button{min-height:44px}.speech-controls button[aria-pressed="true"]{border-color:var(--cool);color:var(--cool);background:#64f6eb0d}.speech-controls small{font-size:11px}

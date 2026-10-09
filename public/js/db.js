@@ -19,7 +19,7 @@ export const all=store=>transaction([store],'readonly',s=>request(s[store].getAl
 export const get=(store,key)=>transaction([store],'readonly',s=>request(s[store].get(key)));
 export const put=(store,value)=>transaction([store],'readwrite',s=>request(s[store].put(value)));
 async function bump(stores){const old=await request(stores.syncQueue.get('state'))||{key:'state',revision:0,sentRevision:0,lastSuccess:0};old.revision++;stores.syncQueue.put(old);return old;}
-export async function settings(){return (await get('settings','preferences'))?.value||structuredClone(DEFAULTS);}
+export async function settings(){const value=(await get('settings','preferences'))?.value||{};return {...structuredClone(DEFAULTS),...value,assignments:{...structuredClone(DEFAULTS.assignments),...value.assignments}};}
 export async function saveSettings(value){return transaction(['settings','syncQueue'],'readwrite',async s=>{s.settings.put({key:'preferences',value});await bump(s);});}
 export async function saveSession(session,dirty=true){return transaction(['sessions','syncQueue'],'readwrite',async s=>{s.sessions.put(session);if(dirty)await bump(s);});}
 export async function saveAnswer(attempt,session){

@@ -14,19 +14,22 @@ export async function importAudio(file,order=0){
   await db.addTrack(meta,new Blob([file],{type}));return meta;
 }
 export class AudioEngine{
-  constructor(settings,onState=()=>{}){this.settings=settings;this.onState=onState;this.channels=[];this.current=0;this.epoch=0;this.wantPlay=false;this.pauseTimer=null;this.audit=[];this.transitioning=false;this.selectionEpoch=0;this.selectionChain=Promise.resolve();}
+  constructor(settings,onState=()=>{}){this.settings=settings;this.onState=onState;this.channels=[];this.current=0;this.epoch=0;this.wantPlay=false;this.pauseTimer=null;this.audit=[];this.transitioning=false;this.selectionEpoch=0;this.selectionChain=Promise.resolve();this.speechActive=false;this.effectDuck=false;this.effectDuckTimer=null;}
   async unlock(){
     if(!this.context){
       this.context=new (window.AudioContext||window.webkitAudioContext)();const c=this.context;
       this.master=c.createGain();this.bgm=c.createGain();this.sfx=c.createGain();this.duckGain=c.createGain();const limiter=c.createDynamicsCompressor();limiter.threshold.value=-6;limiter.knee.value=3;limiter.ratio.value=12;
       this.bgm.connect(this.duckGain);this.duckGain.connect(this.master);this.sfx.connect(this.master);this.master.connect(limiter);limiter.connect(c.destination);
       this.channels=[0,1].map(i=>{const audio=new Audio();audio.preload='auto';audio.crossOrigin='anonymous';const source=c.createMediaElementSource(audio),gain=c.createGain();gain.gain.value=0;source.connect(gain);gain.connect(this.bgm);audio.addEventListener('timeupdate',()=>this.tick(i));audio.addEventListener('ended',()=>{if(this.wantPlay&&i===this.current&&!this.transitioning)this.next().catch(e=>this.report(e.message));});audio.addEventListener('error',()=>this.report('音源を再生できません。再追加を試してください'));return {audio,gain,url:null,trackId:null};});
-      this.applySettings(this.settings);this.duckGain.gain.value=1;
+      this.applySettings(this.settings);this.duckGain.gain.value=this.duckTarget();
     }
     if(this.context.state!=='running')await this.context.resume();
   }
   ramp(param,to,seconds){const now=this.context.currentTime;if(param.cancelAndHoldAtTime)param.cancelAndHoldAtTime(now);else{param.cancelScheduledValues(now);param.setValueAtTime(param.value,now);}param.linearRampToValueAtTime(to,now+seconds);}
-  applySettings(s){this.settings=s;if(!this.context)return;this.ramp(this.master.gain,s.mute?0:s.master,.03);this.ramp(this.bgm.gain,s.bgm,.05);this.ramp(this.sfx.gain,s.sound?s.sfx:0,.03);}
+  applySettings(s){this.settings=s;if(!this.context)return;this.ramp(this.master.gain,s.mute?0:s.master,.03);this.ramp(this.bgm.gain,s.bgm,.05);this.ramp(this.sfx.gain,s.sound?s.sfx:0,.03);this.updateDucking(.05);}
+  duckTarget(){return Math.min(this.speechActive&&this.settings.speechDuck ? .35 : 1,this.effectDuck&&this.settings.duck ? .65 : 1);}
+  updateDucking(seconds=.12){if(this.context)this.ramp(this.duckGain.gain,this.duckTarget(),seconds);}
+  setSpeechActive(active){this.speechActive=active;this.updateDucking(active ? .12 : .35);}
   report(message=''){this.onState({message,playing:this.wantPlay,trackId:this.channels[this.current]?.trackId});}
   async playlist(){const tracks=(await db.all('audioTracks')).sort((a,b)=>a.order-b.order);const assigned=this.settings.assignments[this.settings.theme]||[];return assigned.length?assigned.map(id=>tracks.find(t=>t.trackId===id)).filter(Boolean):tracks;}
   async start(){this.selectionEpoch++;await this.unlock();clearTimeout(this.pauseTimer);this.wantPlay=true;const ch=this.channels[this.current];
@@ -59,7 +62,7 @@ export class AudioEngine{
   async effect(correct,combo=0){
     if(!this.settings.sound||this.settings.mute)return;try{await this.unlock();}catch{return;}
     const c=this.context,now=c.currentTime;
-    if(this.settings.duck){this.ramp(this.duckGain.gain,.65,.04);this.duckGain.gain.setValueAtTime(.65,now+.15);this.duckGain.gain.linearRampToValueAtTime(1,now+.55);}
+    if(this.settings.duck){this.effectDuck=true;clearTimeout(this.effectDuckTimer);this.updateDucking(.04);this.effectDuckTimer=setTimeout(()=>{this.effectDuck=false;this.updateDucking(.3);},250);}
     const notes=correct?combo>=5?[523.25,659.25,783.99,1046.5]:[659.25,987.77]:[220,164.81];
     notes.forEach((freq,i)=>{const o=c.createOscillator(),g=c.createGain();o.type=correct?'sine':'triangle';o.frequency.value=freq;g.gain.setValueAtTime(0,now+i*.055);g.gain.linearRampToValueAtTime(.12,now+i*.055+.01);g.gain.exponentialRampToValueAtTime(.001,now+i*.055+.2);o.connect(g);g.connect(this.sfx);o.start(now+i*.055);o.stop(now+i*.055+.22);o.onended=()=>{o.disconnect();g.disconnect();};});
   }

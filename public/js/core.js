@@ -1,7 +1,7 @@
 export const APP_ID='sg-study-deck';
 export const FORMAT_VERSION=1;
-export const VERSION='1.0.0';
-export const DEFAULTS={theme:'neon',effects:'high',sound:true,vibration:false,autoNext:1.1,master:0.75,bgm:0.55,sfx:0.45,mute:false,fade:2.5,repeat:'all',duck:true,themeMusic:true,trackId:null,assignments:{neon:[],boss:[],cyber:[]},dailyGoal:10};
+export const VERSION='1.1.0';
+export const DEFAULTS={theme:'neon',effects:'high',sound:true,vibration:false,autoNext:1.1,master:0.75,bgm:0.55,sfx:0.45,mute:false,fade:2.5,repeat:'all',duck:true,themeMusic:true,trackId:null,assignments:{neon:[],boss:[],cyber:[]},dailyGoal:10,speechAuto:false,speechOptions:true,speechRate:1,speechVolume:.9,speechDuck:true};
 export const dayKey=t=>new Intl.DateTimeFormat('sv-SE',{timeZone:'Asia/Tokyo',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(t));
 export const uid=()=>crypto.randomUUID();
 export const percent=(n,d)=>d?Math.round(100*n/d):null;
@@ -91,8 +91,9 @@ export function validateBackup(data){
   assert(data.settings&&typeof data.settings==='object'&&!Array.isArray(data.settings),'設定が不正です');
   const settings=structuredClone(DEFAULTS);
   for(const k of ['theme','effects','repeat']){const vals={theme:['neon','boss','cyber'],effects:['off','low','normal','high'],repeat:['one','all','shuffle']}[k];if(vals.includes(data.settings[k]))settings[k]=data.settings[k];}
-  for(const k of ['sound','vibration','mute','duck','themeMusic'])if(typeof data.settings[k]==='boolean')settings[k]=data.settings[k];
-  for(const k of ['master','bgm','sfx'])if(Number.isFinite(data.settings[k]))settings[k]=Math.max(0,Math.min(1,data.settings[k]));
+  for(const k of ['sound','vibration','mute','duck','themeMusic','speechAuto','speechOptions','speechDuck'])if(typeof data.settings[k]==='boolean')settings[k]=data.settings[k];
+  for(const k of ['master','bgm','sfx','speechVolume'])if(Number.isFinite(data.settings[k]))settings[k]=Math.max(0,Math.min(1,data.settings[k]));
+  if([.7,.85,1,1.15,1.3,1.5].includes(data.settings.speechRate))settings.speechRate=data.settings.speechRate;
   if([0,.7,1.1,1.5].includes(data.settings.autoNext))settings.autoNext=data.settings.autoNext;
   if([1,2.5,4].includes(data.settings.fade))settings.fade=data.settings.fade;
   if(Number.isFinite(data.settings.dailyGoal))settings.dailyGoal=Math.min(100,Math.max(1,data.settings.dailyGoal));

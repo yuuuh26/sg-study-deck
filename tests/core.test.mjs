@@ -18,3 +18,9 @@ test('restore validates app, duplicate events and dangling sessions; settings ar
 test('period buckets retain unique problem count, cumulative level and configurable daily goal',()=>{const logs=Array.from({length:6},(_,i)=>({attemptId:'level-'+i,questionId:'level-q-'+i,answeredAt:'2026-10-09T00:00:00Z',correct:true,topicTagsSnapshot:['認証']}));const stats=statistics(logs,[],'day',5);assert.equal(stats.buckets[0].unique,6);assert.equal(stats.buckets[0].level,2);assert.equal(stats.goalDays,1);assert.equal(statistics(logs).goalDays,0);});
 
 test('packs reject unsafe evidence links and incomplete source metadata',()=>{for(const change of [{verification:{...pack.questions[0].verification,evidenceUrl:'javascript:alert(1)'}},{difficulty:9},{sourceYear:null},{contentUpdatedAt:'invalid'}])assert.throws(()=>validatePack({...pack,questions:[{...pack.questions[0],...change}]}));});
+test('speech preferences round-trip through backups and legacy backups get safe defaults',()=>{
+ const data={appId:APP_ID,formatVersion:1,attempts:[],sessions:[],settings:{speechAuto:true,speechOptions:false,speechRate:1.3,speechVolume:.4,speechDuck:false}};
+ const restored=validateBackup(data).settings;for(const [key,value]of Object.entries(data.settings))assert.equal(restored[key],value);
+ const legacy=validateBackup({...data,settings:{bgm:.2}}).settings;assert.equal(legacy.speechAuto,false);assert.equal(legacy.speechOptions,true);assert.equal(legacy.bgm,.2);
+ const invalid=validateBackup({...data,settings:{speechRate:100,speechVolume:8,speechAuto:'yes'}}).settings;assert.equal(invalid.speechRate,1);assert.equal(invalid.speechVolume,1);assert.equal(invalid.speechAuto,false);
+});
