@@ -3,7 +3,7 @@ import {createRequire} from 'node:module';import {createServer} from 'node:http'
 import {createD1} from './d1.mjs';import {handleAPI} from '../worker/api.js';import {securityHeaders} from '../worker/index.js';
 import {collectMistakes,aiQuestionPrompt,aiQuestionsPrompt} from '../public/js/ai-question.js';import {UNKNOWN_OPTION_ID,VERSION} from '../public/js/core.js';
 const require=createRequire(import.meta.url),{chromium}=require(process.env.SG_PLAYWRIGHT_PATH||(process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES?process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES+'/playwright':'playwright'));
-const root=resolve('public'),env={DB:createD1()},bank=[...JSON.parse(readFileSync('public/data/ipa-verified.json')).questions,...JSON.parse(readFileSync('public/data/practical-verified.json')).questions];
+const root=resolve('public'),env={DB:createD1()},bank=[...JSON.parse(readFileSync('public/data/ipa-verified.json')).questions,...JSON.parse(readFileSync('public/data/practical-verified.json')).questions,...JSON.parse(readFileSync('public/data/practical2-verified.json')).questions];
 const server=createServer(async(req,res)=>{try{
  const origin=`http://127.0.0.1:${server.address().port}`,path=new URL(req.url,origin).pathname;
  if(path.startsWith('/api/')){const r=await handleAPI(new Request(origin+req.url,{headers:req.headers}),env);res.writeHead(r.status,Object.fromEntries(r.headers));res.end(await r.text());return;}
@@ -20,7 +20,7 @@ try{
   Object.defineProperty(navigator,'share',{configurable:true,value:qa.handler});
  });
  page=await context.newPage();page.setDefaultTimeout(15000);page.on('pageerror',e=>errors.push(e.message));await page.goto(origin);await page.waitForSelector('#quick-count');await page.waitForFunction(()=>navigator.serviceWorker.controller);
- const nav=id=>page.locator(`#nav [data-view="${id}"]`).click(),saved=()=>page.evaluate(async()=>{const db=await import('./js/db.js');return {attempts:await db.all('attempts'),sessions:await db.all('sessions'),settings:await db.settings(),sync:await db.syncState()};});
+ const nav=async id=>{await page.locator(`#nav [data-view="${id}"]`).click();await page.waitForSelector({home:'#quick-topic',settings:'#speech-panel',stats:'#stats-period',review:'#review-tag',library:'#library-search'}[id]);},saved=()=>page.evaluate(async()=>{const db=await import('./js/db.js');return {attempts:await db.all('attempts'),sessions:await db.all('sessions'),settings:await db.settings(),sync:await db.syncState()};});
  assert.equal(await page.locator('#quick-count').inputValue(),'5');assert.match(await page.locator('[data-mode="quick"]').innerText(),/クイックスタート/);
  await nav('settings');await page.waitForSelector('#quick-count');await page.locator('#set-autoNext').selectOption('0');await page.locator('#quick-count').fill('3');await page.locator('#quick-count').blur();await page.waitForFunction(async()=>{const db=await import('./js/db.js');const s=await db.settings();return s.quickCount===3&&s.autoNext===0;});await nav('home');assert.equal(await page.locator('#quick-count').inputValue(),'3');
  await page.locator('[data-mode="quick"]').evaluate(el=>{el.click();el.click();});await page.waitForSelector('.option');assert.equal((await saved()).sessions.length,1);assert.equal((await saved()).sessions[0].questionIds.length,3);pass('home and settings choose 3 questions, persist the choice and suppress double starts');

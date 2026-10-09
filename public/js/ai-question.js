@@ -17,6 +17,7 @@ const AI_INSTRUCTIONS=`情報セキュリティマネジメント試験の、次
 
 `;
 function questionContext(q,attempt=null){
+ const terms=q.termNotes?.length?'\n\n【用語メモ】\n'+q.termNotes.map(t=>`${t.term}：${t.meaning}`).join('\n'):'';
  const options=q.options.map(o=>`${o.id}：${o.text}`).join('\n');
  const selected=q.options.find(o=>o.id===attempt?.selectedOptionId);
  const correct=q.options.find(o=>o.id===q.correctOptionId);
@@ -35,7 +36,7 @@ ${myAnswer}
 ${q.correctOptionId}：${correct?.text||''}
 
 【アプリの解説】
-${q.explanation}
+${q.explanation}${terms}
 
 【各選択肢の解説】
 ${reasons}

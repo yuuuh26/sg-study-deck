@@ -9,7 +9,7 @@ import {securityHeaders} from '../worker/index.js';
 import {aiQuestionPrompt} from '../public/js/ai-question.js';
 import {VERSION} from '../public/js/core.js';
 const require=createRequire(import.meta.url),{chromium}=require(process.env.SG_PLAYWRIGHT_PATH||(process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES?process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES+'/playwright':'playwright'));
-const root=resolve('public'),env={DB:createD1()},bank={questions:[...JSON.parse(readFileSync('public/data/ipa-verified.json')).questions,...JSON.parse(readFileSync('public/data/practical-verified.json')).questions]};
+const root=resolve('public'),env={DB:createD1()},bank={questions:[...JSON.parse(readFileSync('public/data/ipa-verified.json')).questions,...JSON.parse(readFileSync('public/data/practical-verified.json')).questions,...JSON.parse(readFileSync('public/data/practical2-verified.json')).questions]};
 const server=createServer(async(req,res)=>{try{
  const origin=`http://127.0.0.1:${server.address().port}`,path=new URL(req.url,origin).pathname;
  if(path.startsWith('/api/')){const response=await handleAPI(new Request(origin+req.url,{headers:req.headers}),env);res.writeHead(response.status,Object.fromEntries(response.headers));res.end(await response.text());return;}

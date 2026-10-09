@@ -1,6 +1,6 @@
 export const APP_ID='sg-study-deck';
 export const FORMAT_VERSION=1;
-export const VERSION='1.4.0';
+export const VERSION='1.5.0';
 export const UNKNOWN_OPTION_ID='__unknown__';
 export const isUnknown=a=>a?.selectedOptionId===UNKNOWN_OPTION_ID;
 export const quickCount=value=>Number.isFinite(Number(value))?Math.max(1,Math.min(100,Math.round(Number(value)))):5;
@@ -74,6 +74,8 @@ export function validatePack(pack,existing=[]){
     assert(['ipa_official','official_sample','ai_original'].includes(q.sourceType)&&/^https:\/\//.test(q.sourceUrl||''),'出典が必要です');
     assert(Array.isArray(q.topicTags)&&q.topicTags.length>0&&q.topicTags.every(t=>str(t,100)),'分野タグが必要です');
     if(q.learningTrack!==undefined)assert(q.learningTrack==='practical'&&q.sourceType==='ai_original'&&q.subject==='A'&&Number.isInteger(q.learningOrder)&&q.learningOrder>0&&str(q.concept,100)&&str(q.syllabusMapping,300),'入門問題の分野・順番・出典区分が不正です');
+    if(q.practicalSet!==undefined)assert(q.learningTrack==='practical'&&[1,2].includes(q.practicalSet),'実用入門の番号が不正です');
+    if(q.termNotes!==undefined)assert(Array.isArray(q.termNotes)&&q.termNotes.length>=1&&q.termNotes.length<=2&&q.termNotes.every(t=>str(t?.term,100)&&str(t?.meaning,500)&&q.stem.includes(t.term))&&new Set(q.termNotes.map(t=>t.term)).size===q.termNotes.length,'用語メモは本文中の異なる用語1〜2個と短い説明が必要です');
     assert(Array.isArray(q.options)&&q.options.length>=4&&q.options.length<=20,'選択肢は4〜20個です（科目Bは多肢選択に対応）');
     assert(Number.isInteger(q.difficulty)&&q.difficulty>=1&&q.difficulty<=5&&Number.isInteger(q.sourceYear)&&q.sourceYear>=2000&&q.sourceYear<=2100&&str(q.sourceExam)&&q.sourceNumber!==undefined&&Number.isFinite(Date.parse(q.contentUpdatedAt)),'出典年度・区分・難易度・更新日が不正です');
     const opts=q.options.map(o=>o.id);assert(new Set(opts).size===opts.length&&!opts.includes(UNKNOWN_OPTION_ID)&&q.options.every(o=>str(o.id,40)&&str(o.text))&&opts.includes(q.correctOptionId),'選択肢ID・正解が不正です');
@@ -90,7 +92,7 @@ export function validateBackup(data){
   assert(data?.appId===APP_ID&&data.formatVersion===FORMAT_VERSION,'このアプリの対応JSONではありません');
   assert(Array.isArray(data.attempts)&&Array.isArray(data.sessions)&&data.attempts.length<=1000000&&data.sessions.length<=100000,'履歴の形式・件数が不正です');
   const ids=new Set();for(const a of data.attempts){assert(str(a.attemptId,200)&&!ids.has(a.attemptId)&&str(a.questionId,160)&&str(a.sessionId,200)&&str(a.selectedOptionId,40)&&typeof a.correct==='boolean'&&(!isUnknown(a)||a.correct===false)&&Number.isInteger(a.revision)&&a.revision>0&&Number.isFinite(Date.parse(a.answeredAt))&&Array.isArray(a.topicTagsSnapshot)&&a.topicTagsSnapshot.every(t=>str(t,100))&&Number.isFinite(a.responseMs)&&a.responseMs>=0,'回答履歴が不正です');ids.add(a.attemptId);}
-  const sids=new Set();for(const s of data.sessions){assert(str(s.sessionId,200)&&!sids.has(s.sessionId)&&Number.isFinite(s.activeMs)&&s.activeMs>=0,'セッションが不正です');sids.add(s.sessionId);}
+  const sids=new Set();for(const s of data.sessions){assert(str(s.sessionId,200)&&!sids.has(s.sessionId)&&Number.isFinite(s.activeMs)&&s.activeMs>=0,'セッションが不正です');if(s.practicalSet!==undefined)assert([0,1,2].includes(s.practicalSet),'セッションの実用入門番号が不正です');sids.add(s.sessionId);}
   assert(data.attempts.every(a=>sids.has(a.sessionId)),'回答に対応するセッションがありません');
   assert(data.settings&&typeof data.settings==='object'&&!Array.isArray(data.settings),'設定が不正です');
   const settings=structuredClone(DEFAULTS);

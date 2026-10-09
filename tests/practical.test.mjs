@@ -11,7 +11,7 @@ const answer=(id,q,correct=false)=>({attemptId:id,questionId:q.questionId,revisi
 
 test('32 original beginner questions have primary evidence, four explanations, distinct permanent IDs and four useful fields',()=>{
  assert.equal(validatePack(practical,official.questions).length,32);assert.equal(new Set(all.map(q=>q.questionId)).size,54);
- for(const course of PRACTICAL_COURSES)assert.equal(practiceCount(all,course.topic),8);
+ for(const course of PRACTICAL_COURSES.filter(c=>c.set===1))assert.equal(practiceCount(all,course.topic),8);
  assert(questionTopics(all).includes('暗号・ハッシュ'));
  for(const q of practical.questions){assert.equal(q.sourceType,'ai_original');assert.equal(q.options.length,4);assert(q.verification.evidenceSection);assert(q.verification.syllabusUrl.includes('syllabus_sg_ver4_1'));assert.match(q.versionNote,/公式解説ではありません/);}
 });

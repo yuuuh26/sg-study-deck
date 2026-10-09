@@ -1,0 +1,2184 @@
+{
+  "packId": "sg-practical-security-2-v1",
+  "formatVersion": 1,
+  "version": "1.0.0",
+  "description": "実用入門②。専門用語と身近な判断を結び付ける独自の入門・予想問題。",
+  "questions": [
+    {
+      "questionId": "sg-practical2-net-01",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門②・予想問題（非公式）",
+      "sourceNumber": "II-NET-01",
+      "sourceUrl": "https://support.google.com/chrome/answer/95617?hl=ja",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "ネット・ブラウザ"
+      ],
+      "difficulty": 1,
+      "learningTrack": "practical",
+      "practicalSet": 2,
+      "learningOrder": 1,
+      "concept": "TLS",
+      "termNotes": [
+        {
+          "term": "TLS",
+          "meaning": "通信相手を確かめ、暗号化などで通信の盗聴や改変を防ぐ仕組み。"
+        },
+        {
+          "term": "HTTPS",
+          "meaning": "TLSを使って保護するWeb通信。"
+        }
+      ],
+      "stem": "買い物サイトがHTTPSで、TLSによって通信を保護している。それだけで保証されるとはいえないものはどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "販売者が誠実で、商品が必ず届くこと"
+        },
+        {
+          "id": "イ",
+          "text": "通信途中で情報を読まれにくくすること"
+        },
+        {
+          "id": "ウ",
+          "text": "通信途中で情報を改変されにくくすること"
+        },
+        {
+          "id": "エ",
+          "text": "サーバ証明書によって接続先を確認すること"
+        }
+      ],
+      "correctOptionId": "ア",
+      "explanation": "TLSは手紙を守る封筒と、宛先の確認のような仕組み。安全な封筒で偽の店へ送っても、その店が善良になるわけではない。HTTPSでもサイト名や購入先を確かめる。",
+      "optionExplanations": {
+        "ア": "通信の保護と、販売者の信用や商品の品質は別。",
+        "イ": "TLSが通信を暗号化して保護する目的に当たる。",
+        "ウ": "TLSは通信途中の改変を検出する仕組みも持つ。",
+        "エ": "証明書による接続先の認証はTLSの役割。ただし販売者の誠実さは保証しない。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面と専門用語を結び付ける独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "セキュリティ実装技術／TLS・HTTPS・公開鍵基盤",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・機能・注意点と正解、全誤答の理由、用語メモを照合。場面への適用は独自作問（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://support.google.com/chrome/answer/95617?hl=ja",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "セキュリティ実装技術／TLS・HTTPS・公開鍵基盤",
+        "additionalEvidenceUrls": [
+          "https://csrc.nist.gov/glossary/term/transport_layer_security"
+        ]
+      }
+    },
+    {
+      "questionId": "sg-practical2-net-02",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門②・予想問題（非公式）",
+      "sourceNumber": "II-NET-02",
+      "sourceUrl": "https://support.google.com/chrome/answer/95617?hl=ja",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "ネット・ブラウザ"
+      ],
+      "difficulty": 1,
+      "learningTrack": "practical",
+      "practicalSet": 2,
+      "learningOrder": 2,
+      "concept": "サーバ証明書",
+      "termNotes": [
+        {
+          "term": "サーバ証明書",
+          "meaning": "接続先のサーバの公開鍵と、ドメイン名などの対応を確かめるための証明書。"
+        }
+      ],
+      "stem": "いつもの買い物サイトを開くと、サーバ証明書に関する警告が出た。適切な対応はどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "警告が出たページへ、端末のパスワードも送る"
+        },
+        {
+          "id": "イ",
+          "text": "入力を止め、URLなどを確認し、解消しなければ公式窓口で確かめる"
+        },
+        {
+          "id": "ウ",
+          "text": "証明書の警告は商品が安いという意味なので、すぐ決済する"
+        },
+        {
+          "id": "エ",
+          "text": "いつものロゴがあるので、警告を無視してカード番号を入れる"
+        }
+      ],
+      "correctOptionId": "イ",
+      "explanation": "サーバ証明書は、通信相手を確かめる手掛かり。警告の原因には設定ミスなどもあるが、見た目だけで安全と決めない。正しいURLと端末の日時を確認し、警告を安易に回避しない。",
+      "optionExplanations": {
+        "ア": "端末のパスワードを送っても証明書は直らず、秘密を漏らす。",
+        "イ": "接続先の確認や通信の保護に問題がある可能性を放置しない。",
+        "ウ": "証明書は通信相手などの確認に使い、商品の値段を証明しない。",
+        "エ": "ロゴは複製でき、証明書の問題を解消しない。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面と専門用語を結び付ける独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ技術／公開鍵基盤：サーバ証明書",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・機能・注意点と正解、全誤答の理由、用語メモを照合。場面への適用は独自作問（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://support.google.com/chrome/answer/95617?hl=ja",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ技術／公開鍵基盤：サーバ証明書"
+      }
+    },
+    {
+      "questionId": "sg-practical2-net-03",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門②・予想問題（非公式）",
+      "sourceNumber": "II-NET-03",
+      "sourceUrl": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "ネット・ブラウザ"
+      ],
+      "difficulty": 1,
+      "learningTrack": "practical",
+      "practicalSet": 2,
+      "learningOrder": 3,
+      "concept": "Cookie",
+      "termNotes": [
+        {
+          "term": "Cookie",
+          "meaning": "サイトがブラウザに保存する小さな情報。ログイン状態の維持などにも使う。"
+        },
+        {
+          "term": "セッション",
+          "meaning": "ログイン後などに、利用者とサービスのやり取りが続いている状態。"
+        }
+      ],
+      "stem": "ログイン状態を示すセッションIDを含むCookieが盗まれた。起こり得ることはどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "Cookieはお菓子なので、アカウントには影響しない"
+        },
+        {
+          "id": "イ",
+          "text": "二要素認証があれば、盗まれたログイン状態は必ず使えない"
+        },
+        {
+          "id": "ウ",
+          "text": "Cookieが盗まれると、すべてのファイルが自動で安全になる"
+        },
+        {
+          "id": "エ",
+          "text": "攻撃者が、ログイン済みの本人になりすまして利用する"
+        }
+      ],
+      "correctOptionId": "エ",
+      "explanation": "セッションは「ログインして利用している状態」。その通行証がCookieに入っている場合、盗まれた通行証で入られることがある。Cookieの全てが通行証なのではなく、ここではセッションIDを含むものが対象。",
+      "optionExplanations": {
+        "ア": "ここでのCookieは、ブラウザとサイトが扱うデータ。",
+        "イ": "ログイン時の認証と、ログイン後のセッション保護は両方必要。",
+        "ウ": "Cookieの盗難にファイルを安全にする機能はない。",
+        "エ": "有効なセッションIDが、本人のログイン状態の悪用につながる場合がある。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面と専門用語を結び付ける独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ／セッションハイジャック・ネットワーク応用／cookie",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・機能・注意点と正解、全誤答の理由、用語メモを照合。場面への適用は独自作問（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ／セッションハイジャック・ネットワーク応用／cookie",
+        "additionalEvidenceUrls": [
+          "https://csrc.nist.gov/glossary/term/session_hijack_attack"
+        ]
+      }
+    },
+    {
+      "questionId": "sg-practical2-net-04",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門②・予想問題（非公式）",
+      "sourceNumber": "II-NET-04",
+      "sourceUrl": "https://support.google.com/chrome/answer/95464?hl=ja",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "ネット・ブラウザ"
+      ],
+      "difficulty": 1,
+      "learningTrack": "practical",
+      "practicalSet": 2,
+      "learningOrder": 4,
+      "concept": "シークレットモード",
+      "termNotes": [
+        {
+          "term": "シークレットモード",
+          "meaning": "終了後の端末内の閲覧履歴などを残しにくくするブラウザのモード。"
+        }
+      ],
+      "stem": "共用パソコンでシークレットモードを使った。適切な理解はどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "端末内に残す閲覧記録を減らせるが、サイトや通信事業者から見えなくなるとは限らない"
+        },
+        {
+          "id": "イ",
+          "text": "ダウンロードしたファイルも、必ず自動で消える"
+        },
+        {
+          "id": "ウ",
+          "text": "悪質なサイトが自動的に善良なサイトへ変わる"
+        },
+        {
+          "id": "エ",
+          "text": "ネット上で完全に匿名になり、誰にも利用を知られない"
+        }
+      ],
+      "correctOptionId": "ア",
+      "explanation": "家に残す足跡を減らしても、出かけた店の記録まで消えるわけではない。Chromeでは全シークレットウィンドウを閉じるとそのセッションが終わるが、保存したファイルやブックマークは残る。",
+      "optionExplanations": {
+        "ア": "端末内の記録の扱いと、通信先などから見える情報は別。",
+        "イ": "保存したファイルやブックマークは終了後も残る。",
+        "ウ": "閲覧モードでサイト運営者の性質は変わらない。",
+        "エ": "サイトやネットワーク管理者などが活動を把握する場合がある。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面と専門用語を結び付ける独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "ネットワーク応用／Webブラウザ・情報セキュリティ対策／プライバシーの関連知識",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・機能・注意点と正解、全誤答の理由、用語メモを照合。場面への適用は独自作問（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://support.google.com/chrome/answer/95464?hl=ja",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "ネットワーク応用／Webブラウザ・情報セキュリティ対策／プライバシーの関連知識"
+      }
+    },
+    {
+      "questionId": "sg-practical2-net-05",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門②・予想問題（非公式）",
+      "sourceNumber": "II-NET-05",
+      "sourceUrl": "https://csrc.nist.gov/glossary/term/virtual_private_network",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "ネット・ブラウザ"
+      ],
+      "difficulty": 2,
+      "learningTrack": "practical",
+      "practicalSet": 2,
+      "learningOrder": 5,
+      "concept": "VPN",
+      "termNotes": [
+        {
+          "term": "VPN",
+          "meaning": "公開ネットワーク上などに仮想的な専用の通信経路を作る仕組み。"
+        }
+      ],
+      "stem": "外出先で、通信を暗号化するVPNを使う。VPNについて適切な理解はどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "利用するVPN事業者も、必ず無条件に信用できる"
+        },
+        {
+          "id": "イ",
+          "text": "どんな偽サイトへパスワードを送っても、被害を完全に防げる"
+        },
+        {
+          "id": "ウ",
+          "text": "ダウンロードしたマルウェアを、必ず無害に変える"
+        },
+        {
+          "id": "エ",
+          "text": "VPNの保護区間を守るが、偽サイトや危険なファイルへの判断も必要"
+        }
+      ],
+      "correctOptionId": "エ",
+      "explanation": "VPNは保護されたトンネルのイメージ。トンネルを通っても、行き先が詐欺の店なら危険は残る。暗号化する区間を理解し、VPN事業者や接続先の確認も行う。",
+      "optionExplanations": {
+        "ア": "通信を通す事業者や設定も確かめる必要がある。",
+        "イ": "自分で偽サイトへ秘密を送る行為まで防ぐものではない。",
+        "ウ": "通信経路を守ることは、ファイルの無害化ではない。",
+        "エ": "VPNの経路保護と、接続先やファイルの安全性は別の問題。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面と専門用語を結び付ける独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "セキュリティ実装技術／ネットワークセキュリティ：VPN",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・機能・注意点と正解、全誤答の理由、用語メモを照合。場面への適用は独自作問（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://csrc.nist.gov/glossary/term/virtual_private_network",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "セキュリティ実装技術／ネットワークセキュリティ：VPN"
+      }
+    },
+    {
+      "questionId": "sg-practical2-net-06",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門②・予想問題（非公式）",
+      "sourceNumber": "II-NET-06",
+      "sourceUrl": "https://csrc.nist.gov/glossary/term/domain_name_server",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "ネット・ブラウザ"
+      ],
+      "difficulty": 2,
+      "learningTrack": "practical",
+      "practicalSet": 2,
+      "learningOrder": 6,
+      "concept": "DNS",
+      "termNotes": [
+        {
+          "term": "DNS",
+          "meaning": "ドメイン名に対応するIPアドレスなどを調べる仕組み。"
+        }
+      ],
+      "stem": "ブラウザにサイトのドメイン名を入力すると、DNSで接続先を調べる。DNSの基本的な役割はどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "全ての通信内容を必ず暗号化する"
+        },
+        {
+          "id": "イ",
+          "text": "商品の品質を保証する"
+        },
+        {
+          "id": "ウ",
+          "text": "名前に対応するIPアドレスなどを調べる"
+        },
+        {
+          "id": "エ",
+          "text": "利用者の指紋を照合する"
+        }
+      ],
+      "correctOptionId": "ウ",
+      "explanation": "DNSはネットの住所案内に似ている。店の名前から住所を調べるが、その店の商品まで検査するわけではない。名前の解決、通信の保護、本人確認を分けて考える。",
+      "optionExplanations": {
+        "ア": "通常のDNSによる名前の解決と、通信の暗号化は別の役割。",
+        "イ": "名前とアドレスの仕組みは、商品の品質の保証ではない。",
+        "ウ": "人が扱う名前と、接続に使うアドレスなどの対応を扱う。",
+        "エ": "指紋などの本人確認は、生体認証の役割。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面と専門用語を結び付ける独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "ネットワーク／インターネット技術：ドメイン・DNS",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・機能・注意点と正解、全誤答の理由、用語メモを照合。場面への適用は独自作問（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://csrc.nist.gov/glossary/term/domain_name_server",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "ネットワーク／インターネット技術：ドメイン・DNS"
+      }
+    },
+    {
+      "questionId": "sg-practical2-net-07",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門②・予想問題（非公式）",
+      "sourceNumber": "II-NET-07",
+      "sourceUrl": "https://csrc.nist.gov/glossary/term/ssid",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "ネット・ブラウザ"
+      ],
+      "difficulty": 2,
+      "learningTrack": "practical",
+      "practicalSet": 2,
+      "learningOrder": 7,
+      "concept": "SSID",
+      "termNotes": [
+        {
+          "term": "SSID",
+          "meaning": "無線LANのネットワークを識別する名前。"
+        }
+      ],
+      "stem": "スマートフォンのWi-Fi一覧に表示されるSSIDについて、適切な説明はどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "端末の指紋認証データそのもの"
+        },
+        {
+          "id": "イ",
+          "text": "無線LANを識別する名前で、その名前だけで接続先の安全性は保証されない"
+        },
+        {
+          "id": "ウ",
+          "text": "ログイン用の秘密パスワードそのもの"
+        },
+        {
+          "id": "エ",
+          "text": "サイトのサーバ証明書そのもの"
+        }
+      ],
+      "correctOptionId": "イ",
+      "explanation": "SSIDはお店の看板のような名前。看板だけで本物の店と断定できないので、接続先の案内や設定も確認する。試験では無線LANの識別子として覚える。",
+      "optionExplanations": {
+        "ア": "SSIDは身体の特徴を記録したデータではない。",
+        "イ": "SSIDは名前。同じ名前が設定される場合もあり、名前だけで相手を信用しない。",
+        "ウ": "接続時のパスワードと、ネットワーク名は別。",
+        "エ": "無線LANの名前と、Webサーバの証明書は別。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面と専門用語を結び付ける独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "ネットワーク／ネットワーク方式：無線LAN・SSID",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・機能・注意点と正解、全誤答の理由、用語メモを照合。場面への適用は独自作問（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://csrc.nist.gov/glossary/term/ssid",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "ネットワーク／ネットワーク方式：無線LAN・SSID"
+      }
+    },
+    {
+      "questionId": "sg-practical2-net-08",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門②・予想問題（非公式）",
+      "sourceNumber": "II-NET-08",
+      "sourceUrl": "https://csrc.nist.gov/glossary/term/firewall",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "ネット・ブラウザ"
+      ],
+      "difficulty": 2,
+      "learningTrack": "practical",
+      "practicalSet": 2,
+      "learningOrder": 8,
+      "concept": "ファイアウォール",
+      "termNotes": [
+        {
+          "term": "ファイアウォール",
+          "meaning": "決めたルールに従い、ネットワーク通信を通すか止めるか制御する仕組み。"
+        }
+      ],
+      "stem": "パソコンのファイアウォールが、通信を許可するか確認してきた。その基本的な役割はどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "全ての保存ファイルを自動で暗号化する"
+        },
+        {
+          "id": "イ",
+          "text": "全ての詐欺メールの内容を必ず見抜く"
+        },
+        {
+          "id": "ウ",
+          "text": "古いOSの脆弱性を必ず全部修正する"
+        },
+        {
+          "id": "エ",
+          "text": "通信をルールに従って許可・拒否する"
+        }
+      ],
+      "correctOptionId": "エ",
+      "explanation": "ファイアウォールは、通してよい通信を選ぶ門番のイメージ。知らないアプリの通信を理由も確かめず許可しない。更新やマルウェア対策も組み合わせる。",
+      "optionExplanations": {
+        "ア": "ファイル暗号化は別の仕組み。",
+        "イ": "通信制御だけで、全ての詐欺の内容を判断できるわけではない。",
+        "ウ": "OSの弱点を修正するのはセキュリティ更新などの役割。",
+        "エ": "接続や通信の流れを制御することが基本。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面と専門用語を結び付ける独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "セキュリティ実装技術／ファイアウォール・パケットフィルタリング",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・機能・注意点と正解、全誤答の理由、用語メモを照合。場面への適用は独自作問（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://csrc.nist.gov/glossary/term/firewall",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "セキュリティ実装技術／ファイアウォール・パケットフィルタリング"
+      }
+    },
+    {
+      "questionId": "sg-practical2-fraud-01",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門②・予想問題（非公式）",
+      "sourceNumber": "II-FRAUD-01",
+      "sourceUrl": "https://www.npa.go.jp/bureau/cyber/countermeasures/phishing.html",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "詐欺・危険ファイル"
+      ],
+      "difficulty": 1,
+      "learningTrack": "practical",
+      "practicalSet": 2,
+      "learningOrder": 1,
+      "concept": "フィッシング",
+      "termNotes": [
+        {
+          "term": "フィッシング",
+          "meaning": "本物を装って、偽サイトなどで認証情報や個人情報をだまし取る手口。"
+        }
+      ],
+      "stem": "銀行を名乗るメールに「口座を止めるので、リンクから確認」とある。フィッシングを避ける対応として適切なのはどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "メールへ暗証番号を返信する"
+        },
+        {
+          "id": "イ",
+          "text": "メールのリンクを使わず、いつもの公式アプリなどから確認する"
+        },
+        {
+          "id": "ウ",
+          "text": "銀行のロゴがあるので、すぐリンクへパスワードを入れる"
+        },
+        {
+          "id": "エ",
+          "text": "急がされているので、確認を省く"
+        }
+      ],
+      "correctOptionId": "イ",
+      "explanation": "フィッシングは、本物のふりをした入口へ誘う手口。看板や文章が自然でも、いつもの入口で確かめる。用語と「リンクから秘密を入力させる場面」を結び付けよう。",
+      "optionExplanations": {
+        "ア": "暗証番号を返信すれば秘密を漏らすことになる。",
+        "イ": "メッセージと独立した、確かな入口から確認する。",
+        "ウ": "ロゴは複製でき、送信元の正当性を保証しない。",
+        "エ": "焦らせる言葉は判断を急がせるためにも使われる。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面と専門用語を結び付ける独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ／サイバー攻撃手法：フィッシング",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・機能・注意点と正解、全誤答の理由、用語メモを照合。場面への適用は独自作問（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://www.npa.go.jp/bureau/cyber/countermeasures/phishing.html",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ／サイバー攻撃手法：フィッシング"
+      }
+    },
+    {
+      "questionId": "sg-practical2-fraud-02",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門②・予想問題（非公式）",
+      "sourceNumber": "II-FRAUD-02",
+      "sourceUrl": "https://www.npa.go.jp/bureau/cyber/countermeasures/phishing.html",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "詐欺・危険ファイル"
+      ],
+      "difficulty": 1,
+      "learningTrack": "practical",
+      "practicalSet": 2,
+      "learningOrder": 2,
+      "concept": "スミッシング",
+      "termNotes": [
+        {
+          "term": "スミッシング",
+          "meaning": "SMSを使って偽サイトなどへ誘導するフィッシング。"
+        }
+      ],
+      "stem": "配送会社を名乗るSMSに、再配達用のリンクが来た。スミッシングへの備えとして適切なのはどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "携帯電話に届いたので、送信者を確認せず認証コードを入れる"
+        },
+        {
+          "id": "イ",
+          "text": "SMSのリンクを開かず、公式アプリや既知の窓口から配送状況を確認する"
+        },
+        {
+          "id": "ウ",
+          "text": "SMSはメールより短いので、必ず本物と考える"
+        },
+        {
+          "id": "エ",
+          "text": "URLが書かれていれば、必ず配送会社が送ったと考える"
+        }
+      ],
+      "correctOptionId": "イ",
+      "explanation": "フィッシングのうち、SMSを使うものをスミッシングという。SMS＋フィッシングと結び付けると覚えやすい。配送の確認は、届いたリンクと別の入口から行う。",
+      "optionExplanations": {
+        "ア": "SMSもなりすましや偽サイトへの誘導に使われる。",
+        "イ": "SMSと別の確かな入口で確認する。",
+        "ウ": "文章の長さで送信者の正当性は決まらない。",
+        "エ": "URLは攻撃者も書けるため、それだけでは送信元を確認できない。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面と専門用語を結び付ける独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ／サイバー攻撃手法：フィッシング（スミッシング）",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・機能・注意点と正解、全誤答の理由、用語メモを照合。場面への適用は独自作問（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://www.npa.go.jp/bureau/cyber/countermeasures/phishing.html",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ／サイバー攻撃手法：フィッシング（スミッシング）",
+        "additionalEvidenceUrls": [
+          "https://www.npa.go.jp/hakusyo/r05/honbun/html/z3321000.html"
+        ]
+      }
+    },
+    {
+      "questionId": "sg-practical2-fraud-03",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門②・予想問題（非公式）",
+      "sourceNumber": "II-FRAUD-03",
+      "sourceUrl": "https://csrc.nist.gov/glossary/term/social_engineering",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "詐欺・危険ファイル"
+      ],
+      "difficulty": 1,
+      "learningTrack": "practical",
+      "practicalSet": 2,
+      "learningOrder": 3,
+      "concept": "ソーシャルエンジニアリング",
+      "termNotes": [
+        {
+          "term": "ソーシャルエンジニアリング",
+          "meaning": "人の信頼や焦りなどを利用して、秘密や権限を得ようとする手口。"
+        }
+      ],
+      "stem": "突然の電話で「サポート担当です。急いで認証コードを教えて」と言われた。ソーシャルエンジニアリングへの対応として適切なのはどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "丁寧な話し方なら、本人確認は不要と考える"
+        },
+        {
+          "id": "イ",
+          "text": "担当者と名乗ったので、全てのコードを渡す"
+        },
+        {
+          "id": "ウ",
+          "text": "コードを渡さず、普段の公式窓口から依頼が本物か確認する"
+        },
+        {
+          "id": "エ",
+          "text": "急いでいる相手ほど信用できるので、パスワードも渡す"
+        }
+      ],
+      "correctOptionId": "ウ",
+      "explanation": "機械の弱点ではなく、人の「信じる」「焦る」を利用するのがソーシャルエンジニアリング。顔見知りを装ったり、権威を名乗ったりする場合もある。別の確かな窓口で確認する。",
+      "optionExplanations": {
+        "ア": "話し方の丁寧さは、正当な担当者である証明ではない。",
+        "イ": "肩書きは誰でも名乗れる。",
+        "ウ": "相手の肩書きや急がせる言葉だけで、秘密を渡さない。",
+        "エ": "急がせることは、確認を省かせるためにも使われる。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面と専門用語を結び付ける独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ／脅威：ソーシャルエンジニアリング",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・機能・注意点と正解、全誤答の理由、用語メモを照合。場面への適用は独自作問（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://csrc.nist.gov/glossary/term/social_engineering",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ／脅威：ソーシャルエンジニアリング"
+      }
+    },
+    {
+      "questionId": "sg-practical2-fraud-04",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門②・予想問題（非公式）",
+      "sourceNumber": "II-FRAUD-04",
+      "sourceUrl": "https://www.ipa.go.jp/security/anshin/attention/2017/mgdayori20170427.html",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "詐欺・危険ファイル"
+      ],
+      "difficulty": 1,
+      "learningTrack": "practical",
+      "practicalSet": 2,
+      "learningOrder": 4,
+      "concept": "ドライブバイダウンロード",
+      "termNotes": [
+        {
+          "term": "ドライブバイダウンロード",
+          "meaning": "Webの閲覧時などに弱点を悪用し、不正プログラムを取り込ませる攻撃。"
+        }
+      ],
+      "stem": "サイトを見ただけで、ドライブバイダウンロード攻撃を受ける場合がある。この攻撃について適切な理解はどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "保存ボタンを押さなければ、どんな環境でも絶対に感染しない"
+        },
+        {
+          "id": "イ",
+          "text": "サイトを見るだけで、全ての端末が必ず感染する"
+        },
+        {
+          "id": "ウ",
+          "text": "ブラウザの色を変えれば、全ての攻撃を防げる"
+        },
+        {
+          "id": "エ",
+          "text": "ブラウザなどの脆弱性が悪用される場合があるため、更新などの対策も必要"
+        }
+      ],
+      "correctOptionId": "エ",
+      "explanation": "ドライブバイダウンロードは、通りがかりの閲覧でも起こり得る攻撃。常に感染するという意味ではない。ブラウザ・OSを更新し、不審なサイトや警告を避ける。",
+      "optionExplanations": {
+        "ア": "自分で保存操作をしていなくても、悪用される場合がある。",
+        "イ": "攻撃の有無や端末の状態により異なり、閲覧だけで必ず感染するわけではない。",
+        "ウ": "表示色の変更は、ソフトウェアの弱点を修正しない。",
+        "エ": "Webの閲覧処理で弱点を悪用されることがあり、更新はリスクを減らす。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面と専門用語を結び付ける独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ／サイバー攻撃手法：ドライブバイダウンロード",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・機能・注意点と正解、全誤答の理由、用語メモを照合。場面への適用は独自作問（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://www.ipa.go.jp/security/anshin/attention/2017/mgdayori20170427.html",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ／サイバー攻撃手法：ドライブバイダウンロード",
+        "additionalEvidenceUrls": [
+          "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf"
+        ]
+      }
+    },
+    {
+      "questionId": "sg-practical2-fraud-05",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門②・予想問題（非公式）",
+      "sourceNumber": "II-FRAUD-05",
+      "sourceUrl": "https://csrc.nist.gov/glossary/term/vulnerability",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "詐欺・危険ファイル"
+      ],
+      "difficulty": 2,
+      "learningTrack": "practical",
+      "practicalSet": 2,
+      "learningOrder": 5,
+      "concept": "脆弱性",
+      "termNotes": [
+        {
+          "term": "脆弱性",
+          "meaning": "攻撃などで悪用される可能性のある、システムや手順の弱点。"
+        }
+      ],
+      "stem": "動画再生アプリに「ファイル処理の脆弱性を修正する更新」が来た。この修正の目的として適切なのはどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "細工されたファイルの処理などで悪用される弱点をふさぐ"
+        },
+        {
+          "id": "イ",
+          "text": "動画の再生時間を必ず短くする"
+        },
+        {
+          "id": "ウ",
+          "text": "ネット上の全てのファイルを無害に変える"
+        },
+        {
+          "id": "エ",
+          "text": "動画の内容が必ず正しいと保証する"
+        }
+      ],
+      "correctOptionId": "ア",
+      "explanation": "脆弱性は「悪用される弱点」。動画やPDFを処理するアプリも、弱点を修正する更新が必要になる場合がある。ファイルの種類だけに頼らず、使うアプリも更新する。",
+      "optionExplanations": {
+        "ア": "処理の弱点を修正し、攻撃されるリスクを減らす。",
+        "イ": "更新の目的は弱点の修正で、再生時間の変更とは限らない。",
+        "ウ": "更新が他の全てのファイルを改変するわけではない。",
+        "エ": "ソフトウェアの弱点の修正は、動画の主張の真偽の判定ではない。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面と専門用語を結び付ける独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ／脆弱性・技術的セキュリティ対策／脆弱性管理",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・機能・注意点と正解、全誤答の理由、用語メモを照合。場面への適用は独自作問（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://csrc.nist.gov/glossary/term/vulnerability",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ／脆弱性・技術的セキュリティ対策／脆弱性管理"
+      }
+    },
+    {
+      "questionId": "sg-practical2-fraud-06",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門②・予想問題（非公式）",
+      "sourceNumber": "II-FRAUD-06",
+      "sourceUrl": "https://support.microsoft.com/en-us/office/vba/enable-or-disable-macros-in-microsoft-365-files",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "詐欺・危険ファイル"
+      ],
+      "difficulty": 2,
+      "learningTrack": "practical",
+      "practicalSet": 2,
+      "learningOrder": 6,
+      "concept": "マクロ",
+      "termNotes": [
+        {
+          "term": "マクロ",
+          "meaning": "Officeなどで、繰り返す操作を自動化するための命令のまとまり。"
+        }
+      ],
+      "stem": "知らない相手から来たOfficeファイルに「表示にはマクロの有効化が必要」とある。適切な対応はどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "添付ファイルなら、マクロは必ず安全である"
+        },
+        {
+          "id": "イ",
+          "text": "表示のためなら、全てのマクロを無条件に有効にする"
+        },
+        {
+          "id": "ウ",
+          "text": "マクロは文字の飾りなので、実行しても影響がない"
+        },
+        {
+          "id": "エ",
+          "text": "有効化せず、送信元や必要性を確かな方法で確認する"
+        }
+      ],
+      "correctOptionId": "エ",
+      "explanation": "マクロは作業をまとめて実行する台本のイメージ。便利な台本もあるが、悪い命令を入れることもできる。知らない台本を、内容や相手を確認せず動かさない。",
+      "optionExplanations": {
+        "ア": "添付されたことは、内容が安全である証明にならない。",
+        "イ": "危険な処理を実行させる誘導の場合がある。",
+        "ウ": "マクロは自動処理の命令で、表示の飾りではない。",
+        "エ": "マクロは処理を実行できるため、不明なものを許可しない。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面と専門用語を結び付ける独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ／マルウェア：マクロウイルス",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・機能・注意点と正解、全誤答の理由、用語メモを照合。場面への適用は独自作問（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://support.microsoft.com/en-us/office/vba/enable-or-disable-macros-in-microsoft-365-files",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ／マルウェア：マクロウイルス"
+      }
+    },
+    {
+      "questionId": "sg-practical2-fraud-07",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門②・予想問題（非公式）",
+      "sourceNumber": "II-FRAUD-07",
+      "sourceUrl": "https://support.google.com/chrome/answer/2664769?hl=ja",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "詐欺・危険ファイル"
+      ],
+      "difficulty": 2,
+      "learningTrack": "practical",
+      "practicalSet": 2,
+      "learningOrder": 7,
+      "concept": "アクセス権",
+      "termNotes": [
+        {
+          "term": "アクセス権",
+          "meaning": "情報や機能を読んだり変更したりしてよい範囲の許可。"
+        }
+      ],
+      "stem": "ブラウザ拡張機能が「全てのサイトのデータを読み取り、変更する」アクセス権を求めた。適切な判断はどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "便利そうなら、用途を確かめず全権限を許可する"
+        },
+        {
+          "id": "イ",
+          "text": "必要性と提供元を確認し、許可範囲を絞れるか検討する"
+        },
+        {
+          "id": "ウ",
+          "text": "無料なら、どんなアクセス権でも安全と考える"
+        },
+        {
+          "id": "エ",
+          "text": "拡張機能はブラウザ内なので、ページを読むことはできないと考える"
+        }
+      ],
+      "correctOptionId": "イ",
+      "explanation": "アクセス権は、アプリへ渡す鍵の範囲。拡張機能ごとに何ができるか異なるので、必要な鍵だけ渡す。用途に不要な権限を求める場合は、追加を見送ることも考える。",
+      "optionExplanations": {
+        "ア": "必要以上の許可は、漏えいや悪用の範囲を広げ得る。",
+        "イ": "拡張機能に渡す情報や操作の範囲を理解して判断する。",
+        "ウ": "料金は、権限の必要性や安全性を保証しない。",
+        "エ": "許可された範囲でページのデータを読んだり変更したりする機能もある。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面と専門用語を結び付ける独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ管理／利用者アクセス権・技術的対策／最小権限",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・機能・注意点と正解、全誤答の理由、用語メモを照合。場面への適用は独自作問（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://support.google.com/chrome/answer/2664769?hl=ja",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ管理／利用者アクセス権・技術的対策／最小権限"
+      }
+    },
+    {
+      "questionId": "sg-practical2-fraud-08",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門②・予想問題（非公式）",
+      "sourceNumber": "II-FRAUD-08",
+      "sourceUrl": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-4.pdf",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "詐欺・危険ファイル"
+      ],
+      "difficulty": 2,
+      "learningTrack": "practical",
+      "practicalSet": 2,
+      "learningOrder": 8,
+      "concept": "ディープフェイク",
+      "termNotes": [
+        {
+          "term": "ディープフェイク",
+          "meaning": "AIなどで本物のように見える顔・声・動画などを合成する技術やコンテンツ。"
+        }
+      ],
+      "stem": "上司そっくりの声で「急いで送金して」と電話が来た。ディープフェイクを使うなりすましにも備える対応はどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "声が似ていれば、本人と断定して送金する"
+        },
+        {
+          "id": "イ",
+          "text": "電話で聞いた新しい口座だけを信用する"
+        },
+        {
+          "id": "ウ",
+          "text": "既知の連絡先や社内の承認手順で、依頼を独立して確認する"
+        },
+        {
+          "id": "エ",
+          "text": "急ぎの依頼なら、普段の承認を省く"
+        }
+      ],
+      "correctOptionId": "ウ",
+      "explanation": "ディープフェイクでは、顔や声も本物らしく作れる。全ての電話が偽物という意味ではないが、声だけで決めず、普段の窓口と承認手順を使う。",
+      "optionExplanations": {
+        "ア": "似た声だけでは、本人と確認できない場合がある。",
+        "イ": "依頼者が伝えた情報だけで確認を完結させない。",
+        "ウ": "声以外の確かな経路や手順を組み合わせて確認する。",
+        "エ": "急がせることで確認を省かせる手口もある。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面と専門用語を結び付ける独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ／AIを悪用した攻撃・ディープフェイク・ビジネスメール詐欺",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・機能・注意点と正解、全誤答の理由、用語メモを照合。場面への適用は独自作問（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-4.pdf",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ／AIを悪用した攻撃・ディープフェイク・ビジネスメール詐欺"
+      }
+    },
+    {
+      "questionId": "sg-practical2-cloud-01",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門②・予想問題（非公式）",
+      "sourceNumber": "II-CLOUD-01",
+      "sourceUrl": "https://support.google.com/drive/answer/2494822?hl=ja",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "クラウド・AI"
+      ],
+      "difficulty": 1,
+      "learningTrack": "practical",
+      "practicalSet": 2,
+      "learningOrder": 1,
+      "concept": "アクセス制御",
+      "termNotes": [
+        {
+          "term": "アクセス制御",
+          "meaning": "誰がどの情報や機能を利用できるかを制限する仕組み。"
+        }
+      ],
+      "stem": "社内資料の共有リンクを作る。アクセス制御の観点で、社外へ広げない設定はどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "必要な社内の利用者だけに、必要な閲覧権限を与える"
+        },
+        {
+          "id": "イ",
+          "text": "URLが長ければ、誰でも見られる設定でも必ず安全と考える"
+        },
+        {
+          "id": "ウ",
+          "text": "社内資料というファイル名にするだけで、共有設定は確認しない"
+        },
+        {
+          "id": "エ",
+          "text": "リンクを知っている全員に編集を許可する"
+        }
+      ],
+      "correctOptionId": "ア",
+      "explanation": "アクセス制御は、資料室に入れる人とできる操作を決める仕組み。共有リンクだけでなく、親フォルダやグループの許可も確認する。閲覧者にもコピーなどが可能な場合があるため、必要な相手へ絞る。",
+      "optionExplanations": {
+        "ア": "共有相手と許可する操作を、必要な範囲に制限する。",
+        "イ": "URLの長さは、相手を指定するアクセス制御の代わりではない。",
+        "ウ": "名前だけでは、閲覧可能な人は制限されない。",
+        "エ": "リンクの転送などで閲覧・編集できる範囲が広がり得る。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面と専門用語を結び付ける独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ管理／アクセス権の管理・クラウドサービスの利用",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・機能・注意点と正解、全誤答の理由、用語メモを照合。場面への適用は独自作問（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://support.google.com/drive/answer/2494822?hl=ja",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ管理／アクセス権の管理・クラウドサービスの利用"
+      }
+    },
+    {
+      "questionId": "sg-practical2-cloud-02",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門②・予想問題（非公式）",
+      "sourceNumber": "II-CLOUD-02",
+      "sourceUrl": "https://datatracker.ietf.org/doc/html/rfc6749",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "クラウド・AI"
+      ],
+      "difficulty": 1,
+      "learningTrack": "practical",
+      "practicalSet": 2,
+      "learningOrder": 2,
+      "concept": "OAuth",
+      "termNotes": [
+        {
+          "term": "OAuth",
+          "meaning": "外部アプリへ、本人のパスワードを渡さず、許可した範囲のアクセスを委ねる仕組み。"
+        }
+      ],
+      "stem": "クラウド連携アプリがOAuthでアクセスを求めた。許可する前に確認したいことはどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "OAuthという名前だけを信用し、要求する権限を確認しない"
+        },
+        {
+          "id": "イ",
+          "text": "自分のパスワードを、そのアプリの作者へ直接送る手順"
+        },
+        {
+          "id": "ウ",
+          "text": "アプリのアイコンが好みかだけ"
+        },
+        {
+          "id": "エ",
+          "text": "提供元と、どの情報へ何の操作を許可するのか"
+        }
+      ],
+      "correctOptionId": "エ",
+      "explanation": "OAuthは、全部の鍵を渡さず、許可した範囲の通行証を渡すイメージ。ログインを助ける仕組みと組み合わせることもあるが、OAuth自体はアクセスを委任するための枠組み。許可画面を読む。",
+      "optionExplanations": {
+        "ア": "仕組みの名前だけでは、提供元や権限の妥当性は決まらない。",
+        "イ": "OAuthは、本人のパスワードを外部アプリへ渡すための仕組みではない。",
+        "ウ": "見た目だけでは、情報へのアクセス範囲を判断できない。",
+        "エ": "アクセスの委任でも、相手と許可範囲を判断する必要がある。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面と専門用語を結び付ける独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ管理／アクセス管理・外部サービス利用の関連知識",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・機能・注意点と正解、全誤答の理由、用語メモを照合。場面への適用は独自作問（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://datatracker.ietf.org/doc/html/rfc6749",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ管理／アクセス管理・外部サービス利用の関連知識"
+      }
+    },
+    {
+      "questionId": "sg-practical2-cloud-03",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門②・予想問題（非公式）",
+      "sourceNumber": "II-CLOUD-03",
+      "sourceUrl": "https://learn.microsoft.com/en-us/azure/security/fundamentals/shared-responsibility",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "クラウド・AI"
+      ],
+      "difficulty": 1,
+      "learningTrack": "practical",
+      "practicalSet": 2,
+      "learningOrder": 3,
+      "concept": "責任共有モデル",
+      "termNotes": [
+        {
+          "term": "責任共有モデル",
+          "meaning": "クラウドの安全性について、提供者と利用者が担当する範囲を分けて考えるモデル。"
+        }
+      ],
+      "stem": "クラウドの責任共有モデルでは、利用者が担うこととして適切なのはどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "ログイン情報を一般公開して、管理を省く"
+        },
+        {
+          "id": "イ",
+          "text": "自分のデータの扱いや、利用者の権限・設定を適切に管理する"
+        },
+        {
+          "id": "ウ",
+          "text": "クラウドなら、利用者の設定ミスも全て提供者が防ぐと考える"
+        },
+        {
+          "id": "エ",
+          "text": "提供者の建物の入口の鍵を、全利用者が自分で交換する"
+        }
+      ],
+      "correctOptionId": "イ",
+      "explanation": "責任共有モデルは、借りた部屋で「建物の管理」と「自分の鍵や荷物の管理」を分けるような考え方。分担はサービスによって異なり、クラウドに置いたら全てお任せ、とはならない。",
+      "optionExplanations": {
+        "ア": "認証情報の公開は、不正利用を招く。",
+        "イ": "提供者に任せる範囲があっても、利用者の情報や設定の責任は残る。",
+        "ウ": "共有範囲などの設定は、利用者側も管理しなければならない。",
+        "エ": "物理的なデータセンターの保護は通常、提供者が担当する。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面と専門用語を結び付ける独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ管理／クラウドサービスの責任共有モデル",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・機能・注意点と正解、全誤答の理由、用語メモを照合。場面への適用は独自作問（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://learn.microsoft.com/en-us/azure/security/fundamentals/shared-responsibility",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ管理／クラウドサービスの責任共有モデル"
+      }
+    },
+    {
+      "questionId": "sg-practical2-cloud-04",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門②・予想問題（非公式）",
+      "sourceNumber": "II-CLOUD-04",
+      "sourceUrl": "https://support.microsoft.com/en-us/onedrive/save-disk-space-with-onedrive-files-on-demand-for-windows",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "クラウド・AI"
+      ],
+      "difficulty": 1,
+      "learningTrack": "practical",
+      "practicalSet": 2,
+      "learningOrder": 4,
+      "concept": "同期",
+      "termNotes": [
+        {
+          "term": "同期",
+          "meaning": "複数の場所のデータを、変更に合わせてそろえる処理。"
+        }
+      ],
+      "stem": "ファイルをクラウドと同期している。端末で削除した変更もクラウドへ反映される設定で、誤削除に備える考え方はどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "同期という言葉があれば、過去の全状態を永久に復元できる"
+        },
+        {
+          "id": "イ",
+          "text": "同じ同期フォルダ内にコピーすれば、全ての事故から必ず守れる"
+        },
+        {
+          "id": "ウ",
+          "text": "同期していれば、削除は絶対にクラウドへ反映されない"
+        },
+        {
+          "id": "エ",
+          "text": "同期だけに頼らず、復元できる世代や別のバックアップも確かめる"
+        }
+      ],
+      "correctOptionId": "エ",
+      "explanation": "同期は、両方のノートを同じ内容にそろえること。消した内容までそろう場合がある。バックアップは以前の状態を取り戻すための備えで、復元できる範囲と期間を確かめる。",
+      "optionExplanations": {
+        "ア": "復元できる期間や世代は、サービスや設定により異なる。",
+        "イ": "同じ変更や事故の影響を受ける場所だけでは不十分な場合がある。",
+        "ウ": "この設定では、削除の変更も反映される。",
+        "エ": "そろえる仕組みと、過去の状態を取り戻す仕組みを区別する。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面と専門用語を結び付ける独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ継続／バックアップ・ネットワーク応用／クラウドストレージ",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・機能・注意点と正解、全誤答の理由、用語メモを照合。場面への適用は独自作問（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://support.microsoft.com/en-us/onedrive/save-disk-space-with-onedrive-files-on-demand-for-windows",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ継続／バックアップ・ネットワーク応用／クラウドストレージ"
+      }
+    },
+    {
+      "questionId": "sg-practical2-cloud-05",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門②・予想問題（非公式）",
+      "sourceNumber": "II-CLOUD-05",
+      "sourceUrl": "https://proton.me/support/proton-mail-encryption-explained",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "クラウド・AI"
+      ],
+      "difficulty": 2,
+      "learningTrack": "practical",
+      "practicalSet": 2,
+      "learningOrder": 5,
+      "concept": "E2EE",
+      "termNotes": [
+        {
+          "term": "E2EE",
+          "meaning": "送信側から受信側まで、内容を中継サーバに読ませないようにするエンドツーエンド暗号化。"
+        }
+      ],
+      "stem": "メッセージの本文をE2EEで保護している。適切な理解はどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "端末が不正に操作されても、本文は必ず守られる"
+        },
+        {
+          "id": "イ",
+          "text": "全てのサービスで、宛先などの付随情報も必ず全て隠れる"
+        },
+        {
+          "id": "ウ",
+          "text": "受信者が画面を撮っても、内容は必ず漏れない"
+        },
+        {
+          "id": "エ",
+          "text": "本文を中継側に読ませにくくするが、送受信端末や受信後の扱いも守る必要がある"
+        }
+      ],
+      "correctOptionId": "エ",
+      "explanation": "E2EEは、渡す相手だけが開ける封筒に似ている。相手が開封した後の画面や、封筒の宛名まで全て守るとは限らない。対象の内容・端末・付随情報を分けて理解する。",
+      "optionExplanations": {
+        "ア": "端末で読める状態の内容が、不正に取得される場合がある。",
+        "イ": "どの付随情報まで保護するかは、サービスや設計で異なる。",
+        "ウ": "読める状態になった画面を、受信者が複製できる場合がある。",
+        "エ": "端末や受信者の扱いは、通信中の暗号化とは別の保護が必要。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面と専門用語を結び付ける独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ技術／暗号化・情報漏えい対策の関連知識",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・機能・注意点と正解、全誤答の理由、用語メモを照合。場面への適用は独自作問（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://proton.me/support/proton-mail-encryption-explained",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ技術／暗号化・情報漏えい対策の関連知識"
+      }
+    },
+    {
+      "questionId": "sg-practical2-cloud-06",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門②・予想問題（非公式）",
+      "sourceNumber": "II-CLOUD-06",
+      "sourceUrl": "https://csrc.nist.gov/glossary/term/confidentiality",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "クラウド・AI"
+      ],
+      "difficulty": 2,
+      "learningTrack": "practical",
+      "practicalSet": 2,
+      "learningOrder": 6,
+      "concept": "機密性",
+      "termNotes": [
+        {
+          "term": "機密性",
+          "meaning": "許可されていない相手に情報を見せない性質。"
+        }
+      ],
+      "stem": "仕事の資料を外部の生成AIへ入力したい。機密性を守るために適切な行動はどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "社内ルールと許可される情報・サービスを確認し、不明なら入力せず相談する"
+        },
+        {
+          "id": "イ",
+          "text": "便利なAIなら、全ての社内資料を無条件に入れる"
+        },
+        {
+          "id": "ウ",
+          "text": "AIには人間がいないので、情報が外へ渡ることはないと考える"
+        },
+        {
+          "id": "エ",
+          "text": "無料サービスなら、機密性の確認は不要と考える"
+        }
+      ],
+      "correctOptionId": "ア",
+      "explanation": "機密性は、見せてよい相手だけに見せること。生成AIも外部サービスとして考え、入力してよい情報と利用方法を確認する。名前を消しただけで、全ての機密情報がなくなるとは限らない。",
+      "optionExplanations": {
+        "ア": "外部サービスへ渡す情報は、許可と扱いを確認する必要がある。",
+        "イ": "便利さは、情報を渡してよい許可にはならない。",
+        "ウ": "入力は外部のシステムで処理・保存される場合があり、扱いの確認が必要。",
+        "エ": "料金と、情報の扱いや利用許可は別。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面と専門用語を結び付ける独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティの目的／機密性・情報管理・外部サービス利用",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・機能・注意点と正解、全誤答の理由、用語メモを照合。場面への適用は独自作問（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://csrc.nist.gov/glossary/term/confidentiality",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティの目的／機密性・情報管理・外部サービス利用",
+        "additionalEvidenceUrls": [
+          "https://www.ipa.go.jp/jinzai/ics/core_human_resource/final_project/2024/f55m8k0000003spo-att/f55m8k0000003svn.pdf"
+        ]
+      }
+    },
+    {
+      "questionId": "sg-practical2-cloud-07",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門②・予想問題（非公式）",
+      "sourceNumber": "II-CLOUD-07",
+      "sourceUrl": "https://csrc.nist.gov/pubs/sp/800/188/final",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "クラウド・AI"
+      ],
+      "difficulty": 2,
+      "learningTrack": "practical",
+      "practicalSet": 2,
+      "learningOrder": 7,
+      "concept": "再識別",
+      "termNotes": [
+        {
+          "term": "再識別",
+          "meaning": "名前などを除いた情報から、他の手掛かりを組み合わせて個人を特定し直すこと。"
+        }
+      ],
+      "stem": "資料から名前を消したが、細かい住所や生年月日が残っている。再識別のリスクについて適切な理解はどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "名前がなければ、どんな情報を残しても絶対に本人は分からない"
+        },
+        {
+          "id": "イ",
+          "text": "ファイル名を変えるだけで、再識別を必ず防げる"
+        },
+        {
+          "id": "ウ",
+          "text": "住所や生年月日は、個人の手掛かりには絶対にならない"
+        },
+        {
+          "id": "エ",
+          "text": "残った情報や別の情報との組合せで、本人が分かる場合がある"
+        }
+      ],
+      "correctOptionId": "エ",
+      "explanation": "再識別は、名札を外しても、服装や住所などの手掛かりから人が分かるイメージ。名前を消すだけで安全と決めず、残す情報と公開先、照合される可能性も考える。",
+      "optionExplanations": {
+        "ア": "名前の削除だけでは、識別されるリスクをなくしたとは限らない。",
+        "イ": "ファイル名を変えても、中の情報は残る。",
+        "ウ": "他の情報と合わせて、個人を絞り込める場合がある。",
+        "エ": "直接の名前を削除しても、他の手掛かりの組合せが残る場合がある。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面と専門用語を結び付ける独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "技術的セキュリティ対策／匿名化・データマスキング・情報漏えい対策",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・機能・注意点と正解、全誤答の理由、用語メモを照合。場面への適用は独自作問（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://csrc.nist.gov/pubs/sp/800/188/final",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "技術的セキュリティ対策／匿名化・データマスキング・情報漏えい対策"
+      }
+    },
+    {
+      "questionId": "sg-practical2-cloud-08",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門②・予想問題（非公式）",
+      "sourceNumber": "II-CLOUD-08",
+      "sourceUrl": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "クラウド・AI"
+      ],
+      "difficulty": 2,
+      "learningTrack": "practical",
+      "practicalSet": 2,
+      "learningOrder": 8,
+      "concept": "プロンプトインジェクション",
+      "termNotes": [
+        {
+          "term": "プロンプトインジェクション",
+          "meaning": "外部の文章などへ命令を仕込み、AIの動作を本来の依頼からそらそうとする攻撃。"
+        }
+      ],
+      "stem": "AIにページを要約させると、そのページ内に別の操作を強制する文章があった。プロンプトインジェクションへの備えとして適切なのはどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "ページの文章を本人の指示と区別し、重要な外部操作や情報の送信を確認する"
+        },
+        {
+          "id": "イ",
+          "text": "ページに従い、秘密情報を無条件に送信する"
+        },
+        {
+          "id": "ウ",
+          "text": "読んだページの命令なら、元の依頼より必ず優先する"
+        },
+        {
+          "id": "エ",
+          "text": "AIなら、外部の文章から動作を誘導されることは絶対にない"
+        }
+      ],
+      "correctOptionId": "ア",
+      "explanation": "プロンプトインジェクションは、読ませる資料に「別のことをして」と混ぜる手口。外部の資料は命令の正当性まで保証しない。指示の区別だけで完全に防げるとは限らず、権限を絞り重要な操作を確認する。",
+      "optionExplanations": {
+        "ア": "外部データと信頼できる指示を区別し、権限や重要な操作も管理する。",
+        "イ": "本人が許可していない情報の送信は行わない。",
+        "ウ": "調べる対象の文章は、利用者が許可した指示とは限らない。",
+        "エ": "外部コンテンツを使うAIにも、動作を誘導されるリスクがある。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面と専門用語を結び付ける独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ／AIを悪用した攻撃：プロンプトインジェクション",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・機能・注意点と正解、全誤答の理由、用語メモを照合。場面への適用は独自作問（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ／AIを悪用した攻撃：プロンプトインジェクション"
+      }
+    },
+    {
+      "questionId": "sg-practical2-incident-01",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門②・予想問題（非公式）",
+      "sourceNumber": "II-INCIDENT-01",
+      "sourceUrl": "https://support.google.com/accounts/answer/6294825?hl=en",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "トラブル初動"
+      ],
+      "difficulty": 1,
+      "learningTrack": "practical",
+      "practicalSet": 2,
+      "learningOrder": 1,
+      "concept": "セッション",
+      "termNotes": [
+        {
+          "term": "セッション",
+          "meaning": "ログイン後などに、利用者とサービスのやり取りが続いている状態。"
+        }
+      ],
+      "stem": "アカウントに不審なログインを見つけた。パスワードの変更だけでなく、セッションの確認や終了も考える理由はどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "不審な端末へ、新しいパスワードを知らせるため"
+        },
+        {
+          "id": "イ",
+          "text": "パスワードを変えれば、全サービスで必ず全セッションが消える"
+        },
+        {
+          "id": "ウ",
+          "text": "不審な端末などのログイン状態を、無効にする必要がある場合がある"
+        },
+        {
+          "id": "エ",
+          "text": "セッションは保存した写真なので、まとめて公開するため"
+        }
+      ],
+      "correctOptionId": "ウ",
+      "explanation": "セッションは、ログイン後の通行証が有効な状態のイメージ。安全な端末から公式設定を確認し、見覚えのない端末・連携を見直す。パスワード変更だけで全サービスの状態が同じように変わるとは限らない。",
+      "optionExplanations": {
+        "ア": "新しい秘密を不審な相手へ渡してはいけない。",
+        "イ": "変更時のセッション処理は、サービスの仕様によって異なる。",
+        "ウ": "ログイン中の状態が残るかはサービスによって異なり、利用状況を確認する。",
+        "エ": "ここでのセッションは、利用中の認証状態などを指す。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面と専門用語を結び付ける独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティインシデント対応／不正アクセス・アカウント管理",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・機能・注意点と正解、全誤答の理由、用語メモを照合。場面への適用は独自作問（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://support.google.com/accounts/answer/6294825?hl=en",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティインシデント対応／不正アクセス・アカウント管理",
+        "additionalEvidenceUrls": [
+          "https://csrc.nist.gov/glossary/term/session"
+        ]
+      }
+    },
+    {
+      "questionId": "sg-practical2-incident-02",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門②・予想問題（非公式）",
+      "sourceNumber": "II-INCIDENT-02",
+      "sourceUrl": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r3.pdf",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "トラブル初動"
+      ],
+      "difficulty": 1,
+      "learningTrack": "practical",
+      "practicalSet": 2,
+      "learningOrder": 2,
+      "concept": "封じ込め",
+      "termNotes": [
+        {
+          "term": "封じ込め",
+          "meaning": "被害や攻撃がこれ以上広がらないよう、影響範囲を制限する対応。"
+        }
+      ],
+      "stem": "仕事のパソコンでマルウェア感染が疑われる。封じ込めの観点で適切な初動はどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "担当者に知られないよう、作業を続ける"
+        },
+        {
+          "id": "イ",
+          "text": "確認のため、別のパソコンにも同じ不審ファイルを開かせる"
+        },
+        {
+          "id": "ウ",
+          "text": "不審な状態のまま、共有フォルダへ次々に接続する"
+        },
+        {
+          "id": "エ",
+          "text": "組織の手順に従って接続を隔離し、担当者へ速やかに報告する"
+        }
+      ],
+      "correctOptionId": "エ",
+      "explanation": "封じ込めは、火が広がる前に範囲を区切るような対応。隔離方法や連絡先は組織の手順に従う。端末の電源操作などは証拠や業務にも影響するので、自己判断で繰り返さず担当者へ相談する。",
+      "optionExplanations": {
+        "ア": "発見や対応を遅らせ、被害を広げるおそれがある。",
+        "イ": "別の端末へ感染や被害を広げるおそれがある。",
+        "ウ": "共有先などへの影響を広げ得る。",
+        "エ": "被害拡大を抑え、担当者が状況を判断できるようにする。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面と専門用語を結び付ける独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティインシデント管理／被害拡大の防止：封じ込め（RS.MI-01）",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・機能・注意点と正解、全誤答の理由、用語メモを照合。場面への適用は独自作問（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r3.pdf",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティインシデント管理／被害拡大の防止：封じ込め（RS.MI-01）"
+      }
+    },
+    {
+      "questionId": "sg-practical2-incident-03",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門②・予想問題（非公式）",
+      "sourceNumber": "II-INCIDENT-03",
+      "sourceUrl": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r3.pdf",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "トラブル初動"
+      ],
+      "difficulty": 1,
+      "learningTrack": "practical",
+      "practicalSet": 2,
+      "learningOrder": 3,
+      "concept": "証拠保全",
+      "termNotes": [
+        {
+          "term": "証拠保全",
+          "meaning": "原因や被害を調べるための記録などを、壊したり失ったりしないように守ること。"
+        }
+      ],
+      "stem": "不審な操作を見つけ、証拠保全が必要になった。適切な行動はどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "機密情報を含む画面を、公開SNSへそのまま投稿する"
+        },
+        {
+          "id": "イ",
+          "text": "証拠を確認するため、不審ファイルを何度も実行する"
+        },
+        {
+          "id": "ウ",
+          "text": "発見時刻や状況を記録し、ログなどを消さずに担当者へ伝える"
+        },
+        {
+          "id": "エ",
+          "text": "不審なログを、調査前に全て削除する"
+        }
+      ],
+      "correctOptionId": "ウ",
+      "explanation": "証拠保全は、何が起きたかを調べる手掛かりを守ること。時刻・表示・行った操作を記録し、ログの削除や無断の再実行を避ける。記録を見る人も適切に制限する。",
+      "optionExplanations": {
+        "ア": "調査記録にも秘密が含まれ得るため、公開せず適切に管理する。",
+        "イ": "実行によって状態が変わったり、被害が広がったりするおそれがある。",
+        "ウ": "経緯を調べるための記録を守り、適切な担当者へ渡す。",
+        "エ": "原因や被害の確認に必要な記録を失う。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面と専門用語を結び付ける独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティインシデント管理／記録・証拠保全（RS.AN-06・07）",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・機能・注意点と正解、全誤答の理由、用語メモを照合。場面への適用は独自作問（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r3.pdf",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティインシデント管理／記録・証拠保全（RS.AN-06・07）"
+      }
+    },
+    {
+      "questionId": "sg-practical2-incident-04",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門②・予想問題（非公式）",
+      "sourceNumber": "II-INCIDENT-04",
+      "sourceUrl": "https://support.google.com/accounts/answer/6160491?hl=en",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "トラブル初動"
+      ],
+      "difficulty": 1,
+      "learningTrack": "practical",
+      "practicalSet": 2,
+      "learningOrder": 4,
+      "concept": "リモートワイプ",
+      "termNotes": [
+        {
+          "term": "リモートワイプ",
+          "meaning": "遠隔から端末のデータを消す機能。"
+        }
+      ],
+      "stem": "紛失したスマートフォンへの備えとして、リモートワイプを確認する。この機能の基本的な役割はどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "拾った人の身元を、必ず特定する"
+        },
+        {
+          "id": "イ",
+          "text": "紛失した端末の全データを、必ず新端末へ復元する"
+        },
+        {
+          "id": "ウ",
+          "text": "遠隔から端末のデータを消し、情報が見られるリスクを減らす"
+        },
+        {
+          "id": "エ",
+          "text": "ネットにつながらない端末でも、どんな条件でも必ず即座に消す"
+        }
+      ],
+      "correctOptionId": "ウ",
+      "explanation": "リモートワイプは、離れた場所からデータを消すこと。消したデータを戻すためのバックアップとは別なので、事前に両方を確認する。実行条件や消去範囲もサービスで異なる。",
+      "optionExplanations": {
+        "ア": "データ消去は、拾った人を特定する機能ではない。",
+        "イ": "消去と、別の端末への復元は別の機能。",
+        "ウ": "データを遠隔で消すための機能。条件や消去対象の確認も必要。",
+        "エ": "接続や端末設定など、サービスが示す利用条件がある。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面と専門用語を結び付ける独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "技術的セキュリティ対策／携帯端末のセキュリティ・MDMの関連知識",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・機能・注意点と正解、全誤答の理由、用語メモを照合。場面への適用は独自作問（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://support.google.com/accounts/answer/6160491?hl=en",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "技術的セキュリティ対策／携帯端末のセキュリティ・MDMの関連知識"
+      }
+    },
+    {
+      "questionId": "sg-practical2-incident-05",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門②・予想問題（非公式）",
+      "sourceNumber": "II-INCIDENT-05",
+      "sourceUrl": "https://csrc.nist.gov/glossary/term/availability",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "トラブル初動"
+      ],
+      "difficulty": 2,
+      "learningTrack": "practical",
+      "practicalSet": 2,
+      "learningOrder": 5,
+      "concept": "可用性",
+      "termNotes": [
+        {
+          "term": "可用性",
+          "meaning": "必要なときに、許可された人が情報やサービスを使える性質。"
+        }
+      ],
+      "stem": "予約表のバックアップはあるが、読み戻したことがない。可用性を確かめる備えとして適切なのはどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "予約表を誰でも編集できるようにすれば、全て解決すると考える"
+        },
+        {
+          "id": "イ",
+          "text": "復元に必要な鍵や手順を、全て捨てる"
+        },
+        {
+          "id": "ウ",
+          "text": "安全な方法で復元を試し、必要なときに使えるか確かめる"
+        },
+        {
+          "id": "エ",
+          "text": "保存したという表示だけで、必ず復元できると断定する"
+        }
+      ],
+      "correctOptionId": "ウ",
+      "explanation": "可用性は、必要なときに使えること。予備の鍵を作っただけでなく、実際に開けられるか確かめるように、復元を試す。試験では機密性・完全性と区別する。",
+      "optionExplanations": {
+        "ア": "利用可能性を確保することは、無制限の編集を許すことではない。",
+        "イ": "鍵や手順が必要な場合、捨てると復元できなくなるおそれがある。",
+        "ウ": "保存できることと、取り戻して使えることの両方を確認する。",
+        "エ": "内容の欠損や鍵・手順の不足などで使えない場合がある。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面と専門用語を結び付ける独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティの目的／可用性・情報セキュリティ継続／復旧",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・機能・注意点と正解、全誤答の理由、用語メモを照合。場面への適用は独自作問（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://csrc.nist.gov/glossary/term/availability",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティの目的／可用性・情報セキュリティ継続／復旧",
+        "additionalEvidenceUrls": [
+          "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf"
+        ]
+      }
+    },
+    {
+      "questionId": "sg-practical2-incident-06",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門②・予想問題（非公式）",
+      "sourceNumber": "II-INCIDENT-06",
+      "sourceUrl": "https://csrc.nist.gov/glossary/term/integrity",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "トラブル初動"
+      ],
+      "difficulty": 2,
+      "learningTrack": "practical",
+      "practicalSet": 2,
+      "learningOrder": 6,
+      "concept": "完全性",
+      "termNotes": [
+        {
+          "term": "完全性",
+          "meaning": "情報が不正に変更されたり破壊されたりしていない性質。"
+        }
+      ],
+      "stem": "注文データの数量が、権限のない人によって書き換えられた。完全性への影響として適切なのはどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "情報が不正に変更され、内容を信頼できなくなる"
+        },
+        {
+          "id": "イ",
+          "text": "データの保存場所が増えるだけで、内容には影響しない"
+        },
+        {
+          "id": "ウ",
+          "text": "情報が必ず暗号化され、秘密が強まる"
+        },
+        {
+          "id": "エ",
+          "text": "注文の処理速度が必ず速くなる"
+        }
+      ],
+      "correctOptionId": "ア",
+      "explanation": "完全性は、情報が勝手に書き換えられていないこと。注文の数や金額が変われば、見られただけの場合とは別の被害になる。アクセス権や変更記録などで守る。",
+      "optionExplanations": {
+        "ア": "正当でない変更を防ぐ・検出することは、完全性の保護に関わる。",
+        "イ": "数量の書換えは、情報の内容自体に影響している。",
+        "ウ": "不正な書換えは、暗号化による機密性の強化ではない。",
+        "エ": "完全性の問題は、処理速度の改善ではない。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面と専門用語を結び付ける独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティの目的／完全性・改ざん・アクセス管理",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・機能・注意点と正解、全誤答の理由、用語メモを照合。場面への適用は独自作問（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://csrc.nist.gov/glossary/term/integrity",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティの目的／完全性・改ざん・アクセス管理"
+      }
+    },
+    {
+      "questionId": "sg-practical2-incident-07",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門②・予想問題（非公式）",
+      "sourceNumber": "II-INCIDENT-07",
+      "sourceUrl": "https://csrc.nist.gov/glossary/term/risk",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "トラブル初動"
+      ],
+      "difficulty": 2,
+      "learningTrack": "practical",
+      "practicalSet": 2,
+      "learningOrder": 7,
+      "concept": "リスクアセスメント",
+      "termNotes": [
+        {
+          "term": "リスクアセスメント",
+          "meaning": "起こり得る危険を特定・分析・評価し、対応を考えるための活動。"
+        }
+      ],
+      "stem": "複数のセキュリティ対策から優先するものを決めたい。リスクアセスメントで考えることとして適切なのはどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "どんな被害が、どれくらい起こり得て、起きたときの影響がどれほどか"
+        },
+        {
+          "id": "イ",
+          "text": "全ての危険は同じなので、重要な情報も区別しない"
+        },
+        {
+          "id": "ウ",
+          "text": "対策の名前が格好よいかだけ"
+        },
+        {
+          "id": "エ",
+          "text": "被害が起きる可能性を一切調べず、安い対策を必ず選ぶ"
+        }
+      ],
+      "correctOptionId": "ア",
+      "explanation": "リスクアセスメントは、どこにどんな危険があり、どれを先に備えるかを考えること。「起こりやすさ」と「起きたときの影響」を両方見る。必ず単純な掛け算だけで決まる、という意味ではない。",
+      "optionExplanations": {
+        "ア": "危険の発生可能性や影響を評価し、対応の判断に使う。",
+        "イ": "守る情報や業務により、影響の大きさなどは異なる。",
+        "ウ": "名前の印象では、被害の可能性や影響は評価できない。",
+        "エ": "価格だけでは、必要な対応や優先度を判断できない。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面と専門用語を結び付ける独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティ管理／リスク特定・分析・評価",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・機能・注意点と正解、全誤答の理由、用語メモを照合。場面への適用は独自作問（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://csrc.nist.gov/glossary/term/risk",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティ管理／リスク特定・分析・評価",
+        "additionalEvidenceUrls": [
+          "https://csrc.nist.gov/glossary/term/risk_assessment"
+        ]
+      }
+    },
+    {
+      "questionId": "sg-practical2-incident-08",
+      "revision": 1,
+      "sourceType": "ai_original",
+      "sourceYear": 2026,
+      "sourceExam": "SG Study Deck 実用入門②・予想問題（非公式）",
+      "sourceNumber": "II-INCIDENT-08",
+      "sourceUrl": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r3.pdf",
+      "syllabusVersion": "SG Ver.4.1",
+      "subject": "A",
+      "topicTags": [
+        "トラブル初動"
+      ],
+      "difficulty": 2,
+      "learningTrack": "practical",
+      "practicalSet": 2,
+      "learningOrder": 8,
+      "concept": "再発防止",
+      "termNotes": [
+        {
+          "term": "再発防止",
+          "meaning": "原因や対応から学び、同じような被害を起こしにくくするための改善。"
+        }
+      ],
+      "stem": "誤った共有設定で資料が公開され、公開停止と調査を終えた。再発防止として適切なのはどれか。",
+      "options": [
+        {
+          "id": "ア",
+          "text": "原因と対応を振り返り、共有設定や確認手順、教育を改善する"
+        },
+        {
+          "id": "イ",
+          "text": "記録を全て消し、同じ状態で運用を続ける"
+        },
+        {
+          "id": "ウ",
+          "text": "誰かを責めて終わり、設定や手順は確認しない"
+        },
+        {
+          "id": "エ",
+          "text": "次も同じ公開設定を使い、問題が起きてから考える"
+        }
+      ],
+      "correctOptionId": "ア",
+      "explanation": "再発防止は、事故から分かったことを次の運用へ生かすこと。共有先の初期値や確認方法、連絡手順などを見直す。誰が悪いかだけで終わらず、同じ失敗を起こしにくい仕組みにする。",
+      "optionExplanations": {
+        "ア": "得た教訓を、設定・手順・教育などの改善へつなげる。",
+        "イ": "教訓や原因を確認せずに同じ状態を続けると、改善につながらない。",
+        "ウ": "原因や仕組みが残れば、同じ問題が起こり得る。",
+        "エ": "起きた問題を踏まえ、あらかじめ対策を見直す。"
+      },
+      "status": "active",
+      "contentUpdatedAt": "2026-10-09",
+      "media": [],
+      "modificationNote": null,
+      "versionNote": "身近な場面と専門用語を結び付ける独自の入門問題。IPAの過去問・公式解説ではありません。",
+      "syllabusMapping": "情報セキュリティインシデント管理／改善・教訓の反映（ID.IM）",
+      "verification": {
+        "answerChecked": true,
+        "explanationChecked": true,
+        "checkedAt": "2026-10-09",
+        "method": "一次資料の定義・機能・注意点と正解、全誤答の理由、用語メモを照合。場面への適用は独自作問（AI編集。第三者の人手レビューは未実施）",
+        "evidenceUrl": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r3.pdf",
+        "syllabusUrl": "https://www.ipa.go.jp/shiken/syllabus/nl10bi0000007tch-att/syllabus_sg_ver4_1.pdf",
+        "evidenceSection": "情報セキュリティインシデント管理／改善・教訓の反映（ID.IM）"
+      }
+    }
+  ]
+}
